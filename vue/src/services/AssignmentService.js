@@ -6,12 +6,16 @@ const http = axios.create( {
 
 export default {
 
-  login(user) {
-    return http.post('/login', user)
-  },
+//will return a list of assignments for course
+getCourseAssignments(courseId) {
+    return http.get(`/course/${courseId}/assignment/all`)
+}
 
-  register(user) {
-    return http.post('/register', user)
-  }
 
+
+
+
+
+
+    
 }
