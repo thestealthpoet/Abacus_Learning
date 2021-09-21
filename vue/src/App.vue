@@ -7,3 +7,9 @@
     <router-view />
   </div>
 </template>
+
+<style scoped>
+#app {
+  font-family: -apple-system, Roboto, 'Open Sans', sans-serif;
+}
+</style>
