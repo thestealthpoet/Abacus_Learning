@@ -1,11 +1,15 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.*;
+import com.techelevator.model.Course;
 import com.techelevator.model.User;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.security.Principal;
+import java.util.List;
 
 @RestController
 @RequestMapping
@@ -26,5 +30,18 @@ public class ApplicationController {
         this.userDao = userDao;
         this.gradeDao = gradeDao;
 
+    }
+
+    @RequestMapping(path = "/courses/teach/{teachId}", method= RequestMethod.GET)
+    public List<Course> getByTeacher(@PathVariable int teacherName, Principal principal) {
+        int teachId = userDao.findIdByUsername(principal.getName());
+        return courseDao.getByTeacher(teachId);
+
+    }
+
+    @RequestMapping(path = "/courses", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createNewCourse(@Valid @RequestBody Course course) {
+        courseDao.createCourse(course);
     }
 }

@@ -1,6 +1,7 @@
 package com.techelevator.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public class Assignment {
 
@@ -8,11 +9,11 @@ public class Assignment {
     private int topicId;
     private String assignmentName;
     private BigDecimal grade;
-    private String dueDate;
+    private LocalDateTime dueDate;
 
     public Assignment() {}
 
-    public Assignment(int assignmentId, int topicId, String assignmentName, BigDecimal grade, String dueDate) {
+    public Assignment(int assignmentId, int topicId, String assignmentName, BigDecimal grade, LocalDateTime dueDate) {
         this.assignmentId = assignmentId;
         this.topicId = topicId;
         this.assignmentName = assignmentName;
@@ -52,11 +53,11 @@ public class Assignment {
         this.grade = grade;
     }
 
-    public String getDueDate() {
+    public LocalDateTime getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(String dueDate) {
+    public void setDueDate(LocalDateTime dueDate) {
         this.dueDate = dueDate;
     }
 

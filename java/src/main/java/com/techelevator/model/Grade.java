@@ -1,15 +1,17 @@
 package com.techelevator.model;
 
+import java.time.LocalDateTime;
+
 public class Grade {
 
     private int userId;
     private int assignmentId;
     private boolean isComplete;
-    private String timeTurnedIn;
+    private LocalDateTime timeTurnedIn;
 
     public Grade() {}
 
-    public Grade (int userId, int assignmentId, boolean isComplete, String timeTurnedIn) {
+    public Grade (int userId, int assignmentId, boolean isComplete, LocalDateTime timeTurnedIn) {
         this.userId = userId;
         this.assignmentId = assignmentId;
         this.isComplete = isComplete;
@@ -40,11 +42,11 @@ public class Grade {
         isComplete = complete;
     }
 
-    public String getTimeTurnedIn() {
+    public LocalDateTime getTimeTurnedIn() {
         return timeTurnedIn;
     }
 
-    public void setTimeTurnedIn(String timeTurnedIn) {
+    public void setTimeTurnedIn(LocalDateTime timeTurnedIn) {
         this.timeTurnedIn = timeTurnedIn;
     }
     @Override

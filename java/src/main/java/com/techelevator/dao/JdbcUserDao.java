@@ -30,7 +30,7 @@ public class JdbcUserDao implements UserDao {
     }
 
 	@Override
-	public User getUserById(Long userId) {
+	public User getUserById(int userId) {
 		String sql = "SELECT * FROM users WHERE user_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
 		if(results.next()) {
@@ -90,7 +90,9 @@ public class JdbcUserDao implements UserDao {
 
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
-        user.setId(rs.getLong("user_id"));
+        user.setId(rs.getInt("user_id"));
+        user.setName(rs.getString("name"));
+        user.setEmailAddress(rs.getString("email_address"));
         user.setUsername(rs.getString("username"));
         user.setPassword(rs.getString("password_hash"));
         user.setAuthorities(rs.getString("role"));
