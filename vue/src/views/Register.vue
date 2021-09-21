@@ -15,6 +15,15 @@
         required
         autofocus
       />
+      <label for="emailAddress" class="sr-only">Email Address</label>
+      <input
+        type="text"
+        id="emailAddress"
+        class="form-control"
+        placeholder="Email"
+        v-model="user.emailAddress"
+        required
+        />
       <label for="password" class="sr-only">Password</label>
       <input
         type="password"
@@ -32,8 +41,17 @@
         v-model="user.confirmPassword"
         required
       />
+      <label for="name" class="sr-only">Full Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        placeholder="Name"
+        v-model="user.name"
+        required
+        />
       <router-link :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      <button id="crt-btn" class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
     </form>
@@ -51,7 +69,9 @@ export default {
         username: '',
         password: '',
         confirmPassword: '',
-        role: 'user',
+        emailAddress: '',
+        name: '',
+        role: 'user'
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
@@ -89,3 +109,25 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.form-register {
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #219EBC;
+  border-radius: 3px;
+  display: inline-flex;
+  padding: 10px;
+}
+
+.logo {
+  justify-content: flex-start;
+}
+
+#crt-btn {
+  
+}
+
+
+</style>
