@@ -1,6 +1,5 @@
 <template>
   <div id="login" class="text-center">
-    <img class="logo" src="@/assets/logo.png" alt="Abacus Logo" />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
