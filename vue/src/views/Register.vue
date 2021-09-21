@@ -1,6 +1,5 @@
 <template>
   <div id="register" class="text-center">
-    <img class="logo" src="@/assets/logo.png" alt="Abacus Logo" />
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">

@@ -13,6 +13,10 @@
 
 <style scoped>
 #app {
-  font-family: -apple-system, Roboto, 'Open Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(33, 158, 188, 0.1);
 }
 </style>
