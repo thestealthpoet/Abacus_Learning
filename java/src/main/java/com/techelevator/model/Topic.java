@@ -5,9 +5,6 @@ public class Topic {
     private int topicId;
     private int courseId;
     private String topicName;
-
-
-
     private String topicDescription;
 
     public Topic() {}
