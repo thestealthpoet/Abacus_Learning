@@ -7,9 +7,11 @@ const http = axios.create( {
 export default {
 
 //will return a list of assignments for course
-getCourseAssignments(courseId) {
-    return http.get(`/course/${courseId}/assignment/all`)
-}
+getCourseAssignments(courseId, assignmentId) {
+    return http.get(`/course/${courseId}/assignment/${assignmentId}/all`)
+},
+
+
 
 
 

@@ -47,7 +47,9 @@ export default {
     },
 
     //will add content to course
-    //addCourseContent(course)
+    //addCourseContent(courseId, content) {
+        
+    //}
 
 
 
