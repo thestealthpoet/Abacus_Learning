@@ -10,6 +10,8 @@ public class User {
 
    private Long id;
    private String username;
+   private String emailAddress;
+   private String name;
    @JsonIgnore
    private String password;
    @JsonIgnore
@@ -18,11 +20,13 @@ public class User {
 
    public User() { }
 
-   public User(Long id, String username, String password, String authorities) {
+   public User(Long id, String username, String password, String authorities, String emailAddress, String name ) {
       this.id = id;
       this.username = username;
       this.password = password;
       this.activated = true;
+      this.emailAddress = emailAddress;
+      this.name = name;
    }
 
    public Long getId() {
@@ -47,6 +51,22 @@ public class User {
 
    public void setPassword(String password) {
       this.password = password;
+   }
+
+   public String getEmailAddress() {
+      return emailAddress;
+   }
+
+   public void setEmailAddress(String emailAddress) {
+      this.emailAddress = emailAddress;
+   }
+
+   public String getName() {
+      return name;
+   }
+
+   public void setName(String name) {
+      this.name = name;
    }
 
    public boolean isActivated() {
@@ -97,6 +117,7 @@ public class User {
               ", username='" + username + '\'' +
               ", activated=" + activated +
               ", authorities=" + authorities +
-              '}';
+              ", email=" + emailAddress +
+              ", name =" + name + '}';
    }
 }
