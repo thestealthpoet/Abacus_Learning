@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-$
+
 .form-signin {
   justify-content: flex-start;
   align-items: center;
