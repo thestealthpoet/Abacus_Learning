@@ -1,5 +1,6 @@
 <template>
   <div id="register" class="text-center">
+    <img class="logo" src="@/assets/logo.png" alt="Abacus Logo" />
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
@@ -33,7 +34,7 @@
         required
       />
       <router-link :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      <button id="crt-btn" class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
     </form>
@@ -89,3 +90,25 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.form-register {
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #219EBC;
+  border-radius: 3px;
+  display: inline-flex;
+  padding: 10px;
+}
+
+.logo {
+  justify-content: flex-start;
+}
+
+#crt-btn {
+  
+}
+
+
+</style>

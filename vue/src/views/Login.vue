@@ -1,5 +1,6 @@
 <template>
   <div id="login" class="text-center">
+    <img class="logo" src="@/assets/logo.png" alt="Abacus Logo" />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
@@ -32,7 +33,7 @@
         required
       />
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      <button id="signin-btn" type="submit">Sign in</button>
     </form>
   </div>
 </template>
@@ -74,3 +75,29 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+$
+.form-signin {
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #219EBC;
+  border-radius: 3px;
+  display: inline-flex;
+  padding: 10px;
+}
+
+.logo {
+  justify-content: left;
+}
+
+#login {
+
+}
+
+#signin-btn {
+
+}
+
+</style>
