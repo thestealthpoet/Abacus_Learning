@@ -22,24 +22,10 @@
     </div>
     <div class="field">
         <label for="datetime-class">Select weekly class day and time</label>
-        <datetime
-  type="datetime"
-  v-model="course.classTime"
-  input-class="my-class"
-  value-zone="America/New_York"
-  zone="Asia/Shanghai"
-  :format="{ year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }"
-  :phrases="{ok: 'Continue', cancel: 'Exit'}"
-  :hour-step="2"
-  :minute-step="15"
-  :min-datetime="minDatetime"
-  :max-datetime="maxDatetime"
-  :week-start="7"
-  use12-hour
-  auto
-  ></datetime>
-
+        <input type="datetime-local"
+            v-model="course.classTime" />
     </div>
+    </form>
 
 
 </template>
@@ -54,9 +40,9 @@ export default {
                 description: '',
                 difficultyLevel: '',
                 classTime: ''
-            }
-        }
-    }
+            },
+        };
+    },
 
 }
 </script>
