@@ -31,7 +31,7 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      <router-link class="account-creation" :to="{ name: 'register' }">Need an account?</router-link>
       <button id="signin-btn" type="submit">Sign in</button>
     </form>
   </div>
@@ -88,16 +88,20 @@ export default {
   background: rgb(245, 245, 245);
 }
 
-.logo {
-  justify-content: left;
+label {
+  margin: 5px;
 }
 
-#login {
-
+.account-creation {
+  margin: 5px;
 }
 
 #signin-btn {
+  border-radius: 3px;
+}
 
+#signin-btn:hover {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24), 0 3px 10px 0 rgba(0,0,0,0.19);
 }
 
 </style>

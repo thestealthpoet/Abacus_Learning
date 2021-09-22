@@ -119,6 +119,7 @@ export default {
   border-radius: 3px;
   display: inline-flex;
   padding: 10px;
+  background: rgb(245, 245, 245);
 }
 
 .logo {
