@@ -3,6 +3,7 @@ package com.techelevator.dao;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -62,6 +63,14 @@ public class JdbcUserDao implements UserDao {
             }
         }
         throw new UsernameNotFoundException("User " + username + " was not found.");
+    }
+    @Override
+    public User findByUserEmail(String emailAddress) throws UsernameNotFoundException {
+        for (User user : this.findAll()) {
+            if( user.getEmailAddress().toLowerCase().equals(emailAddress.toLowerCase())) {
+                return user;
+            }
+        }throw new UsernameNotFoundException("User email address " + emailAddress + "Was not found.");
     }
 
     @Override

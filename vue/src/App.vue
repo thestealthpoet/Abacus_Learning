@@ -3,7 +3,6 @@
     <div id="nav">
       <div class="logo">
         <img src="@/assets/logo.png" alt="Abacus Logo">
-<<<<<<< HEAD
       </div>
       <router-link v-bind:to="{ name: 'home' }">
         <img class="HomeIcon" src="@/assets/homeIcon.png" alt="Home">
@@ -11,16 +10,6 @@
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">
         <img src="@/assets/logOutIcon.png" alt="Logout">
       </router-link>
-=======
-        <h4>Always gaining knowledge</h4>
-        </div>
-      
-      <div class="nav-text">
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>
-      <router-link v-bind:to="{ name: 'About' }">About</router-link>
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
-      </div>
->>>>>>> d695b6383d27ee8c31bd46e753b23ee36a6af682
     </div>
     <router-view />
   </div>
@@ -35,12 +24,6 @@
   background: rgba(33, 158, 188, 0.1);
 }
 
-<<<<<<< HEAD
-.HomeIcon {
-  
-}
-
-=======
 .nav-text {
   display: flex;
   justify-content: space-evenly;
@@ -55,5 +38,4 @@
 h4 {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
->>>>>>> d695b6383d27ee8c31bd46e753b23ee36a6af682
 </style>

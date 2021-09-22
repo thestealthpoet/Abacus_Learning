@@ -97,15 +97,7 @@ label {
 }
 
 #signin-btn {
-<<<<<<< HEAD
   background-color: rgba(251, 172, 14, .7);
-=======
-  border-radius: 3px;
-}
-
-#signin-btn:hover {
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24), 0 3px 10px 0 rgba(0,0,0,0.19);
->>>>>>> d695b6383d27ee8c31bd46e753b23ee36a6af682
 }
 
 </style>
