@@ -29,8 +29,10 @@
         type="password"
         id="password"
         class="form-control"
-        placeholder="Password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        placeholder="password"
         v-model="user.password"
+        
         required
       />
       <input
