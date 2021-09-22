@@ -56,7 +56,7 @@ CREATE TABLE courses (
         course_teacher int,
         description varchar(75) NOT NULL,
         difficulty_level varchar(20) NOT NULL,
-        class_time DATE NOT NULL,                                           
+        class_time TIMESTAMP NOT NULL,                                           
         CONSTRAINT PK_course PRIMARY KEY (course_id),
         CONSTRAINT FK_course_teacher_user FOREIGN KEY (course_teacher) REFERENCES users (user_id)
 );
@@ -75,7 +75,7 @@ CREATE TABLE assignments (
         topic_id int,
         assignment_name int NOT NULL,
         grade DECIMAL(5,2),
-        due_date DATE NOT NULL,
+        due_date TIMESTAMP NOT NULL,
         CONSTRAINT PK_assignment PRIMARY KEY (assignment_id),
         CONSTRAINT FK_assignment_topic FOREIGN KEY (topic_id) REFERENCES topics (topic_id)
 );
