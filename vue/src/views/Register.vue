@@ -29,8 +29,10 @@
         type="password"
         id="password"
         class="form-control"
-        placeholder="Password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        placeholder="password"
         v-model="user.password"
+        
         required
       />
       <input
@@ -127,7 +129,7 @@ export default {
 }
 
 #crt-btn {
-  
+  background-color: rgba(251, 172, 14, .7);
 }
 
 
