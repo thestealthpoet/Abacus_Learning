@@ -44,4 +44,9 @@ public class ApplicationController {
     public void createNewCourse(@Valid @RequestBody Course course) {
         courseDao.createCourse(course);
     }
+
+    @RequestMapping(path = "/CourseRoster{courseId}", method= RequestMethod.GET)
+    public List<User> getCourseRoster(@PathVariable int courseId) {
+        return userDao.getCourseRoster(courseId);
+    }
 }
