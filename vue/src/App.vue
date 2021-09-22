@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <div class="logo">
-        <img src="@/assets/logo.png" alt="Abacus Logo">
+    <div>
+        <img class="logo" src="@/assets/logo.png" alt="Abacus Logo">
       </div>
+    <div id="nav">
       <div>
         <h4>Always gaining knowledge</h4>
       </div>
@@ -30,6 +30,8 @@
   align-items: center;
   flex-direction: column;
   background: rgba(33, 158, 188, 0.1);
+  width: 100%;
+  height: 100vh;
 }
 
 .nav-text {
@@ -40,7 +42,7 @@
 }
 
 .logo {
-  display:inline-flex;
+  display: flex;
 }
 
 h4 {
