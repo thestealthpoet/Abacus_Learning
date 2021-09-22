@@ -7,7 +7,7 @@
     </div>
     <div class="field">
         <label for="description">Course Description</label>
-        <input type="text"
+        <textarea id="description"
         v-model="course.description" />
     </div>
     <div class="field">
