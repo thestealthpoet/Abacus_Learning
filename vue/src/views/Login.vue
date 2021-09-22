@@ -97,7 +97,7 @@ export default {
 }
 
 #signin-btn {
-
+  background-color: rgba(251, 172, 14, .7);
 }
 
 </style>
