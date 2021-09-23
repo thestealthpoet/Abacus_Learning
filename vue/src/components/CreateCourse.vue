@@ -51,7 +51,7 @@ export default {
 
 .course-creation-form{
     display: inline-grid;
-    height: 50vh;
+    height: 45vh;
     width: 35vw;
     border: 3px solid #219EBC;
     border-radius: 3px;

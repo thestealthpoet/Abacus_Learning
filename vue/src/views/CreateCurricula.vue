@@ -1,12 +1,13 @@
 <template>
   <div class = "create-curricula">
-      <create-course/>
+      <create-curricula/>
   </div>
 </template>
 
 <script>
+import CreateCurricula from '../components/CreateCurricula.vue';
 export default {
-    
+    components: {CreateCurricula},
 
 }
 </script>
