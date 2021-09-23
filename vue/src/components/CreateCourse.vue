@@ -1,14 +1,14 @@
 <template>
-  <form v-on:submit.prevent class="course-creation-form">
+  <form v-on:submit.prevent="saveCourse" class="course-creation-form">
      <div class="field">
       <label for="course-title">Course Title</label>
       <input type="text"
-      v-model="course.name" />
+      v-model="course.courseName" />
     </div>
     <div class="field">
         <label for="description">Course Description</label>
         <textarea id="description"
-        v-model="course.description" />
+        v-model="course.courseDescription" />
     </div>
     <div class="field">
         <label for="difficulty-level">Difficulty Level</label>
@@ -25,6 +25,7 @@
         <input type="datetime-local"
             v-model="course.classTime" />
     </div>
+    <button class="btn btn-submit">Submit</button>
     </form>
 
 
@@ -38,10 +39,11 @@ export default {
     data() {
         return {
             course: {
-                name: '',
-                description: '',
+                courseName: '',
+                courseDescription: '',
                 difficultyLevel: '',
-                classTime: ''
+                classTime: '',
+                courseTeacher: this.$store.state.user.id,
             },
             errorMsg: ''
         };
