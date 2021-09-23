@@ -1,27 +1,25 @@
 <template>
-  <div id="app">
-    <!-- <div>
-        <img class="logo" src="@/assets/logo.png" alt="Abacus Logo">
-      </div>
-    <div id="nav">
-      <div>
-        <h4>Always gaining knowledge</h4>
-      </div>
-      <div class="nav-text">
-      <router-link v-bind:to="{ name: 'home' }">
-        <img src="@/assets/homeIcon.png" alt="Home">
-      </router-link>
-      <router-link v-bind:to="{ name: 'About' }">
-        <img src="@/assets/infoIcon.png" alt="About">
-      </router-link>
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">
-        <img src="@/assets/logOutIcon.png" alt="Logout">
-      </router-link>
-      </div>
-    </div> -->
-    <router-view />
+  <div>
+    <the-header></the-header>
+    <div id="app" class="app">
+      <router-view />
+    </div>
+    <the-footer></the-footer>
   </div>
 </template>
+
+<script>
+  import TheHeader from '@/components/TheHeader.vue';
+  import TheFooter from '@/components/TheFooter.vue';
+
+export default {
+  name: "app",
+  components: {
+    TheHeader,
+    TheFooter
+  }
+}
+</script>
 
 <style scoped>
 #app {
