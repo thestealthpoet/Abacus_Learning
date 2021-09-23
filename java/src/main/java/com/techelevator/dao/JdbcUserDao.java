@@ -45,7 +45,7 @@ public class JdbcUserDao implements UserDao {
     @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
-        String sql = "select * from users";
+        String sql = "select name, email_address from users";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while(results.next()) {
@@ -116,12 +116,11 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public boolean createRosterEntry(int userId, int courseId) {
+    public void createRosterEntry(int userId, int courseId) {
         String sqlString = "INSERT INTO course_users (user_id, class_id) " +
                 "VALUES (?,?)";
         jdbcTemplate.update(sqlString, userId, courseId);
 
-        return true;
     }
 
     private User mapRowToUser(SqlRowSet rs) {

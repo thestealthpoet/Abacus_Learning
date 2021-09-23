@@ -73,8 +73,7 @@ CREATE TABLE topics (
 CREATE TABLE assignments (
         assignment_id int DEFAULT nextval('seq_assignment_id'::regclass) NOT NULL,
         topic_id int,
-        assignment_name int NOT NULL,
-        grade DECIMAL(5,2),
+        assignment_name varchar(50) NOT NULL,
         due_date TIMESTAMP NOT NULL,
         CONSTRAINT PK_assignment PRIMARY KEY (assignment_id),
         CONSTRAINT FK_assignment_topic FOREIGN KEY (topic_id) REFERENCES topics (topic_id)
@@ -85,8 +84,10 @@ CREATE TABLE grades (
         assignment_id int,
         is_complete BOOLEAN,
         time_turned_in TIMESTAMP,
+        grade DECIMAL(5,2),
         CONSTRAINT FK_grade_user FOREIGN KEY (user_id) REFERENCES users (user_id),
-        CONSTRAINT FK_grade_assignment FOREIGN KEY (assignment_id) REFERENCES assignments (assignment_id)         
+        CONSTRAINT FK_grade_assignment FOREIGN KEY (assignment_id) REFERENCES assignments (assignment_id),
+        CONSTRAINT CHK_grade CHECK (grade<100.00 AND grade>0.00)        
 );
 
 CREATE TABLE course_users (
