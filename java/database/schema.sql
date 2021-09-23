@@ -91,14 +91,16 @@ CREATE TABLE grades (
 
 CREATE TABLE course_users (
         user_id int,
-        course_id int,
-        CONSTRAINT PK_course_user PRIMARY KEY (user_id, course_id),
+        class_id int,
+        CONSTRAINT PK_course_user PRIMARY KEY (user_id, class_id),
         CONSTRAINT FK_course_user_user FOREIGN KEY (user_id) REFERENCES users (user_id),
-        CONSTRAINT FK_course_user_course FOREIGN KEY (course_id) REFERENCES courses (course_id)
+        CONSTRAINT FK_course_user_course FOREIGN KEY (class_id) REFERENCES courses (course_id)
 );
 
 INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Test User','useremail@email.com','user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Test Admin', 'adminemail@email.com','admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1001, 'math', 2, 'math', 'medium', '2021-12-12 00:01:00');
+INSERT INTO course_users (class_id, user_id) VALUES (1001, 1);
 
 
 COMMIT TRANSACTION;

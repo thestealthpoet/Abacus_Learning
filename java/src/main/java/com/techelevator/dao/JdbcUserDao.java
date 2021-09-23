@@ -3,7 +3,9 @@ package com.techelevator.dao;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import com.techelevator.model.UserEmailAlreadyExistsException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -63,6 +65,14 @@ public class JdbcUserDao implements UserDao {
         }
         throw new UsernameNotFoundException("User " + username + " was not found.");
     }
+    @Override
+    public User findByUserEmail(String emailAddress) throws UsernameNotFoundException {
+        for (User user : this.findAll()) {
+            if( user.getEmailAddress().toLowerCase().equals(emailAddress.toLowerCase())) {
+                return user;
+            }
+        }throw new UsernameNotFoundException("User email address " + emailAddress + "Was not found.");
+    }
 
     @Override
     public boolean create(String username, String password, String role, String emailAddress, String name) {
@@ -89,6 +99,29 @@ public class JdbcUserDao implements UserDao {
         
 
         return userCreated;
+    }
+
+    @Override
+    public List<User> getCourseRoster(int courseId){
+        List<User> users = new ArrayList<User>();
+        String sqlString = "SELECT name, email_address FROM users " +
+                "JOIN course_users ON course_users.user_id = users.user_id" +
+                "JOIN courses ON courses.course_id = course_users.class_id" +
+                "WHERE class_id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlString, courseId);
+        while (results.next()) {
+            users.add(mapRowToUser(results));
+        }
+        return users;
+    }
+
+    @Override
+    public boolean createRosterEntry(int userId, int courseId) {
+        String sqlString = "INSERT INTO course_users (user_id, class_id) " +
+                "VALUES (?,?)";
+        jdbcTemplate.update(sqlString, userId, courseId);
+
+        return true;
     }
 
     private User mapRowToUser(SqlRowSet rs) {
