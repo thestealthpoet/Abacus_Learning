@@ -3,20 +3,42 @@
     <div class="field">
       <label for="topic-title">Topic Title</label>
       <input type="text"
-      v-model="topic"/>
+      v-bind:class="{'needs-content': topicName==='' }"
+      v-model.trim="topicName"/>
     </div>
     <div class="field">
       <label for="due-date">Due Date for Exercise</label>
       <input type="date"
-      v-model="exercisesDate"/>
+      v-bind:class="{'needs-content': exercisesDate==='' }"
+      v-model="exercisesDate"/> 
+    </div>
+    <div class="field">
+      <label for="teach-date">Optional Topic Teach Date</label>
+      <input type="date"
+      v-model="teachDate"/>
     </div>  
     <div class="field">
       <label for="description"> Optional Description </label>
       <textarea
       id="optional-description"
       rows="3"
-      v-model="description"/>
-    </div>     
+      v-model.trim="description"/>
+    </div>
+    <div class="other">
+      <input type="radio"
+      id="homework"
+      name="assignments"
+      value="homework">
+      <label for="homework">Add Homework?</label>
+      <input type="radio"
+      id="quiz"
+      name="assignments"
+      value="quiz">
+      <label for="quiz">Add Quiz?</label>
+    </div>  
+    <div>
+    <button type="submit">Submit</button>
+    </div>
   </form>  
 </template>
 
@@ -51,6 +73,13 @@ export default {
     display: flex;
     flex-direction: column;
     justify-self: stretch;
+}
+.needs-content {
+    background-color: #FBAC0E;
+}
+.other {
+  display: flex;
+  justify-content: end;
 }
 
 </style>
