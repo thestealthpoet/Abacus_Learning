@@ -21,7 +21,7 @@
         </select>
     </div>
     <div class="field">
-        <label for="datetime-class">Select weekly class day and time</label>
+        <label for="datetime-class" >Select weekly class day and time</label>
         <input type="datetime-local"
             v-model="course.classTime" />
     </div>
@@ -49,4 +49,17 @@ export default {
 
 <style>
 
+.course-creation-form{
+    display: inline-grid;
+    height: 50vh;
+    width: 35vw;
+    border: 3px solid #219EBC;
+    border-radius: 3px;
+    padding: 10px;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    justify-self: stretch;
+}
 </style>
