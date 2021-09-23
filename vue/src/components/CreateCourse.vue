@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import courseService from "../services/CourseService";
+
 export default {
     name: "create-course",
     data() {
@@ -41,9 +43,30 @@ export default {
                 difficultyLevel: '',
                 classTime: ''
             },
+            errorMsg: ''
         };
     },
-
+    methods: {
+        saveCourse() {
+            courseService.createCourse(this.course)
+            .then(response => {
+                if (response.status === 201) {
+                    courseService.listCourses().then(response => {
+                        this.$store.commit("", response.data);
+                    });
+                    this.course = {
+                        name: '',
+                        description: '',
+                        difficultyLevel: '',
+                        classTime: ''
+                    }
+                    this.$router.push('/courses');
+                }
+            }).catch(error => {
+                this.errorMsg = error.response.statusText;
+            });
+        },
+    },
 }
 </script>
 

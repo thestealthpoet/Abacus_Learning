@@ -47,9 +47,10 @@ export default {
     },
 
     //will add content to course
-    //addCourseContent(courseId, content) {
+    addCourseContent(courseId, content) {
+        return http.post(`/course/${courseId}/content`, content);
         
-    //}
+    }
 
 
 
