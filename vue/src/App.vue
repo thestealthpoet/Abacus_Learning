@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <div>
+    <div>
         <img class="logo" src="@/assets/logo.png" alt="Abacus Logo">
       </div>
     <div id="nav">
