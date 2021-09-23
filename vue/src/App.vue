@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>
+    <!-- <div>
         <img class="logo" src="@/assets/logo.png" alt="Abacus Logo">
       </div>
     <div id="nav">
@@ -18,14 +18,13 @@
         <img src="@/assets/logOutIcon.png" alt="Logout">
       </router-link>
       </div>
-    </div>
+    </div> -->
     <router-view />
   </div>
 </template>
 
 <style scoped>
 #app {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;

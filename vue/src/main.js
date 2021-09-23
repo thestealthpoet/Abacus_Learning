@@ -3,9 +3,9 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store/index'
 import axios from 'axios'
-import { Datetime } from 'vue-datetime';
+// // import { Datetime } from 'vue-datetime';
  
-Vue.component('datetime', Datetime);
+// Vue.component('datetime', Datetime);
 
 Vue.config.productionTip = false
 
