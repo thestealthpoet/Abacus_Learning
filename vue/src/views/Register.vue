@@ -29,7 +29,8 @@
         type="password"
         id="password"
         class="form-control"
-        placeholder="Password"
+        placeholder="Ex: Pikachu1"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         v-model="user.password"
         required
       />
