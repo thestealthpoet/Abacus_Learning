@@ -21,7 +21,7 @@
         </select>
     </div>
     <div class="field">
-        <label for="datetime-class">Select weekly class day and time</label>
+        <label for="datetime-class" >Select weekly class day and time</label>
         <input type="datetime-local"
             v-model="course.classTime" />
     </div>
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import courseService from "../services/CourseService";
+
 export default {
     name: "create-course",
     data() {
@@ -41,12 +43,46 @@ export default {
                 difficultyLevel: '',
                 classTime: ''
             },
+            errorMsg: ''
         };
     },
-
+    methods: {
+        saveCourse() {
+            courseService.createCourse(this.course)
+            .then(response => {
+                if (response.status === 201) {
+                    courseService.listCourses().then(response => {
+                        this.$store.commit("", response.data);
+                    });
+                    this.course = {
+                        name: '',
+                        description: '',
+                        difficultyLevel: '',
+                        classTime: ''
+                    }
+                    this.$router.push('/courses');
+                }
+            }).catch(error => {
+                this.errorMsg = error.response.statusText;
+            });
+        },
+    },
 }
 </script>
 
 <style>
 
+.course-creation-form{
+    display: inline-grid;
+    height: 45vh;
+    width: 35vw;
+    border: 3px solid #219EBC;
+    border-radius: 3px;
+    padding: 10px;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    justify-self: stretch;
+}
 </style>
