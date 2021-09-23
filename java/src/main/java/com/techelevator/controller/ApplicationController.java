@@ -50,8 +50,8 @@ public class ApplicationController {
         return userDao.getCourseRoster(courseId);
     }
 
-    @RequestMapping(path = "/course-roster-entry/{userId}/{courseId}", method = RequestMethod.POST)
-    public void createCourseRosterEntry(@PathVariable int userId, @PathVariable int courseId) {
+    @RequestMapping(path = "/courses/{courseId}/roster", method = RequestMethod.POST)
+    public void createCourseRosterEntry(@RequestBody @PathVariable int userId, @PathVariable int courseId) {
         userDao.createRosterEntry(userId, courseId);
     }
 }

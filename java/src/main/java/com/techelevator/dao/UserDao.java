@@ -20,5 +20,5 @@ public interface UserDao {
 
     List<User> getCourseRoster(int courseId);
 
-    boolean createRosterEntry(int userId, int courseId);
+    void createRosterEntry(int userId, int courseId);
 }
