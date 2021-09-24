@@ -68,11 +68,11 @@ export default {
   data() {
     return {
       user: {
+        name: '',
+        emailAddress: '',
         username: '',
         password: '',
         confirmPassword: '',
-        emailAddress: '',
-        name: '',
         role: 'user'
       },
       registrationErrors: false,
