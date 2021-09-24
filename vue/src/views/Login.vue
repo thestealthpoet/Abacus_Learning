@@ -32,7 +32,7 @@
         required
       />
       <router-link class="account-creation" :to="{ name: 'register' }">Need an account?</router-link>
-      <button id="signin-btn" type="submit">Sign in</button>
+      <button id="btn" type="submit">Sign in</button>
     </form>
   </div>
 </template>
@@ -46,8 +46,9 @@ export default {
   data() {
     return {
       user: {
+        password: "",
         username: "",
-        password: ""
+        
       },
       invalidCredentials: false
     };
@@ -92,4 +93,21 @@ label {
 .account-creation {
   margin: 5px;
 }
+
+#btn {
+  background-color: rgba(251, 172, 14, .5);
+  border: 2px solid rgba(251, 172, 14, 1);
+  color: white;
+  padding: 11px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+#btn:hover {
+  background-color: rgba(251, 172, 14, 1);;
+}
+
 </style>

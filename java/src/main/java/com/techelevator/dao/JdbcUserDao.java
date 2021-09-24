@@ -28,7 +28,7 @@ public class JdbcUserDao implements UserDao {
 
     @Override
     public int findIdByUsername(String username) {
-        return jdbcTemplate.queryForObject("select user_id from users where username = ?", int.class, username);
+        return jdbcTemplate.queryForObject("SELECT user_id FROM users WHERE username = ?;", int.class, username);
     }
 
 	@Override
@@ -45,7 +45,7 @@ public class JdbcUserDao implements UserDao {
     @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
-        String sql = "select name, email_address from users";
+        String sql = "select * from users";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while(results.next()) {
@@ -75,7 +75,7 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public boolean create(String username, String password, String role, String emailAddress, String name) {
+    public boolean create(String name, String emailAddress, String username, String password, String role) {
         boolean userCreated = false;
 
         // create user

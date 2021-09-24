@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style>
-.curricula-creation-form{
+.curricula-creation-form {
     display: inline-grid;
     height: 45vh;
     width: 35vw;
@@ -81,7 +81,7 @@ export default {
 }
 .other {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 </style>

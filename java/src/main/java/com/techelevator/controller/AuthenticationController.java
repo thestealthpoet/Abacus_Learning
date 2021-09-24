@@ -52,12 +52,12 @@ public class AuthenticationController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(@Valid @RequestBody RegisterUserDTO newUser) {
-      //  try {
-      //      User user = userDao.findByUsername(newUser.getUsername());
-      //      throw new UserAlreadyExistsException();
-       // } catch (UsernameNotFoundException e) {
-            userDao.create(newUser.getUsername(), newUser.getPassword(), newUser.getRole(), newUser.getEmailAddress(), newUser.getName());
-       // }
+        try {
+            User user = userDao.findByUsername(newUser.getUsername());
+           throw new UserAlreadyExistsException();
+        } catch (UsernameNotFoundException e) {
+            userDao.create(newUser.getName(), newUser.getEmailAddress(), newUser.getUsername(), newUser.getPassword(), newUser.getRole());
+        }
         //try {
             //User user = userDao.findByUserEmail(newUser.getEmailAddress());
             //throw new UserEmailAlreadyExistsException();
