@@ -8,12 +8,9 @@ import store from '../store/index'
 import About from '../views/About.vue'
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
-<<<<<<< HEAD
 // eslint-disable-next-line no-unused-vars
 import ViewCurricula from '../views/ViewCurricula.vue'
-=======
 import UserCourses from '../views/UserCourses.vue'
->>>>>>> 76627cfb4dc39107a7981da4fe2770a7dc2a561d
 
 Vue.use(Router)
 
@@ -87,19 +84,19 @@ const router = new Router({
       }
     },
     {
-<<<<<<< HEAD
       path: "/curricula",
       name: "view-curricula",
       component: Register,
       meta: {
         requiresAuth: false
-=======
+      }
+    },
+    {  
       path: "/myCourses",
       name: "my-courses",
       component: UserCourses,
       meta: {
         requiresAuth: true
->>>>>>> 76627cfb4dc39107a7981da4fe2770a7dc2a561d
       }
     },
 
