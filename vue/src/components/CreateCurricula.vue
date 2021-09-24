@@ -39,7 +39,7 @@
       <label for="quiz">Add Quiz?</label>
     </div>  
     <div>
-    <button type="submit">Submit</button>
+    <button id="btn" type="submit">Submit</button>
     </div>
   </form>  
 </template>

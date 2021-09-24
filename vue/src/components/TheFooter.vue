@@ -20,6 +20,9 @@ export default {
 }
 
 p {
+    display: flex;
+    justify-content: flex-end;
     color: white;
+    padding-right: 10px;
 }
 </style>
