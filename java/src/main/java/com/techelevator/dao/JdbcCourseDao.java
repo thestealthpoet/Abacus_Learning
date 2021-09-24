@@ -43,6 +43,22 @@ public class JdbcCourseDao implements CourseDao {
     }
 
     @Override
+    public List<Course> getCourseListByUserId(int userId) {
+        List<Course> userCourseList = new ArrayList<>();
+        String sql = "SELECT course_id, course_name, course_teacher, description, difficulty_level, class_time " +
+                "FROM courses " +
+                "JOIN course_users ON courses.course_id = course_users.class_id " +
+                "WHERE course_users.user_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        while (results.next()) {
+            Course course = mapRowToCourse(results);
+            userCourseList.add(course);
+        }
+
+        return userCourseList;
+    }
+
+    @Override
     public void createCourse(Course course) {
         //adds course into courses table
         String sql = "INSERT INTO courses (" +
