@@ -66,6 +66,8 @@ CREATE TABLE topics (
         course_id int,
         topic_name varchar(50) NOT NULL,
         description varchar(75),
+        topic_due_date date NOT NULL,
+        topic_teach_date date,
         CONSTRAINT PK_topic PRIMARY KEY (topic_id),
         CONSTRAINT FK_topic_course FOREIGN KEY (course_id) REFERENCES courses (course_id)
 );
@@ -102,6 +104,9 @@ INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Test
 INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Test Admin', 'adminemail@email.com','admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1001, 'math', 2, 'math', 'medium', '2021-12-12 00:01:00');
 INSERT INTO course_users (class_id, user_id) VALUES (1001, 1);
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1002, 'reading', 2, 'books', 'medium', '2021-11-12 00:01:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES(1002, 1001, 'topic1', null, '2002-12-12', null);
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (1003, 1001, 'topic2', null, '2012-3-4', null);
 
 
 COMMIT TRANSACTION;
