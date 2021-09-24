@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping
-@PreAuthorize("isAuthenticated()")
+//@PreAuthorize("isAuthenticated()")
 @CrossOrigin
 public class ApplicationController {
 

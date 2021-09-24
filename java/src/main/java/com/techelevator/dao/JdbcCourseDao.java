@@ -7,8 +7,10 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -38,8 +40,6 @@ public class JdbcCourseDao implements CourseDao {
             courses.add(course);
         }
         return courses;
-
-
     }
 
     @Override
@@ -60,13 +60,13 @@ public class JdbcCourseDao implements CourseDao {
 
     @Override
     public void createCourse(Course course) {
-        //adds course into courses table
+        //first adds course into courses table
         String sql = "INSERT INTO courses (" +
                 "course_name, course_teacher, description, difficulty_level, class_time) " +
                 "VALUES (? ,? ,?, ?, ?)";
         jdbcTemplate.update(sql, course.getCourseName(), course.getCourseTeacher(), course.getCourseDescription(),
                 course.getDifficultyLevel(), course.getClassTime());
-        //adds into course_users table
+        //then adds into course_users table
         String sql2 = "INSERT INTO course_users (user_id, class_id) \n" +
                 "SELECT course_teacher, course_id\n" +
                 "FROM courses WHERE course_name = ?;";
@@ -79,10 +79,13 @@ public class JdbcCourseDao implements CourseDao {
         Course course = new Course();
         course.setCourseId(results.getInt("course_id"));
         course.setCourseName(results.getString("course_name"));
-        course.setCourseTeacher(results.getInt("teacher_id"));
+        course.setCourseTeacher(results.getInt("course_teacher"));
         course.setCourseDescription(results.getString("description"));
         course.setDifficultyLevel(results.getString("difficulty_level"));
-        course.setClassTime(LocalDateTime.parse(results.getString("class_time")));
+        Timestamp timestamp = results.getTimestamp("class_time");
+        assert timestamp != null;
+        LocalDateTime localDateTime = timestamp.toLocalDateTime();
+        course.setClassTime(localDateTime);
         return course;
 
     }

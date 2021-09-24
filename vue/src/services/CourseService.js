@@ -11,6 +11,10 @@ export default {
         return http.get('/courses/all');
     },
 
+    listCoursesByCurrentUserId(userId) {
+        return http.get(`/courses/all/${userId}`);
+    },
+
     //will retrieve a specific course
     getCourse(courseId) {
         return http.get(`/courses/${courseId}`);

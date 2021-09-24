@@ -9,8 +9,8 @@ public interface CourseDao {
     Course getByCourseId(int courseId);
     Course getByUser(int userId);
     List<Course> getByTeacher(int teacherId);
-    void createCourse(Course course);
     List<Course> getCourseListByUserId(int userId);
+    void createCourse(Course course);
 
 
 }
