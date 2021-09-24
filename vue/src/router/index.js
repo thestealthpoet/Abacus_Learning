@@ -8,6 +8,7 @@ import store from '../store/index'
 import About from '../views/About.vue'
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
+import UserCourses from '../views/UserCourses.vue'
 
 Vue.use(Router)
 
@@ -76,6 +77,14 @@ const router = new Router({
       path: "/curricula-creation",
       name: "curricula-creation",
       component: CreateCurricula,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/myCourses",
+      name: "my-courses",
+      component: UserCourses,
       meta: {
         requiresAuth: true
       }
