@@ -25,7 +25,7 @@
         <input type="datetime-local"
             v-model="course.classTime" />
     </div>
-    <button class="btn btn-submit">Submit</button>
+    <button id="btn" class="btn btn-submit">Submit</button>
     </form>
 
 
