@@ -6,6 +6,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -20,12 +21,17 @@ public class JdbcTopicDao implements TopicDao{
     }
 
     @Override
-    public Topic getByCourse(int courseId) {
+    public List<Topic> getByCourse(int courseId) {
+        List<Topic> topics = new ArrayList<>();
         String sql = "SELECT topic_name, topic_due_date " +
                 "FROM topics " +
                 "WHERE course_id = ? "+
                 "ORDER BY topic_due_date";
-        return null;
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, courseId);
+        while (results.next()) {
+            topics.add(mapRowToTopic(results));
+        }
+        return topics;
     }
 
     @Override
