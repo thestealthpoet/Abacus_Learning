@@ -31,7 +31,8 @@ export default {
     display: flex;
     justify-content: space-between;
     height: 18vh;
-    background: rgba(0, 48, 73, .7);
+    /* background: rgba(0, 48, 73, .7); */
+    background: linear-gradient(to right, rgba(0, 48,73), rgba(33, 158, 188));
 }
 
 .nav-text {

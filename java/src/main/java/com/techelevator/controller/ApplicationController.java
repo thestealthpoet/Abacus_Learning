@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping
-@PreAuthorize("isAuthenticated()")
+//@PreAuthorize("isAuthenticated()")
 @CrossOrigin
 public class ApplicationController {
 
@@ -55,8 +55,15 @@ public class ApplicationController {
     public void createCourseRosterEntry(@RequestBody @PathVariable int userId, @PathVariable int courseId) {
         userDao.createRosterEntry(userId, courseId);
     }
+
     @RequestMapping(path ="/courses/{courseId}/topics", method = RequestMethod.GET)
     public List<Topic> getTopicByCourse(@PathVariable int courseId) {
         return topicDao.getByCourse(courseId);
+    }
+
+    @RequestMapping(path="/courses/all/{userId}", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<Course> getAllCoursesByUserId(@PathVariable int userId) {
+        return courseDao.getCourseListByUserId(userId);
     }
 }

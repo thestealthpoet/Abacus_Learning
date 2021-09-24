@@ -1,8 +1,8 @@
 <template>
-  <div class="body">
+  <div>
     <the-header></the-header>
     <div id="app" class="app">
-      <router-view/>
+      <router-view />
     </div>
     <the-footer></the-footer>
   </div>
@@ -30,18 +30,39 @@ export default {
   width: 100%;
   height: 100vh;
 }
+
 #btn {
-  background-color: rgba(251, 172, 14, .5);
+  background-color: rgba(251, 172, 14, 1);
   border: 2px solid rgba(251, 172, 14, 1);
   color: white;
-  padding: 11px 22px;
+  padding: 11px 11px 11px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  border-radius: 8px;
+  font-size: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
 }
+
 #btn:hover {
-  background-color: rgba(251, 172, 14, 1);
+  background-color: rgba(251, 172, 14, .6);
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+#btn:after {
+  content: ' »';
+  position: center;
+  opacity: 0;  
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+#btn:hover:after {
+  opacity: 1;
+  right: 10px;
 }
 </style>
