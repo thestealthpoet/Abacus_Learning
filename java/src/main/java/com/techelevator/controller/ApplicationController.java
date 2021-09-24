@@ -66,4 +66,5 @@ public class ApplicationController {
     public List<Course> getAllCoursesByUserId(@PathVariable int userId) {
         return courseDao.getCourseListByUserId(userId);
     }
+
 }

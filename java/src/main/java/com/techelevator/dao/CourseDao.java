@@ -12,4 +12,5 @@ public interface CourseDao {
     List<Course> getCourseListByUserId(int userId);
     void createCourse(Course course);
 
+
 }
