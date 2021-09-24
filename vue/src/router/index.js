@@ -8,6 +8,8 @@ import store from '../store/index'
 import About from '../views/About.vue'
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
+// eslint-disable-next-line no-unused-vars
+import ViewCurricula from '../views/ViewCurricula.vue'
 
 Vue.use(Router)
 
@@ -78,6 +80,14 @@ const router = new Router({
       component: CreateCurricula,
       meta: {
         requiresAuth: true
+      }
+    },
+    {
+      path: "/curricula",
+      name: "view-curricula",
+      component: Register,
+      meta: {
+        requiresAuth: false
       }
     },
 

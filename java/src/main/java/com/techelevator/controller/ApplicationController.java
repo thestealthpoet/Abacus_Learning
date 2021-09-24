@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.*;
 import com.techelevator.model.Course;
+import com.techelevator.model.Topic;
 import com.techelevator.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -53,5 +54,9 @@ public class ApplicationController {
     @RequestMapping(path = "/courses/{courseId}/roster", method = RequestMethod.POST)
     public void createCourseRosterEntry(@RequestBody @PathVariable int userId, @PathVariable int courseId) {
         userDao.createRosterEntry(userId, courseId);
+    }
+    @RequestMapping(path ="/courses/{courseId}/topics", method = RequestMethod.GET)
+    public List<Topic> getTopicByCourse(@PathVariable int courseId) {
+        return topicDao.getByCourse(courseId);
     }
 }
