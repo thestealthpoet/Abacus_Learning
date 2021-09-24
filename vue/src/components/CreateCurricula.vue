@@ -4,12 +4,14 @@
       <label for="topic-title">Topic Title</label>
       <input type="text"
       v-bind:class="{'needs-content': topicName==='' }"
+      required
       v-model.trim="topicName"/>
     </div>
     <div class="field">
       <label for="due-date">Due Date for Exercise</label>
       <input type="date"
       v-bind:class="{'needs-content': exercisesDate==='' }"
+      required
       v-model="exercisesDate"/> 
     </div>
     <div class="field">

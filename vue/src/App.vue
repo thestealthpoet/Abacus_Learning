@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="body">
     <the-header></the-header>
     <div id="app" class="app">
-      <router-view />
+      <router-view/>
     </div>
     <the-footer></the-footer>
   </div>
@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 #app {
   display: flex;
   align-items: center;
@@ -30,19 +30,18 @@ export default {
   width: 100%;
   height: 100vh;
 }
-
-.nav-text {
-  display: flex;
-  justify-content: space-evenly;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin: 5px;
+#btn {
+  background-color: rgba(251, 172, 14, .5);
+  border: 2px solid rgba(251, 172, 14, 1);
+  color: white;
+  padding: 11px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
 }
-
-.logo {
-  display: flex;
-}
-
-h4 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+#btn:hover {
+  background-color: rgba(251, 172, 14, 1);
 }
 </style>

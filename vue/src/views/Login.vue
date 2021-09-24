@@ -76,7 +76,6 @@ export default {
 </script>
 
 <style scoped>
-
 .form-signin {
   justify-content: flex-start;
   align-items: center;
@@ -87,17 +86,10 @@ export default {
   padding: 10px;
   background: rgb(245, 245, 245);
 }
-
 label {
   margin: 5px;
 }
-
 .account-creation {
   margin: 5px;
 }
-
-#signin-btn {
-  background-color: rgba(251, 172, 14, .7);
-}
-
 </style>
