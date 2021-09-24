@@ -77,40 +77,22 @@ export default {
 </script>
 
 <style scoped>
-
 .form-signin {
-  justify-content: flex-start;
+  display: inline-flex;
+  justify-content: flex;
   align-items: center;
   flex-direction: column;
   border: 3px solid #219EBC;
   border-radius: 3px;
-  display: inline-flex;
   padding: 10px;
   background: rgb(245, 245, 245);
+  height: 45vh;
+  width: 40vh;
 }
-
 label {
   margin: 5px;
 }
-
 .account-creation {
   margin: 5px;
 }
-
-#btn {
-  background-color: rgba(251, 172, 14, .5);
-  border: 2px solid rgba(251, 172, 14, 1);
-  color: white;
-  padding: 11px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 8px;
-}
-
-#btn:hover {
-  background-color: rgba(251, 172, 14, 1);;
-}
-
 </style>

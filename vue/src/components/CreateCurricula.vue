@@ -4,12 +4,14 @@
       <label for="topic-title">Topic Title</label>
       <input type="text"
       v-bind:class="{'needs-content': topicName==='' }"
+      required
       v-model.trim="topicName"/>
     </div>
     <div class="field">
       <label for="due-date">Due Date for Exercise</label>
       <input type="date"
       v-bind:class="{'needs-content': exercisesDate==='' }"
+      required
       v-model="exercisesDate"/> 
     </div>
     <div class="field">
@@ -37,7 +39,7 @@
       <label for="quiz">Add Quiz?</label>
     </div>  
     <div>
-    <button type="submit">Submit</button>
+    <button id="btn" type="submit">Submit</button>
     </div>
   </form>  
 </template>
@@ -61,7 +63,7 @@ export default {
 </script>
 
 <style>
-.curricula-creation-form{
+.curricula-creation-form {
     display: inline-grid;
     height: 45vh;
     width: 35vw;
@@ -79,7 +81,7 @@ export default {
 }
 .other {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 </style>
