@@ -31,7 +31,20 @@ export default {
     display: flex;
     height: 18vh;
     background: rgba(0, 48, 73, .7);
+}
 
+.nav-text {
+  display: flex;
+  justify-content: space-evenly;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 5px;
+}
 
+.logo {
+  display: flex;
+}
+
+h4 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 </style>
