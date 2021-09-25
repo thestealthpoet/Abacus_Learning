@@ -7,7 +7,16 @@ const http = axios.create( {
 export default {
 //will bring up topics by course number
 getTopicsByCourse(courseId) {
-    return http.get(`/courses/${courseId}/topics`)
+    return http.get(`/courses/topics/${courseId}`)
+},
+//will create topic
+createTopic(topic) {
+  return http.post(`/topics`, topic);
+
+},
+//will list all topics
+listTopics() {
+  return http.get('/topics/all');
 },
 
 }

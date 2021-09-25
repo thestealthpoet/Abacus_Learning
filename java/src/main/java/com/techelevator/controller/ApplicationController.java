@@ -56,7 +56,7 @@ public class ApplicationController {
         userDao.createRosterEntry(userId, courseId);
     }
 
-    @RequestMapping(path ="/courses/{courseId}/topics", method = RequestMethod.GET)
+    @RequestMapping(path ="/courses/topics/{courseId}", method = RequestMethod.GET)
     public List<Topic> getTopicByCourse(@PathVariable int courseId) {
         return topicDao.getByCourse(courseId);
     }
@@ -66,5 +66,15 @@ public class ApplicationController {
     public List<Course> getAllCoursesByUserId(@PathVariable int userId) {
         return courseDao.getCourseListByUserId(userId);
     }
+    @PostMapping(path = "courses/{courseId}/topics")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createNewTopic(@Valid @RequestBody Topic topic) {
+        topicDao.createTopic(topic);
+    }
 
+    @GetMapping(path = "/topics/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Topic> getAllTopics(){
+        return topicDao.getAllTopics();
+    }
 }
