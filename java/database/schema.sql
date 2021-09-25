@@ -111,7 +111,16 @@ INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date,
 
 COMMIT TRANSACTION;
 
-
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('990','Naomi Johnson','n.johnson@test.com','user990','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('991','Ken Anthony','k.anthony@test.com','user991','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('992','Crystal Smith','c.smith@test.com','user992','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('993','Jessica Stark','j.stark@test.com','user993','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('994','Travis Diaz','t.diaz@test.com','user994','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('995','Zola Lewis','z.lewis@test.com','user995','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('996','Alex Harrison','a.harrison@test.com','user996','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('997','Cierra Taylor','c.taylor@test.com','user997','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('998','George Noble','g.noble@test.com','user998','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+--INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('999','Roberto Garcia','r.garcia@test.com','user999','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 
 
 
