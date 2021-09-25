@@ -46,6 +46,8 @@ export default {
 }
 
 .phrase {
+    font-size: 25px;
+    /* color: white; */
 }
 
 h4 {
