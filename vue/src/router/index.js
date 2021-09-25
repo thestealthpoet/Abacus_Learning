@@ -11,6 +11,7 @@ import CreateCurricula from '../views/CreateCurricula.vue'
 // eslint-disable-next-line no-unused-vars
 import ViewCurricula from '../views/ViewCurricula.vue'
 import UserCourses from '../views/UserCourses.vue'
+import NotFound from '../views/NotFound.vue'
 
 Vue.use(Router)
 
@@ -88,7 +89,7 @@ const router = new Router({
       name: "view-curricula",
       component: Register,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {  
@@ -97,6 +98,14 @@ const router = new Router({
       component: UserCourses,
       meta: {
         requiresAuth: true
+      }
+    },
+    {
+      path: '*',
+      name: 'NotFound',
+      component: NotFound,
+      meta: {
+        requiresAuth: false
       }
     },
 

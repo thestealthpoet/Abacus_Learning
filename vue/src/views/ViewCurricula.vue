@@ -10,7 +10,13 @@ export default {
     
     components: ViewCurricula,
     
-}
+};
+//created() {
+    //topicService.getTopics().then(response => {
+   //    this.topics = response.data;
+   // });
+//
+//};
 </script>
 
 <style>
