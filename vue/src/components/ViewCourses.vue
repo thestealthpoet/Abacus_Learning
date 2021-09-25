@@ -1,7 +1,7 @@
 <template>
   <div class="main">
       <div class="course-list">
-          <div class="courses" v-for="course in userCourses" :key="course.id">
+          <div class="courses" v-for="course in userCourses" :key="course.id" >
             <div class="course-name">
                 Course Name: {{course.courseName}}
             </div>
@@ -10,6 +10,9 @@
             </div>
             <div class="class-time">
                 Course Time: {{course.classTime}}
+            </div>
+            <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
+                You are the teacher of this course.
             </div>
           </div>
       </div>
@@ -23,7 +26,8 @@ export default {
     data() {
         return {
             userCourses:  [],
-            currentUserId: this.$store.state.user.id
+            currentUserId: this.$store.state.user.id,
+            isTeacher: false,
     };
     },
     created() {
@@ -34,6 +38,9 @@ export default {
         .catch( (error) => {
             console.error(error + "user courses not loaded");
         });
+
+        
+        
     },
 
 }

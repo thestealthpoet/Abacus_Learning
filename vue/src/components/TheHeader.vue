@@ -7,7 +7,7 @@
             <h4>Always gaining knowledge!</h4>
         </div>
         <div class="nav-text">
-        <router-link v-bind:to="{ name: 'home' }">
+        <router-link v-bind:to="{ name: 'myDashboard', params: {username: this.$store.state.user.username} }">
             <img src="@/assets/homeIcon.png" alt="Home">
         </router-link>
         <router-link v-bind:to="{ name: 'About' }">

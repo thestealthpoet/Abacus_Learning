@@ -1,14 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home.vue'
+//Login & Registration stuff
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
+//Information about Abacus app
 import About from '../views/About.vue'
+//Course related components
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
 import UserCourses from '../views/UserCourses.vue'
+
+//404!
+import Missing from '../views/Missing.vue'
 
 Vue.use(Router)
 
@@ -26,8 +32,8 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: '/myDashboard/:username',
+      name: 'myDashboard',
       component: Home,
       meta: {
         requiresAuth: true
@@ -89,6 +95,10 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: '*',
+      component: Missing
+    }
 
   ]
 })
