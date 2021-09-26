@@ -1,5 +1,5 @@
 <template>
-  <form v-on:submit.prevent="saveTopic" class="course-creation-form">
+  <form v-on:submit.prevent="saveCourse" class="course-creation-form">
      <div class="field">
       <label for="course-title">Course Title</label>
       <input type="text"
@@ -62,7 +62,7 @@ export default {
                         difficultyLevel: '',
                         classTime: ''
                     }
-                    this.$router.push('/courses');
+                    this.$router.push({name: 'myDashboard' });
                 }
             }).catch(error => {
                 this.errorMsg = error.response.statusText;

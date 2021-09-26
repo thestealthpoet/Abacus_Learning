@@ -18,6 +18,7 @@ import UserCourses from '../views/UserCourses.vue'
 //404!
 import Missing from '../views/Missing.vue'
 import CreateTopic from '../views/CreateTopic.vue'
+import AllTopics from '../views/AllTopics.vue'
 
 Vue.use(Router)
 
@@ -107,7 +108,7 @@ const router = new Router({
       }
     },
     {
-      path: '/*',
+      path: '*',
       component: Missing
     },
     {
@@ -117,6 +118,15 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: "/topics/all",
+      name: "all-topics",
+      component: AllTopics,
+      meta: {
+        requiresAuth: false
+      }
+
     },
 
   ]

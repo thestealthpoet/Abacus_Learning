@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -38,7 +39,10 @@ public class JdbcAssignmentDao implements AssignmentDao{
         assignment.setTopicId(results.getInt("topic_id"));
         assignment.setAssignmentName(results.getString("assignment_name"));
         assignment.setGrade(results.getBigDecimal("grade"));
-        assignment.setDueDate(LocalDateTime.parse(results.getString("due_date")));
+        Timestamp timestamp = results.getTimestamp("due_date");
+        assert timestamp != null;
+        LocalDateTime localDateTime = timestamp.toLocalDateTime();
+        assignment.setDueDate(localDateTime);
         return assignment;
     }
 
