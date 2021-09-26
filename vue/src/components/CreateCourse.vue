@@ -62,7 +62,7 @@ export default {
                         difficultyLevel: '',
                         classTime: ''
                     }
-                    this.$router.push('/courses');
+                    this.$router.push({name: 'my-courses' });
                 }
             }).catch(error => {
                 this.errorMsg = error.response.statusText;

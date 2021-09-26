@@ -61,4 +61,9 @@ public class ApplicationController {
         return courseDao.getCourseListByUserId(userId);
     }
 
+   @RequestMapping(path = "/courses/all", method=RequestMethod.GET)
+   @ResponseStatus(HttpStatus.OK)
+        public List<Course> getAllCourses() {
+        return courseDao.getAllCourses();
+        }
 }

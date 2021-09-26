@@ -21,6 +21,18 @@ public class JdbcCourseDao implements CourseDao {
     public JdbcCourseDao(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
 
     @Override
+    public List<Course> getAllCourses() {
+        List<Course> courseList = new ArrayList<>();
+        String sql = "SELECT * FROM courses;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        while (results.next()) {
+            Course course = mapRowToCourse(results);
+            courseList.add(course);
+        }
+        return courseList;
+    }
+
+    @Override
     public Course getByCourseId(int courseId) {
         return null;
     }

@@ -39,6 +39,7 @@ const router = new Router({
         requiresAuth: true
       }
     },
+
     {
       path: "/login",
       name: "login",
@@ -47,6 +48,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
     {
       path: "/logout",
       name: "logout",
@@ -55,6 +57,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
     {
       path: "/register",
       name: "register",
@@ -63,6 +66,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
     {
       path: "/about",
       name: "About",
@@ -71,6 +75,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
     {
       path: "/course-creation",
       name: "course-creation",
@@ -79,6 +84,7 @@ const router = new Router({
         requiresAuth: true
       }
     },
+
     {
       path: "/curricula-creation",
       name: "curricula-creation",
@@ -87,16 +93,26 @@ const router = new Router({
         requiresAuth: true
       }
     },
+
     {
-      path: "/myCourses",
+      path: "/MyCourses",
       name: "my-courses",
       component: UserCourses,
       meta: {
         requiresAuth: true
       }
     },
+
     {
-      path: '*',
+      path: "/course-list",
+      name: "course-list",
+      metal: {
+        requiresAuth: true
+      }
+    },
+
+    {
+      path: '/*',
       component: Missing
     }
 
