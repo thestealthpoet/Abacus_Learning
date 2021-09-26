@@ -1,7 +1,16 @@
 <template>
     <footer class="footer">
         <div>
-            <p>&#xa9; 2021 Copright ABACUS</p>
+            <ul class="footer-list">
+                <li class="footer-item">Home</li>
+                <li class="footer-item">Services</li>
+                <li class="footer-item">
+                    <router-link class="footer-link" v-bind:to="{ name: 'About' }">About</router-link>
+                </li>
+                <li class="footer-item">Terms</li>
+                <li class="footer-item">Privacy Policy</li>
+            </ul>
+            <p>ABACUS &#xa9; 2021</p>
         </div>
     </footer>
 </template>
@@ -17,13 +26,35 @@ export default {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* background: rgba(0, 48, 73, .7); */
     background: linear-gradient(to left, rgba(0, 48,73), rgba(33, 158, 188));
-    min-height: 10vh;
+    /* min-height: 10vh; */
+    height: 8vh;
+    padding: 40px 0;
 }
 
 p {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     color: white;
-    padding-right: 10px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+    color: white;
+}
+
+li {
+  padding:0 10px;
+  text-decoration: none;
+}
+
+.footer-link {
+    text-decoration: none;
 }
 </style>

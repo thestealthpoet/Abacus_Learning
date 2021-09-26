@@ -11,10 +11,14 @@ import About from '../views/About.vue'
 //Course related components
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
+//View courses
+//import ViewCurricula from '../views/ViewCurricula.vue'
 import UserCourses from '../views/UserCourses.vue'
+import CourseList from '../views/CourseList.vue'
 
 //404!
 import Missing from '../views/Missing.vue'
+import CreateTopic from '../views/CreateTopic.vue'
 
 Vue.use(Router)
 
@@ -95,7 +99,15 @@ const router = new Router({
     },
 
     {
-      path: "/MyCourses",
+      path: "/curricula",
+      name: "view-curricula",
+      component: Register,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {  
+      path: "/myCourses",
       name: "my-courses",
       component: UserCourses,
       meta: {
@@ -106,6 +118,7 @@ const router = new Router({
     {
       path: "/course-list",
       name: "course-list",
+      component: CourseList,
       metal: {
         requiresAuth: true
       }
@@ -114,7 +127,15 @@ const router = new Router({
     {
       path: '/*',
       component: Missing
-    }
+    },
+    {
+      path: "/topics",
+      name: "create-topic",
+      component: CreateTopic,
+      meta: {
+        requiresAuth: true
+      }
+    },
 
   ]
 })

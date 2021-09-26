@@ -1,5 +1,6 @@
 <template>
-    <div>words here
+    <div>
         
     </div>
 </template>
+

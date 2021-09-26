@@ -105,8 +105,8 @@ INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Test
 INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1001, 'math', 2, 'math', 'medium', '2021-12-12 00:01:00');
 INSERT INTO course_users (class_id, user_id) VALUES (1001, 1);
 INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1002, 'reading', 2, 'books', 'medium', '2021-11-12 00:01:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES(1002, 1001, 'topic1', null, '2002-12-12 00:02:00', null);
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (1003, 1001, 'topic2', null, '2012-3-4 00:03:00', null);
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES(1002, 1001, 'topic1', null, '2002-12-12 00:02:00', '2002-12-12 00:02:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (1003, 1001, 'topic2', null, '2012-3-4 00:03:00', '2002-12-12 00:02:00');
 
 
 COMMIT TRANSACTION;

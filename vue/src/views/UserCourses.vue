@@ -9,7 +9,8 @@
 
 import ViewUserCourses from '../components/ViewUserCourses.vue';
 export default {
-    components: { ViewUserCourses,
+    components: { 
+        ViewUserCourses,
 
     },
 

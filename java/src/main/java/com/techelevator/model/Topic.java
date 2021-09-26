@@ -1,6 +1,6 @@
 package com.techelevator.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Topic {
 
@@ -8,13 +8,13 @@ public class Topic {
     private int courseId;
     private String topicName;
     private String topicDescription;
-    private LocalDate topicDueDate;
-    private LocalDate topicTeachDate;
+    private LocalDateTime topicDueDate;
+    private LocalDateTime topicTeachDate;
 
     public Topic() {
     }
 
-    public Topic(int topicId, int courseId, String topicName, String topicDescription, LocalDate topicDueDate, LocalDate topicTeachDate) {
+    public Topic(int topicId, int courseId, String topicName, String topicDescription, LocalDateTime topicDueDate, LocalDateTime topicTeachDate) {
         this.topicId = topicId;
         this.courseId = courseId;
         this.topicName = topicName;
@@ -52,19 +52,19 @@ public class Topic {
         return topicDescription;
     }
 
-    public LocalDate getTopicDueDate() {
+    public LocalDateTime getTopicDueDate() {
         return topicDueDate;
     }
 
-    public void setTopicDueDate(LocalDate topicDueDate) {
+    public void setTopicDueDate(LocalDateTime topicDueDate) {
         this.topicDueDate = topicDueDate;
     }
 
-    public LocalDate getTopicTeachDate() {
+    public LocalDateTime getTopicTeachDate() {
         return topicTeachDate;
     }
 
-    public void setTopicTeachDate(LocalDate topicTeachDate) {
+    public void setTopicTeachDate(LocalDateTime topicTeachDate) {
         this.topicTeachDate = topicTeachDate;
     }
     public void setTopicDescription(String topicDescription) {
