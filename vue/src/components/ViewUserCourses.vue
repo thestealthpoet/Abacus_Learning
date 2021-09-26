@@ -22,7 +22,7 @@
 <script>
 import courseService from "../services/CourseService";
 export default {
-    name: 'view-courses',
+    name: 'view-user-courses',
     data() {
         return {
             userCourses:  [],

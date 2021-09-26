@@ -72,9 +72,17 @@ public class ApplicationController {
         topicDao.createTopic(topic);
     }
 
+
+   @RequestMapping(path = "/courses/all", method=RequestMethod.GET)
+   @ResponseStatus(HttpStatus.OK)
+        public List<Course> getAllCourses() {
+        return courseDao.getAllCourses();
+        }
+
     @GetMapping(path = "/topics/all")
     @ResponseStatus(HttpStatus.OK)
     public List<Topic> getAllTopics(){
         return topicDao.getAllTopics();
     }
+
 }

@@ -11,9 +11,10 @@ import About from '../views/About.vue'
 //Course related components
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
-// eslint-disable-next-line no-unused-vars
-import ViewCurricula from '../views/ViewCurricula.vue'
+//View courses
+//import ViewCurricula from '../views/ViewCurricula.vue'
 import UserCourses from '../views/UserCourses.vue'
+import CourseList from '../views/CourseList.vue'
 
 //404!
 import Missing from '../views/Missing.vue'
@@ -43,6 +44,7 @@ const router = new Router({
         requiresAuth: true
       }
     },
+
     {
       path: "/login",
       name: "login",
@@ -51,6 +53,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
     {
       path: "/logout",
       name: "logout",
@@ -59,6 +62,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
     {
       path: "/register",
       name: "register",
@@ -67,6 +71,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
     {
       path: "/about",
       name: "About",
@@ -75,6 +80,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
     {
       path: "/course-creation",
       name: "course-creation",
@@ -83,6 +89,7 @@ const router = new Router({
         requiresAuth: true
       }
     },
+
     {
       path: "/curricula-creation",
       name: "curricula-creation",
@@ -91,6 +98,7 @@ const router = new Router({
         requiresAuth: true
       }
     },
+
     {
       path: "/curricula",
       name: "view-curricula",
@@ -107,6 +115,16 @@ const router = new Router({
         requiresAuth: true
       }
     },
+
+    {
+      path: "/course-list",
+      name: "course-list",
+      component: CourseList,
+      metal: {
+        requiresAuth: true
+      }
+    },
+
     {
       path: '*',
       component: Missing

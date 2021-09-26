@@ -1,14 +1,18 @@
 <template>
   <div class="course-view">
-      <view-courses />
+      <view-user-courses />
   </div>
   
 </template>
 
 <script>
-import ViewCourses from '../components/ViewCourses.vue'
+
+import ViewUserCourses from '../components/ViewUserCourses.vue';
 export default {
-    components: {ViewCourses},
+    components: { 
+        ViewUserCourses,
+
+    },
 
 }
 </script>
