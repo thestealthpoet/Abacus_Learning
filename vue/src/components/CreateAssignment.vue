@@ -14,7 +14,7 @@
     <div class="field">
       <label for="datetime-due-date">Due Date for Assignment</label>
       <input type="datetime-local"
-      v-model="assignment.assignmentDueDate"/> 
+      v-model="assignment.dueDate"/> 
     </div>
     <div class="field">
       <label for="assignment-type">Assignment Type</label>
