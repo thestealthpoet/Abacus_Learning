@@ -31,8 +31,9 @@
         v-model="user.password"
         required
       />
-      <router-link class="account-creation" :to="{ name: 'register' }">Need an account?</router-link>
       <button id="btn" type="submit">Sign in</button>
+      <router-link class="account-creation" :to="{ name: 'register' }">Need an account?</router-link>
+      
     </form>
   </div>
 </template>
@@ -81,16 +82,22 @@ export default {
   display: inline-flex;
   justify-content: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   border: 3px solid #219EBC;
   border-radius: 3px;
-  padding: 10px;
+  padding: 20px;
   background: rgb(245, 245, 245);
   height: 45vh;
   width: 40vh;
+  margin: 80px;
 }
 label {
-  margin: 5px;
+  margin: 8px;
+}
+
+input {
+  padding: 5px;
 }
 .account-creation {
   margin: 5px;

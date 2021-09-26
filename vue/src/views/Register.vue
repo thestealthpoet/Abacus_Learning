@@ -114,14 +114,16 @@ export default {
 
 <style scoped>
 .form-register {
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  display: flex;
   align-items: center;
   flex-direction: column;
   border: 3px solid #219EBC;
   border-radius: 3px;
   display: inline-flex;
-  padding: 10px;
+  padding: 40px;
   background: rgb(245, 245, 245);
+  margin: 80px;
 }
 
 .logo {
