@@ -10,6 +10,15 @@ export default {
 getCourseAssignments(courseId, assignmentId) {
     return http.get(`/course/${courseId}/assignment/${assignmentId}/all`)
 },
+//will return all assignments
+listAssignments() {
+  return http.get('/assignments/all');
+},
+
+//will create an assignment (post)
+createAssignment(assignment) {
+  return http.post('/assignments', assignment);
+},
 
 
 

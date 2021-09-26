@@ -8,17 +8,19 @@ public class Assignment {
     private int assignmentId;
     private int topicId;
     private String assignmentName;
-    private BigDecimal grade;
+    private Double grade;
     private LocalDateTime dueDate;
+    private String assignmentType;
 
     public Assignment() {}
 
-    public Assignment(int assignmentId, int topicId, String assignmentName, BigDecimal grade, LocalDateTime dueDate) {
+    public Assignment(int assignmentId, int topicId, String assignmentName, Double grade, LocalDateTime dueDate, String assignmentType) {
         this.assignmentId = assignmentId;
         this.topicId = topicId;
         this.assignmentName = assignmentName;
         this.grade = grade;
         this.dueDate = dueDate;
+        this.assignmentType = assignmentType;
     }
 
     public int getAssignmentId() {
@@ -45,11 +47,11 @@ public class Assignment {
         this.assignmentName = assignmentName;
     }
 
-    public BigDecimal getGrade() {
+    public Double getGrade() {
         return grade;
     }
 
-    public void setGrade(BigDecimal grade) {
+    public void setGrade(Double grade) {
         this.grade = grade;
     }
 
@@ -57,10 +59,17 @@ public class Assignment {
         return dueDate;
     }
 
+    public String getAssignmentType() {
+        return assignmentType;
+    }
+
+    public void setAssignmentType(String assignmentType) {
+        this.assignmentType = assignmentType;
+    }
+
     public void setDueDate(LocalDateTime dueDate) {
         this.dueDate = dueDate;
     }
-
     @Override
     public String toString() {
         return "Assignment{" +
@@ -68,11 +77,9 @@ public class Assignment {
                 ", topicId=" + topicId +
                 ", assignmentName='" + assignmentName + '\'' +
                 ", grade=" + grade +
-                ", dueDate='" + dueDate + '\'' +
+                ", dueDate=" + dueDate +
+                ", assignmentType='" + assignmentType + '\'' +
                 '}';
     }
-
-
-
 
 }

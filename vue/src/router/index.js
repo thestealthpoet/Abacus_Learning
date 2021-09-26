@@ -19,7 +19,9 @@ import CourseList from '../views/CourseList.vue'
 //404!
 import Missing from '../views/Missing.vue'
 import CreateTopic from '../views/CreateTopic.vue'
-
+import AllTopics from '../views/AllTopics.vue'
+import AllAssignments from '../views/AllAssignments.vue'
+import CreateAssignment from '../views/CreateAssignment.vue'
 Vue.use(Router)
 
 /**
@@ -125,7 +127,7 @@ const router = new Router({
     },
 
     {
-      path: '/*',
+      path: '*',
       component: Missing
     },
     {
@@ -136,6 +138,32 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: "/topics/all",
+      name: "all-topics",
+      component: AllTopics,
+      meta: {
+        requiresAuth: false
+      }
+
+    },
+    {
+      path: "/assignments/all",
+      name: "all-assignments",
+      component: AllAssignments,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/assignments",
+      name: "create-assignment",
+      component: CreateAssignment,
+      meta: {
+        requiresAuth: false
+      }
+    }
+
 
   ]
 })

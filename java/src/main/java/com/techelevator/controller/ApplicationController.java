@@ -1,9 +1,11 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.*;
+import com.techelevator.model.Assignment;
 import com.techelevator.model.Course;
 import com.techelevator.model.Topic;
 import com.techelevator.model.User;
+import org.springframework.expression.spel.ast.Assign;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -56,7 +58,11 @@ public class ApplicationController {
         userDao.createRosterEntry(userId, courseId);
     }
 
+<<<<<<< HEAD
     @RequestMapping(path = "/courses/topics/{courseId}", method = RequestMethod.GET)
+=======
+    @RequestMapping(path ="/{course}/topics", method = RequestMethod.GET)
+>>>>>>> 96c53f0446a3d9a83ad93ff11f89e7f098b1cd14
     public List<Topic> getTopicByCourse(@PathVariable int courseId) {
         return topicDao.getByCourse(courseId);
     }
@@ -66,8 +72,12 @@ public class ApplicationController {
     public List<Course> getAllCoursesByUserId(@PathVariable int userId) {
         return courseDao.getCourseListByUserId(userId);
     }
+<<<<<<< HEAD
 
     @PostMapping(path = "courses/{courseId}/topics")
+=======
+    @PostMapping(path = "topics")
+>>>>>>> 96c53f0446a3d9a83ad93ff11f89e7f098b1cd14
     @ResponseStatus(HttpStatus.CREATED)
     public void createNewTopic(@Valid @RequestBody Topic topic) {
         topicDao.createTopic(topic);
@@ -78,6 +88,20 @@ public class ApplicationController {
     public List<Topic> getAllTopics() {
         return topicDao.getAllTopics();
     }
+<<<<<<< HEAD
+=======
+    @GetMapping(path = "/assignments/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Assignment>  getAllAssignments() {
+        return assignmentDao.listAssignments();
+    }
+    @PostMapping(path = "/assignments")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createNewAssignment(@Valid @RequestBody Assignment assignment) {
+        assignmentDao.createAssignment(assignment);
+    }
+
+>>>>>>> 96c53f0446a3d9a83ad93ff11f89e7f098b1cd14
 }
 
 

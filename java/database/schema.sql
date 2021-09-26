@@ -76,7 +76,8 @@ CREATE TABLE assignments (
         assignment_id int DEFAULT nextval('seq_assignment_id'::regclass) NOT NULL,
         topic_id int,
         assignment_name varchar(50) NOT NULL,
-        due_date TIMESTAMP NOT NULL,
+        due_date TIMESTAMP,
+        assignment_type varchar(50) NOT NULL,
         CONSTRAINT PK_assignment PRIMARY KEY (assignment_id),
         CONSTRAINT FK_assignment_topic FOREIGN KEY (topic_id) REFERENCES topics (topic_id)
 );
@@ -100,69 +101,38 @@ CREATE TABLE course_users (
         CONSTRAINT FK_course_user_course FOREIGN KEY (class_id) REFERENCES courses (course_id)
 );
 
+--USERS
 INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Test User','useremail@email.com','user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Test Admin', 'adminemail@email.com','admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
-INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1001, 'math', 2, 'math', 'medium', '2021-12-12 00:01:00');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Sally Test', 'testMeFindOut@test.com','missTest','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Naomi Johnson','n.johnson@test.com','user4','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Ken Anthony','k.anthony@test.com','user5','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Crystal Smith','c.smith@test.com','user6','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Jessica Stark','j.stark@test.com','user7','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Travis Diaz','t.diaz@test.com','user8','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Zola Lewis','z.lewis@test.com','user9','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Alex Harrison','a.harrison@test.com','user10','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Cierra Taylor','c.taylor@test.com','user11','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('George Noble','g.noble@test.com','user12','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Roberto Garcia','r.garcia@test.com','user13','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+
+--COURSES
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1001, 'Math', 2, 'Basic Mathematics', 'Medium', '2021-12-12 00:01:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1002, 'Biology', 2, 'Study of living organisms', 'Medium', '2021-11-12 00:01:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1003, 'Reading', 3, 'The fundamentals of reading your enemies for filth.','Novice', '2021-10-04 00:01:00');
+
+--COURSE_USERS
 INSERT INTO course_users (class_id, user_id) VALUES (1001, 1);
-INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1002, 'reading', 2, 'books', 'medium', '2021-11-12 00:01:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES(1002, 1001, 'topic1', null, '2002-12-12 00:02:00', '2002-12-12 00:02:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (1003, 1001, 'topic2', null, '2012-3-4 00:03:00', '2002-12-12 00:02:00');
+
+--TOPICS
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES(2002, 1001, 'topic1', null, '2002-12-12 00:02:00', '2002-12-12 00:02:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2003, 1001, 'topic2', null, '2012-3-4 00:03:00', '2002-12-12 00:02:00');
+
+--ASSIGNMENTS
 
 
 COMMIT TRANSACTION;
 
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('990','Naomi Johnson','n.johnson@test.com','user990','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('991','Ken Anthony','k.anthony@test.com','user991','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('992','Crystal Smith','c.smith@test.com','user992','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('993','Jessica Stark','j.stark@test.com','user993','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('994','Travis Diaz','t.diaz@test.com','user994','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('995','Zola Lewis','z.lewis@test.com','user995','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('996','Alex Harrison','a.harrison@test.com','user996','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('997','Cierra Taylor','c.taylor@test.com','user997','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('998','George Noble','g.noble@test.com','user998','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('999','Roberto Garcia','r.garcia@test.com','user999','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('990','Naomi Johnson','n.johnson@test.com','user990','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('991','Ken Anthony','k.anthony@test.com','user991','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('992','Crystal Smith','c.smith@test.com','user992','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('993','Jessica Stark','j.stark@test.com','user993','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('994','Travis Diaz','t.diaz@test.com','user994','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('995','Zola Lewis','z.lewis@test.com','user995','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('996','Alex Harrison','a.harrison@test.com','user996','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('997','Cierra Taylor','c.taylor@test.com','user997','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('998','George Noble','g.noble@test.com','user998','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
---INSERT INTO users (user_id,name,email_address,username,password_hash,role) VALUES ('999','Roberto Garcia','r.garcia@test.com','user999','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 

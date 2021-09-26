@@ -76,9 +76,9 @@ export default {
     flex-direction: column;
     justify-self: stretch;
 }
-.needs-content {
+/* .needs-content {
     background-color: #FBAC0E;
-}
+} */
 .other {
   display: flex;
   justify-content: flex-end;
