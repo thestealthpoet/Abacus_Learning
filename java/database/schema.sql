@@ -76,7 +76,8 @@ CREATE TABLE assignments (
         assignment_id int DEFAULT nextval('seq_assignment_id'::regclass) NOT NULL,
         topic_id int,
         assignment_name varchar(50) NOT NULL,
-        due_date TIMESTAMP NOT NULL,
+        due_date TIMESTAMP,
+        assignment_type varchar(50) NOT NULL,
         CONSTRAINT PK_assignment PRIMARY KEY (assignment_id),
         CONSTRAINT FK_assignment_topic FOREIGN KEY (topic_id) REFERENCES topics (topic_id)
 );

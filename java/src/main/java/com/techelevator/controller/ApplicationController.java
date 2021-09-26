@@ -1,9 +1,11 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.*;
+import com.techelevator.model.Assignment;
 import com.techelevator.model.Course;
 import com.techelevator.model.Topic;
 import com.techelevator.model.User;
+import org.springframework.expression.spel.ast.Assign;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -83,6 +85,16 @@ public class ApplicationController {
     @ResponseStatus(HttpStatus.OK)
     public List<Topic> getAllTopics(){
         return topicDao.getAllTopics();
+    }
+    @GetMapping(path = "/assignments/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Assignment>  getAllAssignments() {
+        return assignmentDao.listAssignments();
+    }
+    @PostMapping(path = "/assignments")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createNewAssignment(@Valid @RequestBody Assignment assignment) {
+        assignmentDao.createAssignment(assignment);
     }
 
 }

@@ -20,7 +20,8 @@ import CourseList from '../views/CourseList.vue'
 import Missing from '../views/Missing.vue'
 import CreateTopic from '../views/CreateTopic.vue'
 import AllTopics from '../views/AllTopics.vue'
-
+import AllAssignments from '../views/AllAssignments.vue'
+import CreateAssignment from '../views/CreateAssignment.vue'
 Vue.use(Router)
 
 /**
@@ -146,6 +147,23 @@ const router = new Router({
       }
 
     },
+    {
+      path: "/assignments/all",
+      name: "all-assignments",
+      component: AllAssignments,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/assignments",
+      name: "create-assignment",
+      component: CreateAssignment,
+      meta: {
+        requiresAuth: false
+      }
+    }
+
 
   ]
 })
