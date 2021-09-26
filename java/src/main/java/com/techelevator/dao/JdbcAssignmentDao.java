@@ -58,7 +58,7 @@ public class JdbcAssignmentDao implements AssignmentDao{
         assignment.setAssignmentId(results.getInt("assignment_id"));
         assignment.setTopicId(results.getInt("topic_id"));
         assignment.setAssignmentName(results.getString("assignment_name"));
-        assignment.setGrade(results.getDouble("grade"));
+        //assignment.setGrade(results.getDouble("grade"));
         Timestamp timestamp = results.getTimestamp("due_date");
         try {
             LocalDateTime localDateTime = timestamp.toLocalDateTime();
@@ -66,6 +66,7 @@ public class JdbcAssignmentDao implements AssignmentDao{
         } catch (NullPointerException e) {
             System.out.println("null pointer");
         }
+        assignment.setAssignmentType(results.getString("assignment_type"));
         return assignment;
     }
 
