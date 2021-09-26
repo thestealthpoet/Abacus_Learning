@@ -76,7 +76,8 @@ export default {
     width: 35vw;
     border: 3px solid #219EBC;
     border-radius: 3px;
-    padding: 10px;
+    padding: 40px;
+    margin: 80px;
 }
 .field{
     display: flex;

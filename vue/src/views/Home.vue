@@ -9,6 +9,7 @@
         <button id="btn" class="create-curricula-btn" @click="$router.push({ name: 'curricula-creation' })">Create Curricula</button>
         <button id="btn" class="view-all-courses-btn" @click="$router.push( {name: 'course-list' })">View All Available Courses on Abacus</button>
         <button id="btn" class="view-all-courses-btn" @click="$router.push( {name: 'my-courses' })">My Courses</button>
+        <button id="btn" class="create-assignment-btn">Add assignment</button>
         <br>
       </div>
       
