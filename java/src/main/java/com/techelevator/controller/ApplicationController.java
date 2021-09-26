@@ -33,7 +33,7 @@ public class ApplicationController {
 
     }
 
-    @RequestMapping(path = "/courses/teach/{teachId}", method= RequestMethod.GET)
+    @RequestMapping(path = "/courses/teach/{teachId}", method = RequestMethod.GET)
     public List<Course> getByTeacher(@PathVariable int teacherName, Principal principal) {
         int teachId = userDao.findIdByUsername(principal.getName());
         return courseDao.getByTeacher(teachId);
@@ -46,7 +46,7 @@ public class ApplicationController {
         courseDao.createCourse(course);
     }
 
-    @RequestMapping(path = "/course-roster/{courseId}", method= RequestMethod.GET)
+    @RequestMapping(path = "/course-roster/{courseId}", method = RequestMethod.GET)
     public List<User> getCourseRoster(@PathVariable int courseId) {
         return userDao.getCourseRoster(courseId);
     }
@@ -56,33 +56,37 @@ public class ApplicationController {
         userDao.createRosterEntry(userId, courseId);
     }
 
-    @RequestMapping(path ="/courses/topics/{courseId}", method = RequestMethod.GET)
+    @RequestMapping(path = "/courses/topics/{courseId}", method = RequestMethod.GET)
     public List<Topic> getTopicByCourse(@PathVariable int courseId) {
         return topicDao.getByCourse(courseId);
     }
 
-    @RequestMapping(path="/courses/all/{userId}", method = RequestMethod.GET)
+    @RequestMapping(path = "/courses/all/{userId}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<Course> getAllCoursesByUserId(@PathVariable int userId) {
         return courseDao.getCourseListByUserId(userId);
     }
+
     @PostMapping(path = "courses/{courseId}/topics")
     @ResponseStatus(HttpStatus.CREATED)
     public void createNewTopic(@Valid @RequestBody Topic topic) {
         topicDao.createTopic(topic);
     }
 
-
-   @RequestMapping(path = "/courses/all", method=RequestMethod.GET)
-   @ResponseStatus(HttpStatus.OK)
-        public List<Course> getAllCourses() {
-        return courseDao.getAllCourses();
-        }
-
     @GetMapping(path = "/topics/all")
     @ResponseStatus(HttpStatus.OK)
-    public List<Topic> getAllTopics(){
+    public List<Topic> getAllTopics() {
         return topicDao.getAllTopics();
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -31,16 +31,16 @@ public class JdbcUserDao implements UserDao {
         return jdbcTemplate.queryForObject("SELECT user_id FROM users WHERE username = ?;", int.class, username);
     }
 
-	@Override
-	public User getUserById(int userId) {
-		String sql = "SELECT * FROM users WHERE user_id = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
-		if(results.next()) {
-			return mapRowToUser(results);
-		} else {
-			throw new RuntimeException("userId "+userId+" was not found.");
-		}
-	}
+    @Override
+    public User getUserById(int userId) {
+        String sql = "SELECT * FROM users WHERE user_id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        if(results.next()) {
+            return mapRowToUser(results);
+        } else {
+            throw new RuntimeException("userId "+userId+" was not found.");
+        }
+    }
 
     @Override
     public List<User> findAll() {
@@ -96,7 +96,7 @@ public class JdbcUserDao implements UserDao {
                 }
                 , keyHolder) == 1;
         int newUserId = (int) keyHolder.getKeys().get(id_column);
-        
+
 
         return userCreated;
     }
@@ -135,3 +135,20 @@ public class JdbcUserDao implements UserDao {
         return user;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
