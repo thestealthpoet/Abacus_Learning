@@ -27,19 +27,21 @@ export default {
 .header {
     display: flex;
     justify-content: space-between;
-    height: 16vh;
+    height: 20vh;
     /* background: rgba(0, 48, 73, .7); */
     background: linear-gradient(to right, rgba(0, 48,73, .9), rgba(33, 158, 188));
     font-family: Georgia, sans-serif;
 }
 
 .nav-text {
+  display: flex;
   justify-content: flex-end;
-  margin: 5px;
+  margin: 10px;
 }
 
 .logo {
   display: flex;
+  padding: 10px;
 }
 
 .phrase {
@@ -51,6 +53,7 @@ export default {
     text-decoration: none;
     display: grid;
     text-align: center;
+    padding: 5px 10px;
 }
 
 </style>

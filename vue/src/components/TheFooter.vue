@@ -2,10 +2,12 @@
     <footer class="footer">
         <div>
             <ul class="footer-list">
-                <li class="footer-item">Home</li>
+                <li class="footer-item">
+                    <router-link class="footer-link" v-bind:to="{ name: 'home' }">Home</router-link>
+                </li>
                 <li class="footer-item">Services</li>
                 <li class="footer-item">
-                    <router-link class="footer-link" v-bind:to="{ name: 'About' }">About</router-link>
+                    <router-link class="footer-link" v-bind:to="{ name: 'about' }">About</router-link>
                 </li>
                 <li class="footer-item">Terms</li>
                 <li class="footer-item">
@@ -45,7 +47,7 @@ ul {
     padding:0;
     list-style:none;
     text-align:center;
-    font-size:18px;
+    font-size: 16px;
     line-height:1.6;
     margin-bottom:0;
     color: white;
