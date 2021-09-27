@@ -12,12 +12,12 @@
                 Course Time: {{course.classTime}}
           </div>
           <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
-              You are the teacher of this course.
-              <button id="btn">Add students to this course</button>
+              <div id="role-label">You are the teacher of this course.</div>
+              <button id="btn" class="add-student-btn">Add students to this course</button>
           </div>
-          <div class="else" v-else>
+          <!-- <div id="role-label" class="else" v-else>
               You are not the teacher of this course.
-          </div>
+          </div> -->
         </div>
     </div>      
   </div>
@@ -61,5 +61,16 @@ export default {
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+.show-teacher {
+  display: flex;
+  justify-content: space-between;
+}
+
+#role-label {
+  text-decoration: overline;
+  padding: 20px 0px 0px 20px;
+}
+
 
 </style>
