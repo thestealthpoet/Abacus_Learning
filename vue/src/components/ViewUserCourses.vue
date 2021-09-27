@@ -13,7 +13,7 @@
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
                 You are the teacher of this course.
-                <button @click="$router.push( {name: 'user-list'})">Add students to this course</button>
+                <button @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
             </div>
           </div>
       </div>
@@ -24,6 +24,11 @@
 import courseService from "../services/CourseService";
 export default {
     name: 'view-user-courses',
+    methods: {
+        setSelectedCourseId(courseId) {
+            this.$store.commit("SET_SELECTED_COURSE", courseId);
+        }
+    },
     data() {
         return {
             //value of userCourses
@@ -32,7 +37,7 @@ export default {
             //course.courseName equates to course.getName()
             userCourses:  [],
             currentUserId: this.$store.state.user.id,
-            isTeacher: false,
+            //isTeacher: false,
     };
     },
     created() {

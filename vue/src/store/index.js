@@ -22,6 +22,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     courses: [],
     assignments: [],
+    selectedCourseId: '',
     
   },
   mutations: {
@@ -40,6 +41,11 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
-    }
+    },
+
+    SET_SELECTED_COURSE(state, courseId) {
+      state.selectedCourseId = courseId;
+    },
+    
   }
 })
