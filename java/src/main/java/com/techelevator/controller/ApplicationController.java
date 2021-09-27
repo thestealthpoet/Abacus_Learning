@@ -1,10 +1,7 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.*;
-import com.techelevator.model.Assignment;
-import com.techelevator.model.Course;
-import com.techelevator.model.Topic;
-import com.techelevator.model.User;
+import com.techelevator.model.*;
 import org.springframework.expression.spel.ast.Assign;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,6 +21,7 @@ public class ApplicationController {
     private AssignmentDao assignmentDao;
     private UserDao userDao;
     private GradeDao gradeDao;
+    private RegisterDao registerDao;
 
     public ApplicationController(TopicDao topicDao, CourseDao courseDao, AssignmentDao assignmentDao, UserDao userDao, GradeDao gradeDao) {
         this.topicDao = topicDao;
@@ -60,8 +58,9 @@ public class ApplicationController {
     }
 
     @RequestMapping(path = "/courses/{courseId}/roster", method = RequestMethod.POST)
-    public void createCourseRosterEntry(@RequestBody @PathVariable int userId, @PathVariable int courseId) {
-        userDao.createRosterEntry(userId, courseId);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createCourseRosterEntry(@RequestBody List<CourseRosterEntry> courseRosterEntries, @PathVariable int courseId) {
+        registerDao.registerUsersToCourse(courseRosterEntries);
     }
 
     @RequestMapping(path = "/{course}/topics", method = RequestMethod.GET)
