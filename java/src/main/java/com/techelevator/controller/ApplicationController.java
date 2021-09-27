@@ -96,6 +96,11 @@ public class ApplicationController {
     public List<Topic> listTopicsByUserAndCourse(@Valid @PathVariable int courseId, @PathVariable int userId) {
         return topicDao.topicsByCourseAndUser(courseId, userId);
     }
+    @GetMapping(path = "/users/{userId}/topics")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Topic> listTopicByUser(@Valid @PathVariable int userId) {
+        return topicDao.getByUser(userId);
+    }
 }
 
 
