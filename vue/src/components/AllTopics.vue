@@ -15,7 +15,7 @@ export default {
         };
     },
     created() {
-        topicService.listTopics
+        topicService.listTopics()
     }
     
 }

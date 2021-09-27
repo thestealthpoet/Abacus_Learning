@@ -1,18 +1,15 @@
 <template>
   <div class="main">
       <div class="assignments-user-course">
-          <div class="courses" v-for="course in userCourses" :key="course.id" >
-            <div class="course-name">
-                Course Name: {{course.courseName}}
+          <div class="assignments" v-for="assignment in userAssignments" :key="assignment.id" >
+            <div class="assignment-name">
+                Assignment Name: {{assignment.assignmentName}}
             </div>
-            <div class="course-description">
-                Course Description: {{course.courseDescription}}
+            <div class="assignment-due-date">
+                Assignment Due Date: {{assignment.dueDate}}
             </div>
-            <div class="class-time">
-                Course Time: {{course.classTime}}
-            </div>
-            <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
-                You are the teacher of this course.
+            <div class="assignment-type">
+                Assignment Type: {{assignment.assignmentType}}
             </div>
           </div>
       </div>
@@ -20,20 +17,19 @@
 </template>
 
 <script>
-import courseService from "../services/CourseService";
+import assignmentService from "../services/AssignmentService";
 export default {
-    name: 'view-user-courses',
+    name: 'assignments-user-course',
     data() {
         return {
-            userCourses:  [],
-            currentUserId: this.$store.state.user.id,
-            isTeacher: false,
+            assignments:  [],
+            
     };
     },
     created() {
-        courseService.listCoursesByCurrentUserId(this.currentUserId)
-        .then( (userCoursesData) => {
-            this.userCourses = userCoursesData.data;
+        assignmentService.getAssignmentsByUser(this.currentUserId, this.courseId)
+        .then( (userAssignmentCourseData) => {
+            this.userAssignmentCourse = userAssignmentCourseData.data;
         })
         .catch( (error) => {
             console.error(error + "user courses not loaded");

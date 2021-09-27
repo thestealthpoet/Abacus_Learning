@@ -1,7 +1,7 @@
 <template>
     <div class="main">
         <div class="assignments" v-for="assignment in assignments" :key="assignment.id">
-
+            
         </div>
     </div>
 </template>

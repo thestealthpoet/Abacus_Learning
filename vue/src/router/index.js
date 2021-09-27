@@ -22,6 +22,7 @@ import CreateTopic from '../views/CreateTopic.vue'
 import AllTopics from '../views/AllTopics.vue'
 import AllAssignments from '../views/AllAssignments.vue'
 import CreateAssignment from '../views/CreateAssignment.vue'
+import AssignmentsUser from '../views/AssignmentsUser.vue'
 Vue.use(Router)
 
 /**
@@ -159,6 +160,14 @@ const router = new Router({
       path: "/assignments",
       name: "create-assignment",
       component: CreateAssignment,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/users/:userId/topics',
+      name: 'AssignmentsUser',
+      component: AssignmentsUser,
       meta: {
         requiresAuth: false
       }

@@ -1,17 +1,25 @@
 <template>
   <div class = "create-curricula">
-      <create-curricula/>
+      <create-topic/>
+      <create-assignment/>
   </div>
 </template>
 
 <script>
-import CreateCurricula from '../components/CreateCurricula.vue';
+import createTopic from '../components/CreateTopic.vue';
+import createAssignment from '../components/CreateAssignment'
 export default {
-    components: {CreateCurricula},
+    components: 
+    {createTopic,
+    createAssignment}
+    
 
 }
 </script>
 
 <style>
-
+  .create-curricula {
+    display: flex;
+    align-items: flex-start;
+  }
 </style>

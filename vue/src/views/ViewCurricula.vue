@@ -1,22 +1,21 @@
 <template>
     <div class="view-curricula">
-        <view-curiccula />
+        <all-assignments/>
+        <all-topics/>
     </div>
 </template>
 
 <script>
-import ViewCurricula from '../components/ViewCurricula.vue';
+import AllAssignments from '@/components/AllAssignments';
+import AllTopics from '@/components/AllTopics';
 export default {
     
-    components: ViewCurricula,
+    components: 
+    {AllAssignments, 
+    AllTopics}
     
 };
-//created() {
-    //topicService.getTopics().then(response => {
-   //    this.topics = response.data;
-   // });
-//
-//};
+
 </script>
 
 <style>

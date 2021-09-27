@@ -53,8 +53,6 @@ public class JdbcTopicDao implements TopicDao{
         while (results.next()) {
             topicsByUser.add(mapRowToTopic(results));
         }
-
-
                 return topicsByUser;
     }
 
