@@ -29,6 +29,7 @@ export default {
   background: rgba(33, 158, 188, 0.1);
   width: 100%;
   height: 100vh;
+  font-family: Georgia, sans-serif;
 }
 
 #btn {

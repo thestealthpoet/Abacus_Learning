@@ -8,6 +8,8 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 //Information about Abacus app
 import About from '../views/About.vue'
+//Privacy Policy for Abacus app
+import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 //Course related components
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
@@ -193,9 +195,15 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
+    },
+    {
+      path: '/privacy-policy',
+      name: 'PrivacyPolicy',
+      component: PrivacyPolicy,
+      meta: {
+        requiresAuth: false
+      }
     }
-
-
   ]
 })
 

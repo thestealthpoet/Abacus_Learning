@@ -1,6 +1,6 @@
 <template>
   <form v-on:submit.prevent="saveCourse" class="course-creation-form">
-     <div class="field">
+    <div class="field">
       <label for="course-title">Course Title</label>
       <input type="text"
       v-model="course.courseName" />
@@ -25,7 +25,7 @@
         <input type="datetime-local"
             v-model="course.classTime" />
     </div>
-    <button id="btn" class="btn btn-submit">Submit</button>
+    <button id="btn" class="btn btn-submit">Create Course</button>
     </form>
 
 

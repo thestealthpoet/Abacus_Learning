@@ -21,7 +21,7 @@
       <input type="text"
       v-model.trim="assignment.assignmentType"/>
     </div>
-    <button id="btn" class="btn btn-submit">Submit</button>
+    <button id="btn" class="btn btn-submit">Add Assignment</button>
     </form>
 
 
