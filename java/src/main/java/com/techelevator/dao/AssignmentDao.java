@@ -11,5 +11,6 @@ public interface AssignmentDao {
     Assignment getByTopicId(int topicId);
     public List<Assignment> listAssignments();
     void createAssignment(Assignment assignment);
+    Assignment getAssignmentsByUserId(int userId);
 
 }

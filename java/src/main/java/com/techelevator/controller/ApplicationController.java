@@ -77,7 +77,7 @@ public class ApplicationController {
 
 
     //COURSE TOPIC RELATED ENDPOINTS/METHODS
-    @PostMapping(path = "topics")
+    @PostMapping(path = "/topics")
     @ResponseStatus(HttpStatus.CREATED)
     public void createNewTopic(@Valid @RequestBody Topic topic) {
         topicDao.createTopic(topic);
@@ -101,7 +101,7 @@ public class ApplicationController {
         assignmentDao.createAssignment(assignment);
     }
 
-    @GetMapping(path = "/courses/{courseId}/{userId}")
+    @GetMapping(path = "/topics/{courseId}/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Topic> listTopicsByUserAndCourse(@Valid @PathVariable int courseId, @PathVariable int userId) {
         return topicDao.topicsByCourseAndUser(courseId, userId);

@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Assignment {
-
     private int assignmentId;
     private int topicId;
     private String assignmentName;

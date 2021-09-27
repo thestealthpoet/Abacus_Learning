@@ -1,12 +1,16 @@
 <template>
     <div class="main">
-        <div class="assignments" v-for="assignment in assignments" :key="assignment.id">
-            
+        
+        <div class="view-assignments" v-for="assignment in assignments" :key="assignment.id">
+            <div>Assignment Name: {{assignment.assignmentName}}</div>
+
+            <div>Assignment Type: {{assignment.assignmentType}}</div>
+            <div>Assignment Due Date: {{assignment.dueDate}}</div>
         </div>
     </div>
 </template>
 <script>
-import assignmentService from "@/services/AssignmentService";
+import assignmentService from "../services/AssignmentService";
 export default {
     name: 'view-assignments',
     data() {
@@ -15,8 +19,13 @@ export default {
         };
     },
     created() {
-        assignmentService
-        .list()
+        assignmentService.listAssignments()
+        .then((assignmentsData) => {
+            this.assignments = assignmentsData.data;
+        })
+        .catch((error) => {
+            console.error(error + " all topics not able to be loaded");
+        });
     },
     
 };
