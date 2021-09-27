@@ -7,11 +7,11 @@
             <h4>Always gaining knowledge!</h4>
         </div>
         <div class="nav-text">
-        <router-link v-bind:to="{ name: 'myDashboard', params: {username: this.$store.state.user.username} }">
-            <img src="@/assets/homeIcon.png" alt="Home">
+        <router-link class="Icons" v-bind:to="{ name: 'myDashboard', params: {username: this.$store.state.user.username} }">
+            <img src="@/assets/homeIcon.png" alt="Home">Home
         </router-link>
-        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">
-            <img src="@/assets/logOutIcon.png" alt="Logout">
+        <router-link class="Icons" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">
+            <img src="@/assets/logOutIcon.png" alt="Logout">Logout
         </router-link>
         </div>
     </header>
@@ -27,19 +27,21 @@ export default {
 .header {
     display: flex;
     justify-content: space-between;
-    height: 16vh;
+    height: 20vh;
     /* background: rgba(0, 48, 73, .7); */
     background: linear-gradient(to right, rgba(0, 48,73, .9), rgba(33, 158, 188));
+    font-family: Georgia, sans-serif;
 }
 
 .nav-text {
+  display: flex;
   justify-content: flex-end;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin: 5px;
+  margin: 10px;
 }
 
 .logo {
   display: flex;
+  padding: 10px;
 }
 
 .phrase {
@@ -47,7 +49,11 @@ export default {
     /* color: white; */
 }
 
-h4 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+.Icons {
+    text-decoration: none;
+    display: grid;
+    text-align: center;
+    padding: 5px 10px;
 }
+
 </style>

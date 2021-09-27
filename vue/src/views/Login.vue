@@ -79,14 +79,14 @@ export default {
 
 <style scoped>
 .form-signin {
-  display: inline-flex;
-  justify-content: flex;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   border: 3px solid #219EBC;
   border-radius: 3px;
-  padding: 20px;
+  padding: 60px;
   background: rgb(245, 245, 245);
   height: 45vh;
   width: 40vh;

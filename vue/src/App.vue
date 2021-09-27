@@ -28,7 +28,9 @@ export default {
   flex-direction: column;
   background: rgba(33, 158, 188, 0.1);
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 80vh;
+  font-family: Georgia, sans-serif;
 }
 
 #btn {
@@ -39,7 +41,7 @@ export default {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 14px;
   border-radius: 14px;
   box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
   cursor: pointer;

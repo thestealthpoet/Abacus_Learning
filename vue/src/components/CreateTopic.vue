@@ -29,7 +29,7 @@
       <input type="datetime-local"
       v-model="topic.teachDate"/>
     </div> 
-    <button id="btn" class="btn btn-submit">Submit</button>
+    <button id="btn" class="btn btn-submit">Create Topic</button>
     </form>
 
 
