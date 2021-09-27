@@ -11,6 +11,6 @@ public interface TopicDao {
     Topic getByName (String topicName);
     List<Topic> getByUser (int userId);
     void createTopic(Topic topic);
-
     List<Topic> getAllTopics();
+    List<Topic> topicsByCourseAndUser(int courseId, int userId);
 }

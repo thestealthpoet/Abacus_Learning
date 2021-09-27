@@ -69,12 +69,31 @@ public class JdbcTopicDao implements TopicDao{
         return topicsAllList;
     }
 
+    @Override
+    public List<Topic> topicsByCourseAndUser(int courseId, int userId) {
+        List <Topic> topicsByUserAndCourse = new ArrayList<>();
+        String sql = "SELECT * FROM topics " +
+                "JOIN courses ON courses.course_id = topics.course_id " +
+                "JOIN course_users ON course_users.class_id = courses.course_id " +
+                "WHERE course_users.user_id = ? AND topics.course_id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId, courseId);
+        while (results.next()) {
+            topicsByUserAndCourse.add(mapRowToTopic(results));
+        }
+        return topicsByUserAndCourse;
+    }
+
+
     private Topic mapRowToTopic(SqlRowSet results) {
         Topic topic = new Topic();
         topic.setTopicId(results.getInt("topic_id"));
         topic.setCourseId(results.getInt("course_id"));
         topic.setTopicName(results.getString("topic_name"));
-        topic.setTopicDescription(results.getString("description"));
+        try {
+            topic.setTopicDescription(results.getString("description"));}
+        catch (NullPointerException e) {
+            System.out.println("another");
+        }
         Timestamp timestamp = results.getTimestamp("topic_due_date");
         assert timestamp != null;
         LocalDateTime localDateTime = timestamp.toLocalDateTime();

@@ -20,6 +20,11 @@ createAssignment(assignment) {
   return http.post('/assignments', assignment);
 },
 
+//will get assignments by user
+getAssignmentsByUser(userId, courseId) {
+  return http.get(`/courses/${courseId}/${userId}`);
+}
+
 
 
 

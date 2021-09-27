@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-import assignmentService from "../services/AssignmentService";
+import assignmentService from "@/services/AssignmentService";
 export default {
     name: 'view-assignments',
     data() {
@@ -15,10 +15,11 @@ export default {
         };
     },
     created() {
-        assignmentService.listAssignments
-    }
+        assignmentService
+        .list()
+    },
     
-}
+};
 </script>
 
 
