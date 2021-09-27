@@ -26,7 +26,10 @@ name: 'user-list',
 data() {
   return {
     userList: [],
-    selectedUsers: [],
+    selectedUsers: {
+      selectedUserId: '',
+      selectedCourseId: ''
+    },
 
   };
 },
