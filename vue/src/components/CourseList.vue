@@ -41,7 +41,7 @@ export default {
       this.courseList = coursesData.data;
     })
     .catch( (error) => {
-      console.error(error + "all courses not able to be loaded");
+      console.error(error + " all courses not able to be loaded");
     }) 
 
     

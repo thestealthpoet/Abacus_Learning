@@ -28,7 +28,7 @@ data() {
     userList: [],
     selectedUsers: {
       selectedUserId: '',
-      selectedCourseId: ''
+      selectedCourseId: this.$store.state.selectedCourseId
     },
 
   };
