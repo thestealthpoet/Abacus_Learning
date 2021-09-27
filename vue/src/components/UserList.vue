@@ -1,5 +1,6 @@
 <template>
 <div class="main">
+  <form v-on:submit.prevent="addStudentsToRoster" class="roster-creation-form">
   <div class="user-list">
       <div class="users" v-for="user in userList" :key="user.id">
         <div class="name">
@@ -11,9 +12,15 @@
         <div class="email-address">
           {{user.emailAddress}}
         </div>
-
-      </div>
+        <div class="checkbox">
+        <input type="checkbox" id="user-select-checkbox" v-bind:value="{
+        selectedUserId: user.id,
+        selectedCourseId: $store.state.selectedCourseId}" v-model="selectedUsers">
     </div>
+    </div>
+        <button id="btn" class="btn btn-submit">Add Selected User to Course</button>
+      </div>
+    </form>
 
 </div>
   
@@ -21,15 +28,24 @@
 
 <script>
 import userService from '../services/UserService';
+import rosterService from '../services/RosterService'
 export default {
 name: 'user-list',
+methods: {
+  selecteStudentId() {
+    
+     this.selectedUsers.selectedUserId = this.userList.user.id; 
+  },
+
+  addStudentsToRoster() {
+    rosterService.addStudentsToCourseRoster(this.selectedUsers, this.$store.state.selectedCourseId);
+  }
+},
+
 data() {
   return {
     userList: [],
-    selectedUsers: {
-      selectedUserId: '',
-      selectedCourseId: this.$store.state.selectedCourseId
-    },
+    selectedUsers: [],
 
   };
 },
@@ -50,7 +66,7 @@ created() {
 .users {
   display: flex;
   align-content: space-between;
-  
+  flex-direction: column;
   flex-wrap: wrap;
 
 }
