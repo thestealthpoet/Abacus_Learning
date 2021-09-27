@@ -55,6 +55,7 @@ const router = new Router({
 
     {
       path: '/',
+      name: 'home',
       component: Home,
       meta: {
         requiresAuth: true
@@ -90,7 +91,7 @@ const router = new Router({
 
     {
       path: "/about",
-      name: "About",
+      name: "about",
       component: About,
       meta: {
         requiresAuth: false

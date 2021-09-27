@@ -1,7 +1,6 @@
 <template>
   <div class="main">
     <user-list />
-      
   </div>
 </template>
 
@@ -18,7 +17,7 @@ export default {
 </script>
 
 <style>
-.user-list {
+.main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
