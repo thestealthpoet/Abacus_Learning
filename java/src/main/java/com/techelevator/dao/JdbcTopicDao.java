@@ -43,7 +43,17 @@ public class JdbcTopicDao implements TopicDao{
 
     @Override
     public List<Topic> getByUser(int userId) {
-        return null;
+        List<Topic> topicsByUser = new ArrayList<>();
+
+        String sql = "SELECT * FROM topics " +
+                "JOIN course_users ON topics.course_id = course_users.class_id  " +
+                "WHERE course_users.user_id = ? " +
+                "ORDER BY topics.topic_teach_date";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        while (results.next()) {
+            topicsByUser.add(mapRowToTopic(results));
+        }
+                return topicsByUser;
     }
 
     @Override

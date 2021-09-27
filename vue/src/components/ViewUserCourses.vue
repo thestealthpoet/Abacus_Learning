@@ -26,13 +26,23 @@ export default {
     name: 'view-user-courses',
     data() {
         return {
+            //value of userCourses
+            //key values are column name
+            //modeling java
+            //course.courseName equates to course.getName()
             userCourses:  [],
             currentUserId: this.$store.state.user.id,
             isTeacher: false,
     };
     },
     created() {
+                                               //logged in store
         courseService.listCoursesByCurrentUserId(this.currentUserId)
+        //when you receive the data back as a list of course Object data
+        //userCoursesData is a var
+        //loaded into an array
+        //values from db
+        //don't have to define already defined columns
         .then( (userCoursesData) => {
             this.userCourses = userCoursesData.data;
         })
