@@ -15,7 +15,6 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@RequestMapping
 //@PreAuthorize("isAuthenticated()")
 @CrossOrigin
 public class ApplicationController {
@@ -35,11 +34,18 @@ public class ApplicationController {
 
     }
 
+    //COURSE RELATED ENDPOINTS/METHODS
     @RequestMapping(path = "/courses/teach/{teachId}", method = RequestMethod.GET)
     public List<Course> getByTeacher(@PathVariable int teacherName, Principal principal) {
         int teachId = userDao.findIdByUsername(principal.getName());
         return courseDao.getByTeacher(teachId);
 
+    }
+
+    @RequestMapping(path = "/courses/all", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<Course> getAllCoursesList() {
+        return courseDao.getAllCourses();
     }
 
     @RequestMapping(path = "/courses", method = RequestMethod.POST)
@@ -58,7 +64,7 @@ public class ApplicationController {
         userDao.createRosterEntry(userId, courseId);
     }
 
-    @RequestMapping(path ="/{course}/topics", method = RequestMethod.GET)
+    @RequestMapping(path = "/{course}/topics", method = RequestMethod.GET)
     public List<Topic> getTopicByCourse(@PathVariable int courseId) {
         return topicDao.getByCourse(courseId);
     }
@@ -69,6 +75,8 @@ public class ApplicationController {
         return courseDao.getCourseListByUserId(userId);
     }
 
+
+    //COURSE TOPIC RELATED ENDPOINTS/METHODS
     @PostMapping(path = "topics")
     @ResponseStatus(HttpStatus.CREATED)
     public void createNewTopic(@Valid @RequestBody Topic topic) {
@@ -83,24 +91,37 @@ public class ApplicationController {
 
     @GetMapping(path = "/assignments/all")
     @ResponseStatus(HttpStatus.OK)
-    public List<Assignment>  getAllAssignments() {
+    public List<Assignment> getAllAssignments() {
         return assignmentDao.listAssignments();
     }
+
     @PostMapping(path = "/assignments")
     @ResponseStatus(HttpStatus.CREATED)
     public void createNewAssignment(@Valid @RequestBody Assignment assignment) {
         assignmentDao.createAssignment(assignment);
     }
+
     @GetMapping(path = "/courses/{courseId}/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Topic> listTopicsByUserAndCourse(@Valid @PathVariable int courseId, @PathVariable int userId) {
         return topicDao.topicsByCourseAndUser(courseId, userId);
     }
+
+
     @GetMapping(path = "/users/{userId}/topics")
     @ResponseStatus(HttpStatus.OK)
     public List<Topic> listTopicByUser(@Valid @PathVariable int userId) {
         return topicDao.getByUser(userId);
     }
+
+
+    //USER RELATED ENDPOINTS/METHODS
+    @RequestMapping(path = "/users/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<User> getAllUsers() {
+        return userDao.findAll();
+    }
+
 }
 
 

@@ -16,8 +16,12 @@ import CreateCurricula from '../views/CreateCurricula.vue'
 import UserCourses from '../views/UserCourses.vue'
 import CourseList from '../views/CourseList.vue'
 
+//User lists
+import UserList from '../views/UserList.vue'
+
 //404!
 import Missing from '../views/Missing.vue'
+//Course content creation
 import CreateTopic from '../views/CreateTopic.vue'
 import AllTopics from '../views/AllTopics.vue'
 import AllAssignments from '../views/AllAssignments.vue'
@@ -41,6 +45,14 @@ const router = new Router({
     {
       path: '/myDashboard/:username',
       name: 'myDashboard',
+      component: Home,
+      meta: {
+        requiresAuth: true
+      }
+    },
+
+    {
+      path: '/',
       component: Home,
       meta: {
         requiresAuth: true
@@ -122,9 +134,19 @@ const router = new Router({
       path: "/course-list",
       name: "course-list",
       component: CourseList,
-      metal: {
+      meta: {
         requiresAuth: true
       }
+    },
+
+    {
+      path: "/userlist",
+      name: "user-list",
+      component: UserList,
+      meta: {
+        requiresAuth: true
+      }
+
     },
 
     {
