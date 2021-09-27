@@ -15,7 +15,6 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@RequestMapping
 //@PreAuthorize("isAuthenticated()")
 @CrossOrigin
 public class ApplicationController {
@@ -34,12 +33,18 @@ public class ApplicationController {
         this.gradeDao = gradeDao;
 
     }
-
+//COURSE RELATED ENDPOINTS/METHODS
     @RequestMapping(path = "/courses/teach/{teachId}", method = RequestMethod.GET)
     public List<Course> getByTeacher(@PathVariable int teacherName, Principal principal) {
         int teachId = userDao.findIdByUsername(principal.getName());
         return courseDao.getByTeacher(teachId);
 
+    }
+
+    @RequestMapping(path = "/courses/all", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<Course> getAllCoursesList() {
+        return courseDao.getAllCourses();
     }
 
     @RequestMapping(path = "/courses", method = RequestMethod.POST)
@@ -69,6 +74,8 @@ public class ApplicationController {
         return courseDao.getCourseListByUserId(userId);
     }
 
+
+//COURSE TOPIC RELATED ENDPOINTS/METHODS
     @PostMapping(path = "topics")
     @ResponseStatus(HttpStatus.CREATED)
     public void createNewTopic(@Valid @RequestBody Topic topic) {
@@ -96,6 +103,14 @@ public class ApplicationController {
     public List<Topic> listTopicsByUserAndCourse(@Valid @PathVariable int courseId, @PathVariable int userId) {
         return topicDao.topicsByCourseAndUser(courseId, userId);
     }
+
+//USER RELATED ENDPOINTS/METHODS
+    @RequestMapping(path="/users/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<User> getAllUsers() {
+        return userDao.findAll();
+    }
+
 }
 
 

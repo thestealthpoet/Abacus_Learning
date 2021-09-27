@@ -13,6 +13,7 @@
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
                 You are the teacher of this course.
+                <button>Add students to this course</button>
             </div>
             <div class="else" v-else>
                 You are not the teacher of this course.
@@ -51,5 +52,15 @@ export default {
 </script>
 
 <style>
+.courses {
+  border: 5px double rgb(9, 115, 148);
+  margin: 5px;
+  padding: 6px;
+  border-radius: 10px;
+  display: inline-flexbox;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
 
 </style>
