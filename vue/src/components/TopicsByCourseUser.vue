@@ -20,7 +20,7 @@
 <script>
 import topicService from "../services/TopicService";
 export default {
-    name: 'view-topics-by-course-user',
+    name: 'topics-by-course-user',
     methods: {
         setSelectedCourseId(courseId) {
             this.$store.commit("SET_SELECTED_COURSE", courseId);
@@ -35,7 +35,7 @@ export default {
     },
     created() {
                                         
-        topicService.getTopicsByCourseAndUser(this.currentUserId, this.courseId)
+        topicService.getTopicsByCourseUser(this.currentUserId, this.courseId)
     
         .then( (userTopicsData) => {
             this.userTopics = userTopicsData.data;

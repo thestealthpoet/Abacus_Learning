@@ -1,9 +1,11 @@
 <template>
   <form v-on:submit.prevent="saveTopic" class="topic-creation-form">
     <div class="field">
-      <label for="course-id">Course Id</label>
-      <input type="text"
-      v-model.trim="topic.courseId"/>
+      <label for="course-names"> Choose a course name and Id: </label>
+         <select name="course-names" id="course-names">
+             <option value="Math">Math</option>
+             <option value="BasketWeaving">Basket Weaving</option>
+             </select>
     </div>
     <div class="field">
       <label for="topic-name">Topic Title</label>
