@@ -8,10 +8,10 @@
         </div>
         <div class="nav-text">
         <router-link class="Icons" v-bind:to="{ name: 'myDashboard', params: {username: this.$store.state.user.username} }">
-            <img src="@/assets/homeIcon.png" alt="Home">Home
+            <img src="@/assets/home2.png" alt="Home">Home
         </router-link>
         <router-link class="Icons" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">
-            <img src="@/assets/logOutIcon.png" alt="Logout">Logout
+            <img src="@/assets/logout2.png" alt="Logout">Logout
         </router-link>
         </div>
     </header>
@@ -29,7 +29,7 @@ export default {
     justify-content: space-between;
     height: 20vh;
     /* background: rgba(0, 48, 73, .7); */
-    background: linear-gradient(to right, rgba(0, 48,73, .9), rgba(33, 158, 188));
+    background: linear-gradient(to right, rgba(0, 48,73), rgba(33, 158, 188));
     font-family: Georgia, sans-serif;
 }
 
@@ -41,11 +41,13 @@ export default {
 
 .logo {
   display: flex;
-  padding: 10px;
+  padding: 10px 0px 10px 40px;
 }
 
 .phrase {
     font-size: 25px;
+    font-family: 'Rouge Script', cursive;
+    text-shadow: 1px 1px 2px white;
     /* color: white; */
 }
 

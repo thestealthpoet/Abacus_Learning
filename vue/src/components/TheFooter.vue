@@ -5,13 +5,14 @@
                 <li class="footer-item">
                     <router-link class="footer-link" v-bind:to="{ name: 'home' }">Home</router-link>
                 </li>
-                <li class="footer-item">Services</li>
                 <li class="footer-item">
                     <router-link class="footer-link" v-bind:to="{ name: 'about' }">About</router-link>
                 </li>
-                <li class="footer-item">Terms</li>
                 <li class="footer-item">
-                    <router-link class="footer-link" v-bind:to="{ name: 'PrivacyPolicy' }">Privacy Policy</router-link>
+                    <router-link class="footer-link" v-bind:to="{ name: 'terms' }">Terms</router-link>
+                </li>
+                <li class="footer-item">
+                    <router-link class="footer-link" v-bind:to="{ name: 'privacypolicy' }">Privacy Policy</router-link>
                 </li>
             </ul>
             <p>ABACUS &#xa9; 2021</p>
@@ -60,5 +61,6 @@ li {
 
 .footer-link {
     text-decoration: none;
+    color: white;
 }
 </style>

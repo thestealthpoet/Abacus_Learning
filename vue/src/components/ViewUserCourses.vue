@@ -12,9 +12,12 @@
                 Course Time: {{course.classTime}}
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
-                You are the teacher of this course.
-                <button @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
+                <div id="role-label">You are the teacher of this course.</div>
+                <button id="btn" @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
             </div>
+            <div class="show-topics">
+                    <button @click="$router.push({name: 'topics-course-user'}); setSelectedCourseId(course.courseId)">Test</button>
+           </div>     
           </div>
       </div>
   </div>
@@ -63,5 +66,23 @@ export default {
 </script>
 
 <style>
+.courses {
+  border: 5px double rgb(9, 115, 148);
+  margin: 10px;
+  padding: 16px;
+  border-radius: 10px;
+  display: inline-flexbox;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
 
+.show-teacher {
+  display: flex;
+  justify-content: space-between;
+}
+
+#role-label {
+  text-decoration: overline;
+  padding: 20px 0px 0px 20px;
+}
 </style>

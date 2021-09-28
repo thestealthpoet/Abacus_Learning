@@ -80,7 +80,7 @@ public class JdbcTopicDao implements TopicDao{
     }
 
     @Override
-    public List<Topic> topicsByCourseAndUser(int courseId, int userId) {
+    public List<Topic> topicsByCourseAndUser(int userId, int courseId) {
         List <Topic> topicsByUserAndCourse = new ArrayList<>();
         String sql = "SELECT * FROM topics " +
                 "JOIN courses ON courses.course_id = topics.course_id " +
