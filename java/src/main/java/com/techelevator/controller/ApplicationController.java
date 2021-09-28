@@ -2,9 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.*;
 import com.techelevator.model.*;
-import org.springframework.expression.spel.ast.Assign;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -21,14 +19,15 @@ public class ApplicationController {
     private AssignmentDao assignmentDao;
     private UserDao userDao;
     private GradeDao gradeDao;
-    private RegisterDao registerDao;
+    private RosterDao rosterDao;
 
-    public ApplicationController(TopicDao topicDao, CourseDao courseDao, AssignmentDao assignmentDao, UserDao userDao, GradeDao gradeDao) {
+    public ApplicationController(TopicDao topicDao, CourseDao courseDao, AssignmentDao assignmentDao, UserDao userDao, GradeDao gradeDao, RosterDao rosterDao) {
         this.topicDao = topicDao;
         this.courseDao = courseDao;
         this.assignmentDao = assignmentDao;
         this.userDao = userDao;
         this.gradeDao = gradeDao;
+        this.rosterDao = rosterDao;
 
     }
 
@@ -59,8 +58,12 @@ public class ApplicationController {
 
     @RequestMapping(path = "/courses/{courseId}/roster", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void createCourseRosterEntry(@RequestBody List<CourseRosterEntry> courseRosterEntries, @PathVariable int courseId) {
-        registerDao.registerUsersToCourse(courseRosterEntries);
+    public void createCourseRosterEntry(@RequestBody CourseRosterEntry[] courseRosterEntries , @PathVariable int courseId) {
+        /*for (CourseRosterEntry entry : courseRosterEntries) {
+            System.out.println(entry.getCourseId());
+            System.out.println(entry.getUserId());
+        }*/
+        rosterDao.registerUsersToCourse(courseRosterEntries);
     }
 
     @RequestMapping(path = "/{course}/topics", method = RequestMethod.GET)
