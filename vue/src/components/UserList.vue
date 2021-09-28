@@ -31,6 +31,16 @@ import userService from '../services/UserService';
 import rosterService from '../services/RosterService'
 export default {
 name: 'user-list',
+
+
+data() {
+  return {
+    userList: [],
+    selectedUsers: [],
+
+  };
+},
+
 methods: {
   selecteStudentId() {
     
@@ -40,14 +50,6 @@ methods: {
   addStudentsToRoster() {
     rosterService.addStudentsToCourseRoster(this.selectedUsers, this.$store.state.selectedCourseId);
   }
-},
-
-data() {
-  return {
-    userList: [],
-    selectedUsers: [],
-
-  };
 },
 
 created() {
