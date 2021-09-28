@@ -29,6 +29,7 @@ import AllTopics from '../views/AllTopics.vue'
 import AllAssignments from '../views/AllAssignments.vue'
 import CreateAssignment from '../views/CreateAssignment.vue'
 import AssignmentsUser from '../views/AssignmentsUser.vue'
+import TopicsByCourseUser from '../views/UserTopic.vue'
 Vue.use(Router)
 
 /**
@@ -201,6 +202,14 @@ const router = new Router({
       path: '/privacy-policy',
       name: 'PrivacyPolicy',
       component: PrivacyPolicy,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: 'myCourses/topics',
+      name: 'topics-course-user',
+      component: TopicsByCourseUser,
       meta: {
         requiresAuth: false
       }
