@@ -54,15 +54,20 @@ public class JdbcAssignmentDao implements AssignmentDao{
     }
 
     @Override
-    public Assignment getAssignmentsByUserId(int userId) {
+    public List<Assignment> getAssignmentsByUserId(int userId) {
         List<Assignment> assignmentList = new ArrayList<>();
         String sql = "SELECT * FROM assignments " +
                 "JOIN topics ON assignments.topic_id = topics.topic_id " +
                 "JOIN courses ON topics.course_id = courses.course_id " +
                 "JOIN course_users ON courses.course_id = course_users.class_id " +
-                "WHERE course_users.user_id = ? AND courses.course_id = ?" +
-                "ORDER BY topics.topic_teach_date ";
-        return null;
+                "WHERE course_users.user_id = ? " +
+                "ORDER BY topics.topic_due_date ";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        while (results.next()) {
+            Assignment assignment = mapRowToAssignment(results);
+            assignmentList.add(assignment);
+        }
+        return assignmentList;
     }
 
     private Assignment mapRowToAssignment(SqlRowSet results) {
