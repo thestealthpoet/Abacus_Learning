@@ -1,6 +1,6 @@
 <template>
   <div class = "create-curricula">
-      <create-topic/>
+      <create-topic v-bind:selectedCourseId="$store.state.selectedCourseId"/>
       <create-assignment/>
   </div>
 </template>
