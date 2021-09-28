@@ -6,10 +6,9 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
-//Information about Abacus app
-import About from '../views/About.vue'
-//Privacy Policy for Abacus app
-import PrivacyPolicy from '../views/PrivacyPolicy.vue'
+
+
+
 //Course related components
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
@@ -29,6 +28,15 @@ import AllTopics from '../views/AllTopics.vue'
 import AllAssignments from '../views/AllAssignments.vue'
 import CreateAssignment from '../views/CreateAssignment.vue'
 import AssignmentsUser from '../views/AssignmentsUser.vue'
+
+/////Footer Imports/////
+//General Info about App
+import About from '../views/About.vue'
+//Terms of Service
+import Terms from '../views/Terms.vue'
+//Privacy Policy for Abacus app
+import PrivacyPolicy from '../views/PrivacyPolicy.vue'
+
 Vue.use(Router)
 
 /**
@@ -52,7 +60,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: '/',
       name: 'home',
@@ -61,7 +68,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: "/login",
       name: "login",
@@ -70,7 +76,6 @@ const router = new Router({
         requiresAuth: false
       }
     },
-
     {
       path: "/logout",
       name: "logout",
@@ -79,7 +84,6 @@ const router = new Router({
         requiresAuth: false
       }
     },
-
     {
       path: "/register",
       name: "register",
@@ -88,16 +92,6 @@ const router = new Router({
         requiresAuth: false
       }
     },
-
-    {
-      path: "/about",
-      name: "about",
-      component: About,
-      meta: {
-        requiresAuth: false
-      }
-    },
-
     {
       path: "/course-creation",
       name: "course-creation",
@@ -106,7 +100,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: "/curricula-creation",
       name: "curricula-creation",
@@ -115,7 +108,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: "/curricula",
       name: "view-curricula",
@@ -132,7 +124,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: "/course-list",
       name: "course-list",
@@ -141,7 +132,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-
     {
       path: "/userlist",
       name: "user-list",
@@ -151,7 +141,6 @@ const router = new Router({
       }
 
     },
-
     {
       path: '*',
       component: Missing
@@ -171,7 +160,6 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
-
     },
     {
       path: "/assignments/all",
@@ -198,15 +186,31 @@ const router = new Router({
       }
     },
     {
+      path: "/about",
+      name: "about",
+      component: About,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/terms',
+      name: 'terms',
+      component: Terms,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: '/privacy-policy',
-      name: 'PrivacyPolicy',
+      name: 'privacy-policy',
       component: PrivacyPolicy,
       meta: {
         requiresAuth: false
       }
-    }
+    },
   ]
-})
+});
 
 router.beforeEach((to, from, next) => {
   // Determine if the route requires Authentication
