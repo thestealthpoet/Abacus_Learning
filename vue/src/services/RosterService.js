@@ -6,7 +6,7 @@ const http = axios.create( {
 
 export default {
     addStudentsToCourseRoster(rosterEntryList, courseId) {
-        return http.post(`/courses/${courseId}/roster`);
+        return http.post(`/courses/${courseId}/roster`, rosterEntryList);
     }
 
 }

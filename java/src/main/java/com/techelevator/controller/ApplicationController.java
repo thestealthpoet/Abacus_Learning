@@ -23,12 +23,13 @@ public class ApplicationController {
     private GradeDao gradeDao;
     private RegisterDao registerDao;
 
-    public ApplicationController(TopicDao topicDao, CourseDao courseDao, AssignmentDao assignmentDao, UserDao userDao, GradeDao gradeDao) {
+    public ApplicationController(TopicDao topicDao, CourseDao courseDao, AssignmentDao assignmentDao, UserDao userDao, GradeDao gradeDao, RegisterDao registerDao) {
         this.topicDao = topicDao;
         this.courseDao = courseDao;
         this.assignmentDao = assignmentDao;
         this.userDao = userDao;
         this.gradeDao = gradeDao;
+        this.registerDao = registerDao;
 
     }
 
@@ -59,7 +60,7 @@ public class ApplicationController {
 
     @RequestMapping(path = "/courses/{courseId}/roster", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void createCourseRosterEntry(@RequestBody List<CourseRosterEntry> courseRosterEntries, @PathVariable int courseId) {
+    public void createCourseRosterEntry(@RequestBody List<CourseRosterEntry> courseRosterEntries , @PathVariable int courseId) {
         registerDao.registerUsersToCourse(courseRosterEntries);
     }
 
