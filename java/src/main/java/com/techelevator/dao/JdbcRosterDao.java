@@ -1,20 +1,17 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.Course;
 import com.techelevator.model.CourseRosterEntry;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import java.sql.PreparedStatement;
-import java.util.List;
 @Component
 @CrossOrigin
-public class JdbcRegisterDao implements RegisterDao {
+public class JdbcRosterDao implements RosterDao {
 
     private JdbcTemplate jdbcTemplate;
 
-    public JdbcRegisterDao(JdbcTemplate jdbcTemplate) {
+    public JdbcRosterDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

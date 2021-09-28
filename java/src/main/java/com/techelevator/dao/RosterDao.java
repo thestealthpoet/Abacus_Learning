@@ -5,7 +5,7 @@ import com.techelevator.model.CourseRosterEntry;
 
 import java.util.List;
 
-public interface RegisterDao {
+public interface RosterDao {
 
     void registerUsersToCourse(CourseRosterEntry[] rosterEntries);
 }
