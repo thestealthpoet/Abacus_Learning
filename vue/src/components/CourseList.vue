@@ -71,6 +71,4 @@ export default {
   text-decoration: overline;
   padding: 20px 0px 0px 20px;
 }
-
-
 </style>

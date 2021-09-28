@@ -31,9 +31,11 @@ export default {
 }
 
 .ancient-abacus {
-  width: 300px;
+  width: 280px;
   height: 140px;
+  border: 4px solid rgb(0, 48, 73);
   grid-area: img;
+  
 }
 
 h1 {
@@ -42,6 +44,7 @@ h1 {
 
 h2 {
   grid-area: slogan;
+  text-decoration-line: underline;
 }
 
 h3 {
