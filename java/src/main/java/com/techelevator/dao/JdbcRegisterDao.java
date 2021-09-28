@@ -19,18 +19,16 @@ public class JdbcRegisterDao implements RegisterDao {
     }
 
     @Override
-    public void registerUsersToCourse(List<CourseRosterEntry> rosterEntries) {
-        CourseRosterEntry newCourseRosterEntry = new CourseRosterEntry();
+    public void registerUsersToCourse(CourseRosterEntry[] rosterEntries) {
         for (CourseRosterEntry entry : rosterEntries) {
-            newCourseRosterEntry.setCourseId(entry.getCourseId());
-            int courseId = newCourseRosterEntry.getCourseId();
-            newCourseRosterEntry.setUserId(entry.getUserId());;
-            int userId = newCourseRosterEntry.getUserId();
+
             String sql = "INSERT into course_users (" +
                     "user_id, class_id) " +
                     "VALUES (?, ?);";
 
-            jdbcTemplate.update(connection -> {
+            jdbcTemplate.update(sql,entry.getSelectedUserId(), entry.getSelectedCourseId());
+
+            /*jdbcTemplate.update(connection -> {
                 PreparedStatement ps = connection.prepareStatement(sql);
                 ps.setInt(1, userId);
                 ps.setInt(2, courseId);
@@ -38,7 +36,7 @@ public class JdbcRegisterDao implements RegisterDao {
             });
 
             jdbcTemplate.update(sql, newCourseRosterEntry);
-            newCourseRosterEntry = new CourseRosterEntry();
+            newCourseRosterEntry = new CourseRosterEntry();*/
 
         }
     }

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface RegisterDao {
 
-    void registerUsersToCourse(List<CourseRosterEntry> rosterEntries);
+    void registerUsersToCourse(CourseRosterEntry[] rosterEntries);
 }
