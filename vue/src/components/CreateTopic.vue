@@ -49,9 +49,9 @@ export default {
             topic: {
                 courseId: this.selectedCourseId,
                 topicName: '',
-                topicDescription:'',
+                description: '',
                 topicDueDate: '',
-                topicTeachDate: ''
+                teachDate: ''
             },
             
             courses: [],
