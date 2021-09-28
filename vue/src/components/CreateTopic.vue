@@ -46,7 +46,13 @@ export default {
     ],
     data() {
         return {
-            topic: [],
+            topic: {
+                courseId: this.selectedCourseId,
+                topicName: '',
+                description: '',
+                topicDueDate: '',
+                teachDate: ''
+            },
             
             courses: [],
 

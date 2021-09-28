@@ -9,16 +9,16 @@
               Course Description: {{course.courseDescription}}
           </div>
           <div class="class-time">
-                Course Time: {{course.classTime}}
-          </div>
-          <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
-              <div id="role-label">You are the teacher of this course.</div>
-              <button id="btn" class="add-student-btn">Add students to this course</button>
-          </div>
-          <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
-              <div id="role-label">You are the teacher of this course.</div>
-              <button id="btn" class="add-topic-btn">Add topics to this course</button>
-          </div>
+                Course Time: {{new Date(course.classTime).toLocaleString()}}
+            </div>
+            <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
+                <div id="role-label">You are the teacher of this course.</div>
+                <button id="btn" @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
+            
+            <div class="show-topics">
+                    <button id="btn" @click="$router.push({name: 'curricula-creation'}); setSelectedCourseId(course.courseId)">Add content to this course</button>
+           </div>
+           </div> 
           <!-- <div id="role-label" class="else" v-else>
               You are not the teacher of this course.
           </div> -->
@@ -31,6 +31,11 @@
 import courseService from "../services/CourseService";
 export default {
   name: 'course-list',
+  methods: {
+        setSelectedCourseId(courseId) {
+            this.$store.commit("SET_SELECTED_COURSE", courseId);
+        }
+    },
   data() {
     return {
       courseList: [],
