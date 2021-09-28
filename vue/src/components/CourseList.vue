@@ -14,11 +14,9 @@
           <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
               <div id="role-label">You are the teacher of this course.</div>
               <button id="btn" class="add-student-btn">Add students to this course</button>
-          </div>
-          <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
-              <div id="role-label">You are the teacher of this course.</div>
               <button id="btn" class="add-topic-btn">Add topics to this course</button>
           </div>
+         
           <!-- <div id="role-label" class="else" v-else>
               You are not the teacher of this course.
           </div> -->

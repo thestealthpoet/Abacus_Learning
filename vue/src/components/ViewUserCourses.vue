@@ -16,7 +16,7 @@
                 <button id="btn" @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
             </div>
             <div class="show-topics">
-                    <button @click="$router.push({name: 'curricula-creation'}); setSelectedCourseId(course.courseId)">Test</button>
+                    <button id="btn" @click="$router.push({name: 'curricula-creation'}); setSelectedCourseId(course.courseId)">Add Topics</button>
            </div>     
           </div>
       </div>

@@ -124,7 +124,7 @@ public class ApplicationController {
         return userDao.findAll();
     }
 
-    @GetMapping(path = "assignments/{userId}")
+    @GetMapping(path = "/assignments/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Assignment> getByUser(@Valid @PathVariable int userId) {
         return assignmentDao.getAssignmentsByUserId(userId);

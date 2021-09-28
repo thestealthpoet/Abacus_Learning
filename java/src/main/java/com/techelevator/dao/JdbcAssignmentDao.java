@@ -61,7 +61,7 @@ public class JdbcAssignmentDao implements AssignmentDao{
                 "JOIN courses ON topics.course_id = courses.course_id " +
                 "JOIN course_users ON courses.course_id = course_users.class_id " +
                 "WHERE course_users.user_id = ? " +
-                "ORDER BY topics.topic_due_date ";
+                "ORDER BY assignments.due_date ";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while (results.next()) {
             Assignment assignment = mapRowToAssignment(results);

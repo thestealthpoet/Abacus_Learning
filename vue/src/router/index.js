@@ -180,8 +180,8 @@ const router = new Router({
     },
     
     {
-      path: '/users/:userId/topics',
-      name: 'AssignmentsUser',
+      path: '/myAssignments',
+      name: 'assignments-user',
       component: AssignmentsUser,
       meta: {
         requiresAuth: false
