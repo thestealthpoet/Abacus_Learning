@@ -34,7 +34,8 @@ export default {
   methods: {
         setSelectedCourseId(courseId) {
             this.$store.commit("SET_SELECTED_COURSE", courseId);
-        }
+        },
+  
     },
   data() {
     return {
