@@ -3,10 +3,10 @@
       <div class="assignments-list">
           <div class="assignments" v-for="assignment in userAssignments" :key="assignment.id" >
             <div class="assignment-name">
-                <h2> {{assignment.assignmentName}} </h2>
+                <h3> {{assignment.assignmentName}} </h3>
             </div>
             <div class="assignment-description">
-                Assignment Type: {{assignment.assignmentType}}
+                 <h4>{{assignment.assignmentType}}</h4>
             </div>
             <div class="class-time">
                 Due Date: {{new Date(assignment.dueDate).toLocaleString()}}
