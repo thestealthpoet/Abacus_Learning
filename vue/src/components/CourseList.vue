@@ -9,7 +9,7 @@
               Course Description: {{course.courseDescription}}
           </div>
           <div class="class-time">
-                Course Time: {{new Date(course.classTime).toLocaleString()}}
+                Course Time: {{dayNameAndTime(course.classTime)}}
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
                 <div id="role-label">You are the teacher of this course.</div>
@@ -29,12 +29,18 @@
 
 <script>
 import courseService from "../services/CourseService";
+import moment from 'moment';
 export default {
   name: 'course-list',
   methods: {
         setSelectedCourseId(courseId) {
             this.$store.commit("SET_SELECTED_COURSE", courseId);
         },
+        dayNameAndTime(date) {
+          const getFullName = moment(date).format('dddd, h:mm a');
+          return getFullName;
+        }
+
   
     },
   data() {
