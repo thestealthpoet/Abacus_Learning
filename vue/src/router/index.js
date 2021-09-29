@@ -12,6 +12,7 @@ import store from '../store/index'
 //Course related components
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
+import CourseProgress from '../views/CourseProgress.vue'
 //View courses
 //import ViewCurricula from '../views/ViewCurricula.vue'
 import UserCourses from '../views/UserCourses.vue'
@@ -19,6 +20,7 @@ import CourseList from '../views/CourseList.vue'
 
 //User lists
 import UserList from '../views/UserList.vue'
+import Roster from '../views/Roster.vue'
 
 //404!
 import Missing from '../views/Missing.vue'
@@ -126,6 +128,14 @@ const router = new Router({
       }
     },
     {
+      path: "/courseProgress",
+      name: "course-progress",
+      component: CourseProgress,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/course-list",
       name: "course-list",
       component: CourseList,
@@ -209,6 +219,14 @@ const router = new Router({
       component: PrivacyPolicy,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: '/courses/:courseName/roster',
+      name: 'roster',
+      component: Roster,
+      meta: {
+        requiresAuth: true
       }
     },
 

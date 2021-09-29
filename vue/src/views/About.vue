@@ -35,7 +35,7 @@ export default {
   height: 140px;
   border: 4px solid rgb(0, 48, 73);
   grid-area: img;
-  
+  border-radius: 25px;
 }
 
 h1 {
