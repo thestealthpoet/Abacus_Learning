@@ -116,7 +116,7 @@ public class ApplicationController {
     }
 
 
-    @GetMapping(path = "/users/{userId}/topics")
+    @GetMapping(path = "/topics/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Topic> listTopicByUser(@Valid @PathVariable int userId) {
         return topicDao.getByUser(userId);

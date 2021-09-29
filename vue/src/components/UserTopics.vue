@@ -1,15 +1,15 @@
 <template>
   <div class="main">
-      <div class="assignments-list">
-          <div class="assignments" v-for="assignment in userAssignments" :key="assignment.id" >
-            <div class="assignment-name">
-                <h3> {{assignment.assignmentName}} </h3>
+      <div class="topics-list">
+          <div class="assignments" v-for="topic in userTopics" :key="topic.id" >
+            <div class="topic-name">
+                <h3> {{topic.topicName}} </h3>
             </div>
-            <div class="assignment-description">
-                 <h4>{{assignment.assignmentType}}</h4>
+            <div class="topic.topic-description">
+                 <h4>{{topic.topicDescription}}</h4>
             </div>
             <div class="class-time">
-                Due Date: {{new Date(assignment.dueDate).toLocaleString()}}
+                Due Date: {{new Date(topic.topicDueDate).toLocaleString()}}
             </div>
             </div>
       </div>
@@ -17,30 +17,30 @@
 </template>
 
 <script>
-import assignmentService from "../services/AssignmentService";
+import topicService from "../services/TopicService";
 export default {
-    name: 'user-assignments',
+    name: 'user-topics',
     data() {
         return {
             //value of userCourses
             //key values are column name
             //modeling java
             //course.courseName equates to course.getName()
-            userAssignments:  [],
+            userTopics:  [],
             currentUserId: this.$store.state.user.id,
             //isTeacher: false,
     };
     },
     created() {
                                                //logged in store
-        assignmentService.getAssignmentsByUser(this.currentUserId)
+        topicService.getTopicsByUser(this.currentUserId)
         //when you receive the data back as a list of course Object data
         //userCoursesData is a var
         //loaded into an array
         //values from db
         //don't have to define already defined columns
-        .then( (userAssignmentData) => {
-            this.userAssignments = userAssignmentData.data;
+        .then( (userTopicData) => {
+            this.userTopics = userTopicData.data;
         })
         .catch( (error) => {
             console.error(error + "user assignments not loaded");

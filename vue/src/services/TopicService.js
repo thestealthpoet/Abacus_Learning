@@ -21,4 +21,7 @@ listTopics() {
 getTopicsByCourseAndUser(courseId, userId){
   return http.get(`/topics/${courseId}/${userId}`)
 },
+getTopicsByUser(userId) {
+  return http.get(`topics/${userId}`)
+},
 }
