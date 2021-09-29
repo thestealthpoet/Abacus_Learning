@@ -145,7 +145,7 @@ INSERT INTO course_users (class_id, user_id) VALUES (1007, 8);
 
 --TOPICS
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2001, 1001, 'Pat Sajak', 'He has held his position at Wheel of Fortune since 1981: what we know, and don''t know about him.', '2021-12-12 09:00:00', '2021-12-04 10:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2002, 1001, 'Alex Trebeck', 'He is, and will continue to be missed. The legend, and the inspiration for ''Tiny Expresionless Animals''', '2021-14-12 09:00:00', '2021-12-04 10:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2002, 1001, 'Alex Trebeck', 'He is, and will continue to be missed. The legend, and the inspiration for ''Tiny Expresionless Animals''', '2021-11-12 09:00:00', '2021-12-04 10:00:00');
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2003, 1004, 'Pokemon Types', 'Deep dive into the 18 Pokemon types', '2021-10-11 09:00:00', '2021-10-04 09:00:00');
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2004, 1004, 'Pokemon Abilities', 'Deep dive into the 100s of Pokemon abilities', '2021-10-18 09:00:00', '2021-10-1 09:00:00');
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2005, 1004, 'Pokemon Evolution', 'Methods and nuances of Pokemon evolution', '2021-10-25 09:00:00', '2021-10-18 09:00:00');
