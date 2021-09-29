@@ -2,8 +2,9 @@
 <div class="main">
   <form v-on:submit.prevent="addStudentsToRoster" class="roster-creation-form">
     <div class="user-list">
-      <div class="users" v-for="user in userList" :key="user.id">
-        <div class="profile-pic"></div>
+      
+      <div class="users" v-for=" user in userList" :key="user.id">
+        <div class="profile-pic"><img src="https://picsum.photos/50?random"></div>
         <div class="name">
           {{user.name}} &#124;
         </div>

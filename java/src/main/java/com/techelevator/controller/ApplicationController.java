@@ -66,6 +66,12 @@ public class ApplicationController {
         rosterDao.registerUsersToCourse(courseRosterEntries);
     }
 
+    @RequestMapping(path = "/courses/{courseId}/roster", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<User> getUsersOnCourseRosterByCourseId(@PathVariable int courseId) {
+        return rosterDao.getUsersOnCourseRosterByCourseId(courseId);
+    }
+
     @RequestMapping(path = "/{course}/topics", method = RequestMethod.GET)
     public List<Topic> getTopicByCourse(@PathVariable int courseId) {
         return topicDao.getByCourse(courseId);

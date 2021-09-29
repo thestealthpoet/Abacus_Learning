@@ -19,6 +19,7 @@ import CourseList from '../views/CourseList.vue'
 
 //User lists
 import UserList from '../views/UserList.vue'
+import Roster from '../views/Roster.vue'
 
 //404!
 import Missing from '../views/Missing.vue'
@@ -209,6 +210,14 @@ const router = new Router({
       component: PrivacyPolicy,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: '/courses/:courseName/roster',
+      name: 'roster',
+      component: Roster,
+      meta: {
+        requiresAuth: true
       }
     },
 
