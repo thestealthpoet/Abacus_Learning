@@ -58,7 +58,7 @@ export default {
 
             selectedCourse: {
                 courseId: 0,
-                courseName: ''
+                courseName: '',
 
             }
         
@@ -90,7 +90,7 @@ export default {
         courseService.listCourses()
         .then((courseData) => {
             this.courses = courseData.data;
-            for (const course of this.courses) {
+            for (let course of this.courses) {
                 if (course.courseId === this.selectedCourseId) {
                     this.selectedCourse = course;
                 }

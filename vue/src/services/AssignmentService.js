@@ -21,7 +21,7 @@ createAssignment(assignment) {
 },
 
 //will get assignments by user
-getAssignmentsByUser(courseId, userId) {
-  return http.get(`/courses/${courseId}/${userId}`);
+getAssignmentsByUser(userId) {
+  return http.get(`/assignments/${userId}`);
 },
 }

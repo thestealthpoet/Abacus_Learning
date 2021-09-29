@@ -12,6 +12,7 @@ import store from '../store/index'
 //Course related components
 import CreateCourse from '../views/CreateCourse.vue'
 import CreateCurricula from '../views/CreateCurricula.vue'
+import CourseProgress from '../views/CourseProgress.vue'
 //View courses
 //import ViewCurricula from '../views/ViewCurricula.vue'
 import UserCourses from '../views/UserCourses.vue'
@@ -127,6 +128,14 @@ const router = new Router({
       }
     },
     {
+      path: "/courseProgress",
+      name: "course-progress",
+      component: CourseProgress,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: "/course-list",
       name: "course-list",
       component: CourseList,
@@ -181,8 +190,8 @@ const router = new Router({
     },
     
     {
-      path: '/users/:userId/topics',
-      name: 'AssignmentsUser',
+      path: '/myAssignments',
+      name: 'assignments-user',
       component: AssignmentsUser,
       meta: {
         requiresAuth: false

@@ -1,0 +1,205 @@
+<template>
+    <div class="Pokemon101">
+        <div class="container">
+            <p class="c">Course:</p>
+                <p class="cN">Pokemon 101</p>
+            <p class="oG">Overall Grade</p>
+                <p class="lG">A</p>
+            <p class="cP">Course Progress:</p>
+                <img class="pB" src="../assets/10%.png" alt="Wire Frame 0%">
+            <p class="cu">Curriculum</p>
+                <p class="aG">Assignment Grade</p>
+            <p class="t1">Pokemon Types</p>
+                <p class="a1A">Assignment:     Pokemon Type Chart</p>
+                <p class="a1G">9/10</p>
+            <p class="t2">Pokemon Abilities</p>
+                <p class="a2A">Assignment:     Abilities Flash Cards</p>
+                <p class="a2G">-</p>
+            <p class="t3">Catching Pokemon</p>
+                <p class="a3A">Assignment:     Pokeball catch rates</p>
+                <p class="a3G">-</p>
+            <p class="t4">Pokemon Training</p>
+                <p class="a4A">Assignment:     Pokemon Stats Paper</p>
+                <p class="a4G">-</p>
+            <p class="t5">Items</p>
+                <p class="a5A">Assignment:     PokeMart Excursion</p>
+                <p class="a5G">-</p>
+            <p class="t6">Pokemon Battling Part1</p>
+                <p class="a6A">Assignment:     Battle Journal</p>
+                <p class="a6G">-</p>
+            <p class="t7">Pokemon Battling Part2</p>
+                <p class="a7A">Assignment:     Battle Video</p>
+                <p class="a7G">-</p>
+            <p class="t8">Pokemon Evolution</p>
+                <p class="a8A">Assignment:     Evolution Path Chart</p>
+                <p class="a8G">-</p>
+            <p class="t9">Pokemon Breeding</p>
+                <p class="a9A">Assignment:     Pokemon Daycare Quiz</p>
+                <p class="a9G">-</p>
+            <p class="t10">Pokemon Career Paths</p>
+                <p class="a10A">Assignment:     Final Exam</p>
+                <p class="a10G">-</p>
+        </div>
+    </div>
+</template>
+
+<script>
+
+export default {
+    name: "course-progress",
+}
+</script>
+
+<style>
+.Pokemon101 {
+    /* padding: 80px 40px 40px 40px; */
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "c cN cN cN"
+    "oG oG lG lG" 
+    "cP pB pB pB"
+    "cu cu cu aG"
+    "t1 t1 t1 t1"
+    "a1A a1A a1A a1G"
+    "t2 t2 t2 t2"
+    "a2A a2A a2A a2G"
+    "t3 t3 t3 t3"
+    "a3A a3A a3A a3G"
+    "t4 t4 t4 t4"
+    "a4A a4A a4A a4G"
+    "t5 t5 t5 t5"
+    "a5A a5A a5A a5G"
+    "t6 t6 t6 t6"
+    "a6A a6A a6A a6G"
+    "t7 t7 t7 t7"
+    "a7A a7A a7A a7G"
+    "t8 t8 t8 t8"
+    "a8A a8A a8A a8G"
+    "t9 t9 t9 t9"
+    "a9A a9A a9A a9G"
+    "t10 t10 t10 t10"
+    "a10A a10A a10A a10G";
+    gap: 5px;
+    border: 5px double rgb(9, 115, 148);
+    margin: 10px;
+    padding: 16px;
+    border-radius: 10px;
+    justify-items: left;
+    /* border-left: 5px double rgb(9, 115, 148);
+    border-right: 5px double rgb(9, 115, 148); */
+}
+.progressHeader {
+    padding: 0px 0px 20px 0px;
+}
+p {
+    color: black;
+}
+.c {
+    grid-area: c;
+}
+.cN {
+     grid-area: cN;
+ }
+.cP {
+     grid-area: cP;
+ }
+.cu {
+     grid-area: cu;
+ }
+.t1 {
+     grid-area: t1;
+ }
+.a1A {
+     grid-area: a1A;
+ }
+.a1G {
+     grid-area: a1G;
+ }
+.t2 {
+     grid-area: t2;
+ }
+.a2A {
+     grid-area: a2A;
+ }
+.a2G {
+    grid-area: a2G;
+}
+.t3 {
+     grid-area: t3;
+ }
+.a3A {
+     grid-area: a3A;
+ }
+.a3G {
+     grid-area: a3G;
+ }
+.t4 {
+     grid-area: t4;
+ }
+.a4A {
+     grid-area: a4A;
+ }
+.a4G {
+    grid-area: a4G;
+}
+.t5 {
+     grid-area: t5;
+ }
+.a5A {
+     grid-area: a5A;
+ }
+.a5G {
+     grid-area: a5G;
+ }
+.t6 {
+     grid-area: t6;
+ }
+.a6A {
+     grid-area: a6A;
+ }
+.a6G {
+    grid-area: a6G;
+}
+.t7 {
+     grid-area: t7;
+ }
+.a7A {
+     grid-area: a7A;
+ }
+.a7G {
+     grid-area: a7G;
+ }
+.t8 {
+     grid-area: t8;
+ }
+.a8A {
+     grid-area: a8A;
+ }
+.a8G {
+    grid-area: a8G;
+}
+.t9 {
+     grid-area: t9;
+ }
+.a9A {
+     grid-area: a9A;
+ }
+.a9G {
+     grid-area: a9G;
+ }
+.t10 {
+     grid-area: t10;
+ }
+.a10A {
+     grid-area: a10A;
+ }
+.a10G {
+    grid-area: a10G;
+}
+ /* {
+     grid-area: ;
+ } */
+</style>

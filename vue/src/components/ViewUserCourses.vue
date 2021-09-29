@@ -6,10 +6,10 @@
           </div>
           <div v-else class="courses" v-for="course in userCourses" :key="course.id" >
             <div class="course-name">
-                Course Name: {{course.courseName}}
+                <h2> {{course.courseName}} </h2>
             </div>
             <div class="course-description">
-                Course Description: {{course.courseDescription}}
+                <em> {{course.courseDescription}} </em>
             </div>
             <div class="class-time">
                 Course Time: {{new Date(course.classTime).toLocaleString()}}
