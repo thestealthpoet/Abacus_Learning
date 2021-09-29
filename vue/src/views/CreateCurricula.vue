@@ -7,11 +7,11 @@
 
 <script>
 import createTopic from '../components/CreateTopic.vue';
-import createAssignment from '../components/CreateAssignment'
+
 export default {
     components: 
-    {createTopic,
-    createAssignment}
+    {createTopic
+  }
     
 
 }

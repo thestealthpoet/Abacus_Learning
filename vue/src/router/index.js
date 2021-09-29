@@ -31,7 +31,7 @@ import AllAssignments from '../views/AllAssignments.vue'
 import CreateAssignment from '../views/CreateAssignment.vue'
 import AssignmentsUser from '../views/AssignmentsUser.vue'
 //import TopicsByCourseUser from '../views/TopicsByCourseUser.vue'
-
+import TopicsUser from '../views/TopicsUser.vue'
 /////Footer Imports/////
 //General Info about App
 import About from '../views/About.vue'
@@ -227,6 +227,14 @@ const router = new Router({
       component: Roster,
       meta: {
         requiresAuth: true
+      }
+    },
+    {
+      path: '/myTopics',
+      name: 'topics-user',
+      component: TopicsUser,
+      meta: {
+        requiresAuth: false
       }
     },
 

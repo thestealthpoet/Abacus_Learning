@@ -10,7 +10,7 @@
         <button id="btn" class="create-course-btn" @click="$router.push({ name: 'course-creation' })">Create a course</button>
     
         <button id="btn" class="view-all-courses-btn" @click="$router.push( {name: 'course-list' })">View All Available Courses on Abacus</button>
-        <button id="btn" class="create-assignment-btn" @click="$router.push( {name: 'create-assignment' })">Add assignment</button>
+        
         <button id="btn" class="course-progress-btn" @click="$router.push( {name: 'course-progress' })">Course Progress</button>
         
         <button id="btn" class="view-assignment-btn" @click="$router.push( {name: 'assignments-user' })">My Assignments</button>

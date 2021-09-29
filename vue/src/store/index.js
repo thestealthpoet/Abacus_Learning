@@ -46,6 +46,8 @@ export default new Vuex.Store({
     SET_SELECTED_COURSE(state, courseId) {
       state.selectedCourseId = courseId;
     },
-    
+    SET_SELECTED_TOPIC(state, topicId) {
+      state.selectedTopicId = topicId;
+    },
   }
 })

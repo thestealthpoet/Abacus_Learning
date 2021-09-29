@@ -52,5 +52,7 @@ export default {
 </script>
 
 <style>
-
+.topics-list {
+    font-family: 'Roboto', sans-serif;
+}
 </style>

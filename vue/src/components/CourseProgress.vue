@@ -14,36 +14,47 @@
         </div>
         <div class="cU-container">
             <p class="cU">Curriculum</p>
+                <p class="dD">Due Date</p>
                 <p class="aG">Points</p>
             <p class="t1">Pokemon Types</p>
                 <p class="a1A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Type Chart</p>
+                <p class="dD1">09/24/21</p>
                 <p class="a1G">9/10</p>
             <p class="t2">Pokemon Abilities</p>
                 <p class="a2A">Assignment:&nbsp;&nbsp;&nbsp;Abilities Flash Cards</p>
+                <p class="dD2">10/01/21</p>
                 <p class="a2G">-</p>
             <p class="t3">Catching Pokemon</p>
                 <p class="a3A">Assignment:&nbsp;&nbsp;&nbsp;Pokeball catch rates</p>
+                <p class="dD3">10/08/21</p>
                 <p class="a3G">-</p>
             <p class="t4">Pokemon Training</p>
                 <p class="a4A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Stats Paper</p>
+                <p class="dD4">10/15/21</p>
                 <p class="a4G">-</p>
             <p class="t5">Items</p>
                 <p class="a5A">Assignment:&nbsp;&nbsp;&nbsp;PokeMart Excursion</p>
+                <p class="dD5">10/22/21</p>
                 <p class="a5G">-</p>
             <p class="t6">Pokemon Battling Part1</p>
                 <p class="a6A">Assignment:&nbsp;&nbsp;&nbsp;Battle Journal</p>
+                <p class="dD6">10/29/21</p>
                 <p class="a6G">-</p>
             <p class="t7">Pokemon Battling Part2</p>
                 <p class="a7A">Assignment:&nbsp;&nbsp;&nbsp;Battle Video</p>
+                <p class="dD7">11/05/21</p>
                 <p class="a7G">-</p>
             <p class="t8">Pokemon Evolution</p>
                 <p class="a8A">Assignment:&nbsp;&nbsp;&nbsp;Evolution Path Chart</p>
+                <p class="dD8">11/12/21</p>
                 <p class="a8G">-</p>
             <p class="t9">Pokemon Breeding</p>
                 <p class="a9A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Daycare Quiz</p>
+                <p class="dD9">11/19/21</p>
                 <p class="a9G">-</p>
             <p class="t10">Pokemon Career Paths</p>
                 <p class="a10A">Assignment:&nbsp;&nbsp;&nbsp;Final Exam</p>
+                <p class="dD10">11/26/21</p>
                 <p class="a10G">-</p>
         </div>
     </div>
@@ -101,27 +112,27 @@ export default {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr;
     grid-template-areas:
-    "cU cU cU aG"
+    "cU cU dD aG"
     "t1 t1 t1 t1"
-    "a1A a1A a1A a1G"
+    "a1A a1A dD1 a1G"
     "t2 t2 t2 t2"
-    "a2A a2A a2A a2G"
+    "a2A a2A dD2 a2G"
     "t3 t3 t3 t3"
-    "a3A a3A a3A a3G"
+    "a3A a3A dD3 a3G"
     "t4 t4 t4 t4"
-    "a4A a4A a4A a4G"
+    "a4A a4A dD4 a4G"
     "t5 t5 t5 t5"
-    "a5A a5A a5A a5G"
+    "a5A a5A dD5 a5G"
     "t6 t6 t6 t6"
-    "a6A a6A a6A a6G"
+    "a6A a6A dD6 a6G"
     "t7 t7 t7 t7"
-    "a7A a7A a7A a7G"
+    "a7A a7A dD7 a7G"
     "t8 t8 t8 t8"
-    "a8A a8A a8A a8G"
+    "a8A a8A dD8 a8G"
     "t9 t9 t9 t9"
-    "a9A a9A a9A a9G"
+    "a9A a9A dD9 a9G"
     "t10 t10 t10 t10"
-    "a10A a10A a10A a10G";  
+    "a10A a10A dD10 a10G";  
     gap: 5px;
     border: 5px double rgb(9, 115, 148);
     margin: 10px;
@@ -240,6 +251,40 @@ p {
  }
 .a10G {
     grid-area: a10G;
+}
+.dD {
+    grid-area: dD;
+}
+.dD1 {
+    grid-area: dD1;
+}
+.dD2 {
+    grid-area: dD2;
+    color: rgb(214, 40, 40);
+}
+.dD3 {
+    grid-area: dD3;
+}
+.dD4 {
+    grid-area: dD4;
+}
+.dD5 {
+    grid-area: dD5;
+}
+.dD6 {
+    grid-area: dD6;
+}
+.dD7 {
+    grid-area: dD7;
+}
+.dD8 {
+    grid-area: dD8;
+}
+.dD9 {
+    grid-area: dD9;
+}
+.dD10 {
+    grid-area: dD10;
 }
  /* {
      grid-area: ;
