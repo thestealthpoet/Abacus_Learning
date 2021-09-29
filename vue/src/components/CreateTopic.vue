@@ -30,6 +30,9 @@
       v-model="topic.teachDate"/>
     </div> 
     <button id="btn" class="btn btn-submit">Create Topic</button>
+    <div class="add-assignments">
+                    <button id="btn" @click="$router.push({name: 'create-assignment'}); setSelectedCourseId(course.courseId)">Add an assignment</button>
+           </div>
     </form>
 
 

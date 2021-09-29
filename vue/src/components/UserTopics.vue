@@ -29,7 +29,7 @@ export default {
             userTopics:  [],
             currentUserId: this.$store.state.user.id,
             //isTeacher: false,
-    };
+        };
     },
     created() {
                                                //logged in store
@@ -45,8 +45,6 @@ export default {
         .catch( (error) => {
             console.error(error + "user assignments not loaded");
         });
-
-        
         
     },
 
