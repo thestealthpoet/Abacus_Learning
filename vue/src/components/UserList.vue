@@ -1,10 +1,10 @@
 <template>
 <div class="main">
-  <form v-on:submit.prevent="addStudentsToRoster" class="roster-creation-form">
-    <div class="user-list">
-      
+  
+   <form v-on:submit.prevent="addStudentsToRoster" class="roster-creation-form">
+    <div class="user-list">      
       <div class="users" v-for=" user in userList" :key="user.id">
-        <div class="profile-pic"><img src="https://picsum.photos/50?random"></div>
+        <!---<div class="profile-pic"><img :src="selectRandomImage"></div> --->
         <div class="name">
           {{user.name}} &#124;
         </div>
@@ -30,7 +30,16 @@
 
 <script>
 import userService from '../services/UserService';
-import rosterService from '../services/RosterService'
+import rosterService from '../services/RosterService';
+import legohead1 from '../assets/legohead1.jpg';
+import legohead2 from '../assets/legohead2.jpg';
+import legohead3 from '../assets/legohead3.jpg';
+import legohead4 from '../assets/legohead4.jpg';
+import legohead5 from '../assets/legohead5.jpg';
+import legohead6 from '../assets/legohead6.jpg';
+import legohead7 from '../assets/legohead7.jpg';
+import legohead8 from '../assets/legohead8.jpg';
+import legohead9 from '../assets/legohead9.jpg';
 export default {
 name: 'user-list',
 
@@ -39,7 +48,18 @@ data() {
   return {
     userList: [],
     selectedUsers: [],
-    randomImage: 'img src="https://picsum.photos/50?random=1"'
+    images: [
+                legohead1,
+                legohead2,
+                legohead3,
+                legohead4,
+                legohead5,
+                legohead6,
+                legohead7,
+                legohead8,
+                legohead9
+            ],
+      selectedImage: null,
 
   };
 },
@@ -50,12 +70,20 @@ methods: {
      this.selectedUsers.selectedUserId = this.userList.user.id; 
   },
 
+  selectRandomImage() {
+    return this.images[Math.floor(Math.random()*this.images.length)]; 
+    
+  },
+
   addStudentsToRoster() {
     rosterService.addStudentsToCourseRoster(this.selectedUsers, this.$store.state.selectedCourseId);
   }
 },
 
 created() {
+
+this.selectedImage = this.selectRandomImage(this.images);
+
   userService.getUsersList()
   .then( (userData) => {
     this.userList = userData.data;
