@@ -1,9 +1,15 @@
 <template>
   <form v-on:submit.prevent="saveAssignment" class="assignment-creation-form">
-    <div class="field">
-      <label for="topic-id">Topic Id</label>
-      <input type="text"
-      v-model.trim="assignment.topicId"/>
+  <div class="field">
+      <label for="topic-names"> Choose a topic name: </label>
+         <select name="topic-names" id="topic-names" v-model="assignment">
+             <option v-for="topic in topics" :key="topic.id" v-bind:value="{
+                 topicId: topic.topicId, 
+                 
+             }">
+             {{topic.topicName}}
+             </option>
+             </select>
     </div>
     <div class="field">
       <label for="assignment-name">Assignment Name</label>
@@ -29,19 +35,15 @@
 
 <script>
 import assignmentService from "../services/AssignmentService";
-
+import topicService from "../services/TopicService";
 export default {
     name: "create-assignment",
     data() {
         return {
-            assignment: {
-                topic_id: '',
-                assignment_name: '',
-                due_date: '',
-                assignment_type: '',
-            },
-            errorMsg: ''
-        };
+            assignment: [],
+
+            topics: [],
+        };    
     },
     methods: {
         saveAssignment() {
@@ -64,7 +66,17 @@ export default {
                 this.errorMsg = error.response.statusText;
             });
         },
+    
     },
+    created() {
+        topicService.listTopics()
+        .then((topicData) => {
+            this.topics = topicData.data;
+        })
+        .catch(error =>{
+            console.error(error + 'data could not be loaded')
+        });
+    }
 }
 </script>
 

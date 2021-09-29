@@ -1,9 +1,9 @@
 <template>
   <form v-on:submit.prevent="saveTopic" class="topic-creation-form">
-    <div class="field">
-      <label for="course-id">Course Id</label>
-      <input type="text"
-      v-model.trim="topic.courseId"/>
+    
+    <div>
+             {{selectedCourse.courseName}}
+             
     </div>
     <div class="field">
       <label for="topic-name">Topic Title</label>
@@ -37,19 +37,31 @@
 
 <script>
 import topicService from "../services/TopicService";
+import courseService from "../services/CourseService";
 
 export default {
     name: "create-topic",
+    props: [
+        'selectedCourseId'
+    ],
     data() {
         return {
             topic: {
-                courseId: '',
+                courseId: this.selectedCourseId,
                 topicName: '',
                 description: '',
                 topicDueDate: '',
-                topicTeachDate: '',
+                teachDate: ''
             },
-            errorMsg: ''
+            
+            courses: [],
+
+            selectedCourse: {
+                courseId: 0,
+                courseName: '',
+
+            }
+        
         };
     },
     methods: {
@@ -74,6 +86,21 @@ export default {
             });
         },
     },
+    created() {
+        courseService.listCourses()
+        .then((courseData) => {
+            this.courses = courseData.data;
+            for (let course of this.courses) {
+                if (course.courseId === this.selectedCourseId) {
+                    this.selectedCourse = course;
+                }
+            }
+        })
+        .catch(error =>{
+            console.error(error + 'data could not be loaded')
+        });
+    }
+
 }
 </script>
 

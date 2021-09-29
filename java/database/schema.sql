@@ -52,9 +52,9 @@ CREATE TABLE users (
 
 CREATE TABLE courses (
         course_id int DEFAULT nextval ('seq_course_id'::regclass) NOT NULL,
-        course_name varchar(50) NOT NULL,
+        course_name varchar(75) NOT NULL,
         course_teacher int,
-        description varchar(75) NOT NULL,
+        description varchar(300) NOT NULL,
         difficulty_level varchar(20) NOT NULL,
         class_time TIMESTAMP NOT NULL,                                           
         CONSTRAINT PK_course PRIMARY KEY (course_id),
@@ -65,7 +65,7 @@ CREATE TABLE topics (
         topic_id int DEFAULT nextval('seq_topic_id'::regclass) NOT NULL,
         course_id int,
         topic_name varchar(50) NOT NULL,
-        description varchar(75),
+        description varchar(200),
         topic_due_date TIMESTAMP NOT NULL,
         topic_teach_date TIMESTAMP,
         CONSTRAINT PK_topic PRIMARY KEY (topic_id),
@@ -117,11 +117,14 @@ INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Geor
 INSERT INTO users (name,email_address,username,password_hash,role) VALUES ('Roberto Garcia','r.garcia@test.com','user13','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 
 --COURSES
-INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1001, 'Math', 2, 'Basic Mathematics', 'Medium', '2021-12-12 10:00:00');
-INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1002, 'Biology', 2, 'Study of living organisms', 'Medium', '2021-11-12 12:00:00');
-INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1003, 'Reading', 3, 'The fundamentals of reading your enemies for filth.','Novice', '2021-10-04 09:00:00');
-INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1004, 'Pokemon 101', 3, 'How to become the very best.','Experienced', '2021-10-04 11:00:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1001, 'Game Show Mythology and Western Ego', 2, 'An exploration of the personalities behind the most popular game shows, informed by David Foster Wallace''s story Little Expressionless Animals.', 'Medium', '2021-12-12 10:00:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1002, 'Introduction to SQL Queries', 2, 'Come prepared with your caps lock, a large computer screen, and a penchant for key-making.', 'Medium', '2021-11-12 12:00:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1003, 'How to Win Friends and Influence People', 3, 'The text for this course has been in publication since 1936 and has sold over 15 million copies. Maybe you''ll be number 16 million.','Novice', '2021-10-04 09:00:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1004, 'Pokemon 101', 3, 'For those late to this party, we have all of your basics: from cards, to animations, to tournaments.','Experienced', '2021-10-04 11:00:00');
 INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1005, 'Underwater Basket Weaving', 3, 'Step by step course on basics of weaving baskets underwater.','Novice', '2021-10-04 13:00:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1006, 'Demystifying Wine Terminology', 4, 'We''ll focus on some classics: garrigue, petrol, and barnyard, and work our way into modern oenological phenomena.', 'Novice', '2021-10-21 13:00:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1007, 'Crosswording for Beginners', 5, 'We''ll go through the NYT crossword every Monday through Wednesday to cover puns, famous people and places commonly used in crosswords, the importance of uncovering the theme quickly.', 'Novice', '2021-10-15 14:00:00');
+
 
 --COURSE_USERS
 INSERT INTO course_users (class_id, user_id) VALUES (1001, 1);
@@ -135,17 +138,25 @@ INSERT INTO course_users (class_id, user_id) VALUES (1003, 10);
 INSERT INTO course_users (class_id, user_id) VALUES (1004, 11);
 INSERT INTO course_users (class_id, user_id) VALUES (1004, 12);
 INSERT INTO course_users (class_id, user_id) VALUES (1005, 13);
+INSERT INTO course_users (class_id, user_id) VALUES (1006, 3);
+INSERT INTO course_users (class_id, user_id) VALUES (1005, 11);
+INSERT INTO course_users (class_id, user_id) VALUES (1007, 4);
+INSERT INTO course_users (class_id, user_id) VALUES (1007, 8);
 
 --TOPICS
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2002, 1001, 'topic1', null, '2021-12-12 11:59:00', '2021-12-04 10:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2003, 1001, 'topic2', null, '2021-12-12 11:59:00', '2021-12-04 10:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2004, 1004, 'Pokemon Types', 'Deep dive into the 18 Pokemon types', '2021-10-11 09:00:00', '2021-10-04 09:00:00');       
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2005, 1004, 'Pokemon Abilities', 'Deep dive into the 100s of Pokemon abilities', '2021-10-18 09:00:00', '2021-10-1 09:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2006, 1004, 'Pokemon Evolution', 'Methods and nuances of Pokemon evolution', '2021-10-25 09:00:00', '2021-10-18 09:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2007, 1005, 'Safety', 'Best safety practices when weaving baskets underwater', '2021-10-11 13:00:00', '2021-10-04 13:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2001, 1001, 'Pat Sajack', 'He has held his position at Wheel of Fortune since 1981: what we know, and don''t know about him.', '2021-12-12 11:59:00', '2021-12-04 10:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2002, 1001, 'Alex Trebeck', 'He is, and will continue to be missed. The legend, and the inspiration for ''Tiny Expresionless Animals''', '2021-12-12 11:59:00', '2021-12-04 10:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2003, 1004, 'Pokemon Types', 'Deep dive into the 18 Pokemon types', '2021-10-11 09:00:00', '2021-10-04 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2004, 1004, 'Pokemon Abilities', 'Deep dive into the 100s of Pokemon abilities', '2021-10-18 09:00:00', '2021-10-1 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2005, 1004, 'Pokemon Evolution', 'Methods and nuances of Pokemon evolution', '2021-10-25 09:00:00', '2021-10-18 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2006, 1005, 'Safety', 'Best safety practices when weaving baskets underwater', '2021-10-11 13:00:00', '2021-10-04 13:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2007, 1002, 'How to Use Select *', 'Definitely not a best practice, but generally quicker than typing column names', '2021-10-14 13:00:00', '2021-10-7 13:00:00' );
+
 
 --ASSIGNMENTS
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3001, 2004, 'Type Chart', '2021-10-11 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3001, 2004, 'Pokemon101: Type Chart Homework', '2021-10-11 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3002, 2005, 'Pokemon101: Pokemon Evolution Quiz', '2021-10-15 09:00:00', 'Quiz');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3003, 2003, 'Pokemon101: Pokemon Types Homework', '2021-10-07 9:00:00', 'Homework');
 
 --GRADES
 

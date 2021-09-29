@@ -3,6 +3,7 @@
   <form v-on:submit.prevent="addStudentsToRoster" class="roster-creation-form">
     <div class="user-list">
       <div class="users" v-for="user in userList" :key="user.id">
+        <div class="profile-pic"></div>
         <div class="name">
           {{user.name}} &#124;
         </div>
@@ -37,6 +38,7 @@ data() {
   return {
     userList: [],
     selectedUsers: [],
+    randomImage: 'img src="https://picsum.photos/50?random=1"'
 
   };
 },
@@ -88,6 +90,10 @@ created() {
 
 .check-box {
   /* padding: 0px 0px 0px 20px; */
+}
+
+.profile-pic {
+  margin: 5px;
 }
 
 </style>

@@ -29,6 +29,7 @@ import AllTopics from '../views/AllTopics.vue'
 import AllAssignments from '../views/AllAssignments.vue'
 import CreateAssignment from '../views/CreateAssignment.vue'
 import AssignmentsUser from '../views/AssignmentsUser.vue'
+//import TopicsByCourseUser from '../views/TopicsByCourseUser.vue'
 
 /////Footer Imports/////
 //General Info about App
@@ -186,9 +187,10 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    
     {
-      path: '/users/:userId/topics',
-      name: 'AssignmentsUser',
+      path: '/myAssignments',
+      name: 'assignments-user',
       component: AssignmentsUser,
       meta: {
         requiresAuth: false
@@ -218,6 +220,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
   ]
 });
 

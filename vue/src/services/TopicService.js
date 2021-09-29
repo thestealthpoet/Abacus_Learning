@@ -18,5 +18,7 @@ createTopic(topic) {
 listTopics() {
   return http.get('/topics/all');
 },
-
+getTopicsByCourseAndUser(courseId, userId){
+  return http.get(`/topics/${courseId}/${userId}`)
+},
 }

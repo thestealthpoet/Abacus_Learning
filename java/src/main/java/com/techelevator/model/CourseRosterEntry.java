@@ -2,29 +2,27 @@ package com.techelevator.model;
 
 public class CourseRosterEntry {
 
-    private int userId;
-    private int courseId;
+    private int selectedUserId;
+    private int selectedCourseId;
 
     public CourseRosterEntry(int userId, int courseId) {
-        this.userId = userId;
-        this.courseId = courseId;
+        this.selectedUserId = userId;
+        this.selectedCourseId = courseId;
     }
 
-    public CourseRosterEntry() { }
-
-    public int getUserId() {
-        return userId;
+    public int getSelectedUserId() {
+        return selectedUserId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setSelectedUserId(int selectedUserId) {
+        this.selectedUserId = selectedUserId;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public int getSelectedCourseId() {
+        return selectedCourseId;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setSelectedCourseId(int selectedCourseId) {
+        this.selectedCourseId = selectedCourseId;
     }
 }

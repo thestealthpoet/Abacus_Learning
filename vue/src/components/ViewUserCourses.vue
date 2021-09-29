@@ -3,20 +3,24 @@
       <div class="course-list">
           <div class="courses" v-for="course in userCourses" :key="course.id" >
             <div class="course-name">
-                Course Name: {{course.courseName}}
+                <h2> {{course.courseName}} </h2>
             </div>
             <div class="course-description">
-                Course Description: {{course.courseDescription}}
+                <em> {{course.courseDescription}} </em>
             </div>
             <div class="class-time">
-                Course Time: {{course.classTime}}
+                Course Time: {{new Date(course.classTime).toLocaleString()}}
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
                 <div id="role-label">You are the teacher of this course.</div>
                 <button id="btn" @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
-            </div>
+            
+            <div class="show-topics">
+                    <button id="btn" @click="$router.push({name: 'curricula-creation'}); setSelectedCourseId(course.courseId)">Add Topics</button>
+           </div>     
           </div>
       </div>
+  </div>
   </div>
 </template>
 
