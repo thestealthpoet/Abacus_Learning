@@ -2,7 +2,7 @@
   <div class="main">
       <div class="course-list">
           <div class="no-courses" v-if="userCourses.length == 0">
-              Create Your first course.
+              <button id="btn" class="create-course-btn" @click="$router.push({ name: 'course-creation' })">Create your first course!</button>
           </div>
           <div v-else class="courses" v-for="course in userCourses" :key="course.id" >
             <div class="course-name">
