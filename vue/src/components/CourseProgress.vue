@@ -1,43 +1,49 @@
 <template>
     <div class="Pokemon101">
-        <div class="container">
+        <div class="c-container">
             <p class="c">Course:</p>
                 <p class="cN">Pokemon 101</p>
-            <p class="oG">Overall Grade</p>
-                <p class="lG">A</p>
+        </div>
+        <div class="p-container">
             <p class="cP">Course Progress:</p>
                 <img class="pB" src="../assets/10%.png" alt="Wire Frame 0%">
-            <p class="cu">Curriculum</p>
-                <p class="aG">Assignment Grade</p>
+        </div>
+        <div class="g-container">
+            <p class="oG">Overall Grade</p>
+                <p class="lG">A</p>
+        </div>
+        <div class="cU-container">
+            <p class="cU">Curriculum</p>
+                <p class="aG">Points</p>
             <p class="t1">Pokemon Types</p>
-                <p class="a1A">Assignment:     Pokemon Type Chart</p>
+                <p class="a1A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Type Chart</p>
                 <p class="a1G">9/10</p>
             <p class="t2">Pokemon Abilities</p>
-                <p class="a2A">Assignment:     Abilities Flash Cards</p>
+                <p class="a2A">Assignment:&nbsp;&nbsp;&nbsp;Abilities Flash Cards</p>
                 <p class="a2G">-</p>
             <p class="t3">Catching Pokemon</p>
-                <p class="a3A">Assignment:     Pokeball catch rates</p>
+                <p class="a3A">Assignment:&nbsp;&nbsp;&nbsp;Pokeball catch rates</p>
                 <p class="a3G">-</p>
             <p class="t4">Pokemon Training</p>
-                <p class="a4A">Assignment:     Pokemon Stats Paper</p>
+                <p class="a4A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Stats Paper</p>
                 <p class="a4G">-</p>
             <p class="t5">Items</p>
-                <p class="a5A">Assignment:     PokeMart Excursion</p>
+                <p class="a5A">Assignment:&nbsp;&nbsp;&nbsp;PokeMart Excursion</p>
                 <p class="a5G">-</p>
             <p class="t6">Pokemon Battling Part1</p>
-                <p class="a6A">Assignment:     Battle Journal</p>
+                <p class="a6A">Assignment:&nbsp;&nbsp;&nbsp;Battle Journal</p>
                 <p class="a6G">-</p>
             <p class="t7">Pokemon Battling Part2</p>
-                <p class="a7A">Assignment:     Battle Video</p>
+                <p class="a7A">Assignment:&nbsp;&nbsp;&nbsp;Battle Video</p>
                 <p class="a7G">-</p>
             <p class="t8">Pokemon Evolution</p>
-                <p class="a8A">Assignment:     Evolution Path Chart</p>
+                <p class="a8A">Assignment:&nbsp;&nbsp;&nbsp;Evolution Path Chart</p>
                 <p class="a8G">-</p>
             <p class="t9">Pokemon Breeding</p>
-                <p class="a9A">Assignment:     Pokemon Daycare Quiz</p>
+                <p class="a9A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Daycare Quiz</p>
                 <p class="a9G">-</p>
             <p class="t10">Pokemon Career Paths</p>
-                <p class="a10A">Assignment:     Final Exam</p>
+                <p class="a10A">Assignment:&nbsp;&nbsp;&nbsp;Final Exam</p>
                 <p class="a10G">-</p>
         </div>
     </div>
@@ -52,16 +58,50 @@ export default {
 
 <style>
 .Pokemon101 {
-    /* padding: 80px 40px 40px 40px; */
+    padding: 20px 0px 0px 40px;
 }
-.container {
+.c-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
-    "c cN cN cN"
-    "oG oG lG lG" 
-    "cP pB pB pB"
-    "cu cu cu aG"
+    "c cN cN cN";
+    gap: 5px;
+    border: 5px double rgb(9, 115, 148);
+    margin: 10px;
+    padding: 16px;
+    border-radius: 10px;
+    justify-items: center;
+}
+.p-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+    "cP pB pB";
+    gap: 5px;
+    border: 5px double rgb(9, 115, 148);
+    margin: 10px;
+    padding: 16px;
+    border-radius: 10px;
+    justify-items: left;
+    align-items: center;
+}
+.g-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "oG oG oG lG";
+    gap: 5px;
+    border: 5px double rgb(9, 115, 148);
+    margin: 10px;
+    padding: 16px;
+    border-radius: 10px;
+    justify-items: center;
+}
+.cU-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-areas:
+    "cU cU cU aG"
     "t1 t1 t1 t1"
     "a1A a1A a1A a1G"
     "t2 t2 t2 t2"
@@ -81,16 +121,15 @@ export default {
     "t9 t9 t9 t9"
     "a9A a9A a9A a9G"
     "t10 t10 t10 t10"
-    "a10A a10A a10A a10G";
+    "a10A a10A a10A a10G";  
     gap: 5px;
     border: 5px double rgb(9, 115, 148);
     margin: 10px;
     padding: 16px;
     border-radius: 10px;
     justify-items: left;
-    /* border-left: 5px double rgb(9, 115, 148);
-    border-right: 5px double rgb(9, 115, 148); */
 }
+
 .progressHeader {
     padding: 0px 0px 20px 0px;
 }
@@ -102,12 +141,15 @@ p {
 }
 .cN {
      grid-area: cN;
+     text-emphasis: bold;
+     font-size: larger;
  }
 .cP {
      grid-area: cP;
  }
-.cu {
-     grid-area: cu;
+.cU {
+     grid-area: cU;
+     text-decoration-line: underline;
  }
 .t1 {
      grid-area: t1;
