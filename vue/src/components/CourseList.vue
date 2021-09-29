@@ -3,10 +3,10 @@
     <div class="course-list">
         <div class="courses" v-for="course in courseList" :key="course.id" >
           <div class="course-name">
-              Course Name: {{course.courseName}}
+              <h4> {{course.courseName}} </h4>
           </div>
           <div class="course-description">
-              Course Description: {{course.courseDescription}}
+              <em> {{course.courseDescription}} </em>
           </div>
           <div class="class-time">
                 Course Time: {{dayNameAndTime(course.classTime)}}
