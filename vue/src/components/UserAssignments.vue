@@ -3,9 +3,9 @@
       <div class="assignments-list">
           <div class="assignments" v-for="assignment in userAssignments" :key="assignment.id" >
             <div class="assignment-name">
-                Assignment Name: {{assignment.assignmentName}}
+                <h2> {{assignment.assignmentName}} </h2>
             </div>
-            <div class="course-description">
+            <div class="assignment-description">
                 Assignment Type: {{assignment.assignmentType}}
             </div>
             <div class="class-time">
