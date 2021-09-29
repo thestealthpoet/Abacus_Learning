@@ -1,7 +1,10 @@
 <template>
   <div class="main">
       <div class="course-list">
-          <div class="courses" v-for="course in userCourses" :key="course.id" >
+          <div class="no-courses" v-if="userCourses.length == 0">
+              <button id="btn" class="create-course-btn" @click="$router.push({ name: 'course-creation' })">Create your first course!</button>
+          </div>
+          <div v-else class="courses" v-for="course in userCourses" :key="course.id" >
             <div class="course-name">
                 <h2> {{course.courseName}} </h2>
             </div>
@@ -16,11 +19,14 @@
                 <button id="btn" @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
             
             <div class="show-topics">
-                    <button id="btn" @click="$router.push({name: 'curricula-creation'}); setSelectedCourseId(course.courseId)">Add Topics</button>
+                    <button id="btn" @click="$router.push({name: 'curricula-creation'}); setSelectedCourseId(course.courseId)">Add content to this course</button>
+           </div>
+           <div class="show-roster">
+               <button id="btn" @click="$router.push( {name: 'roster', params: {courseName: course.courseName}}); setSelectedCourseId(course.courseId)">View Course Roster</button>
+           </div>
            </div>     
           </div>
       </div>
-  </div>
   </div>
 </template>
 
