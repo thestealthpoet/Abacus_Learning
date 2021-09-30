@@ -41,17 +41,22 @@ export default {
 
 
 <style>
-.view-assignments {
-  border: 5px double rgb(251, 172, 14);
+.main {
+    
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: space-around;
+    
+}
+.view-assignments{
+  border: 5px double rgb(9, 115, 148);
   margin: 10px;
-  padding: 16px;
+  padding: 5px;
+  width: 25rem;
   border-radius: 10px;
-  display: inline-flexbox;
-  
+  display: flex;
   flex-direction: column;
-  width: 200px;
-  flex-wrap: wrap;
-
 }
 
 
