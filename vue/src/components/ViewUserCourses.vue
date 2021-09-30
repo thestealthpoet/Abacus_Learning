@@ -97,11 +97,13 @@ export default {
     max-width: 5%;
     max-height: auto;
     margin-left: 5px;
-    margin-top: 3px;
+    margin-bottom: 5px;
 }
 
-#course-name {
+.course-name {
     display: flex;
     justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
 }
 </style>
