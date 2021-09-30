@@ -8,7 +8,7 @@ import java.util.List;
 public interface AssignmentDao {
 
     Assignment getByAssignmentId(int assignmentId);
-    Assignment getByTopicId(int topicId);
+    List<Assignment> getByTopicId(int topicId);
     public List<Assignment> listAssignments();
     void createAssignment(Assignment assignment);
     public List<Assignment> getAssignmentsByUserId(int userId);

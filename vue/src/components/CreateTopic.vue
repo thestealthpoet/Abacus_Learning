@@ -2,7 +2,7 @@
   <form v-on:submit.prevent="saveTopic" class="topic-creation-form">
     
     <div>
-             {{selectedCourse.courseName}}
+            <h4> {{selectedCourse.courseName}} </h4>
              
     </div>
     <div class="field">

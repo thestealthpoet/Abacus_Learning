@@ -39,6 +39,7 @@ import About from '../views/About.vue'
 import Terms from '../views/Terms.vue'
 //Privacy Policy for Abacus app
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
+import TopicsByCourse from '../views/TopicsByCourse.vue'
 
 Vue.use(Router)
 
@@ -237,6 +238,15 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    {
+      path:'/topics/:courseId',
+      name: 'course-topics',
+      component: TopicsByCourse,
+      meta: {
+        requiresAuth: false
+      }
+
+    }
 
   ]
 });

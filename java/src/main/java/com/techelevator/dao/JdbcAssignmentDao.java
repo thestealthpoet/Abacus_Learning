@@ -26,8 +26,16 @@ public class JdbcAssignmentDao implements AssignmentDao{
     }
 
     @Override
-    public Assignment getByTopicId(int topicId) {
-        return null;
+    public List<Assignment> getByTopicId(int topicId) {
+        List<Assignment> assignmentList = new ArrayList<>();
+        String sql = "SELECT * FROM assignments WHERE assignments.topic_id = ? ORDER BY assignments.due_date";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, topicId);
+        while (results.next()) {
+            Assignment assignment = mapRowToAssignment(results);
+            assignmentList.add(assignment);
+        }
+        return assignmentList;
     }
 
     @Override

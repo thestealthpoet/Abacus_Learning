@@ -5,10 +5,8 @@ const http = axios.create( {
 });
 
 export default {
-//will bring up topics by course number
-getTopicsByCourse(courseId) {
-    return http.get(`/courses/topics/${courseId}`)
-},
+
+
 //will create topic
 createTopic(topic) {
   return http.post(`/topics`, topic);
@@ -23,5 +21,8 @@ getTopicsByCourseAndUser(courseId, userId){
 },
 getTopicsByUser(userId) {
   return http.get(`topics/${userId}`)
+},
+getTopicsByCourse(courseId) {
+  return http.get(`topics/courses/${courseId}`)
 },
 }
