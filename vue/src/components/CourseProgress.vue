@@ -2,15 +2,15 @@
     <div class="Pokemon101">
         <div class="c-container">
             <p class="cN">Pokemon 101</p>
-            <img class="pB" src="../assets/20%.png" alt="Wire Frame 20%">
-            <p class="lG">Grade: D</p>
+            <img class="pB" src="@/assets/progress20.png" alt="Wire Frame 20%">
+            <p class="lG">Grade: <strong>D</strong></p>
         </div>
         <div class="cU-container">
             <p class="cU">Curriculum</p>
                 <p class="dD">Due Date</p>
                 <p class="aG">Points</p>
             <p class="t1">Pokemon Types</p>
-                <p class="a1A">Pokemon Type Chart</p>
+                <p class="a1A">&nbsp;&nbsp;&nbsp;&nbsp;Pokemon Type Chart</p>
                 <p class="dD1">09/17/21</p>
                 <p class="a1G">10/10</p>
             <p class="t2">Pokemon Abilities</p>
@@ -66,7 +66,7 @@ export default {
 }
 .c-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 6fr 1fr ;
+    grid-template-columns: 1fr 1fr 5fr 1fr ;
     grid-template-areas:
     "cN cN pB lG";
     gap: 5px;
@@ -241,6 +241,7 @@ p {
 .dD3 {
     grid-area: dD3;
     color: rgb(214, 40, 40);
+    font-weight: 1000;
 }
 .dD4 {
     grid-area: dD4;

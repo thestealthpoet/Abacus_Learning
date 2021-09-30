@@ -13,6 +13,9 @@
         <router-link class="Icons" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">
             <img src="@/assets/logout2.png" alt="Logout">Logout
         </router-link>
+        <router-link class="Icons" v-bind:to="{ name: 'settings' }" v-if="$store.state.token != ''">
+            <img src="@/assets/settings2.png" alt="Settings">Settings
+        </router-link>
         </div>
     </header>
 </template>
@@ -56,9 +59,9 @@ export default {
     display: grid;
     text-align: center;
     padding: 5px 10px;
+    color: white;
 }
-.headline, .nav-text {
-    font-family: 'Roboto', sans-serif;
+.Icons:hover {
+    text-decoration: underline;
 }
-
 </style>
