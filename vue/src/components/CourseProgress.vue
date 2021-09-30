@@ -1,17 +1,18 @@
 <template>
     <div class="Pokemon101">
         <div class="c-container">
-            <p class="c">Course:</p>
+            <!-- <p class="c">Course:</p> -->
                 <p class="cN">Pokemon 101</p>
-        </div>
-        <div class="p-container">
-            <p class="cP">Course Progress:</p>
                 <img class="pB" src="../assets/10%.png" alt="Wire Frame 0%">
+                <p class="lG">Grade: A</p>
+        </div>
+        <!-- <div class="p-container">
+                
         </div>
         <div class="g-container">
             <p class="oG">Overall Grade</p>
-                <p class="lG">A</p>
-        </div>
+                
+        </div> -->
         <div class="cU-container">
             <p class="cU">Curriculum</p>
                 <p class="dD">Due Date</p>
@@ -73,40 +74,16 @@ export default {
 }
 .c-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 6fr 1fr ;
     grid-template-areas:
-    "c cN cN cN";
+    "cN cN pB lG";
     gap: 5px;
     border: 5px double rgb(9, 115, 148);
     margin: 10px;
-    padding: 16px;
+    padding: 6px 10px 0px 10px;
     border-radius: 10px;
     justify-items: center;
-}
-.p-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-areas:
-    "cP pB pB";
-    gap: 5px;
-    border: 5px double rgb(9, 115, 148);
-    margin: 10px;
-    padding: 16px;
-    border-radius: 10px;
-    justify-items: left;
     align-items: center;
-}
-.g-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "oG oG oG lG";
-    gap: 5px;
-    border: 5px double rgb(9, 115, 148);
-    margin: 10px;
-    padding: 16px;
-    border-radius: 10px;
-    justify-items: center;
 }
 .cU-container {
     display: grid;
@@ -153,7 +130,7 @@ p {
 .cN {
      grid-area: cN;
      text-emphasis: bold;
-     font-size: larger;
+     font-size: 30px;
  }
 .cP {
      grid-area: cP;
@@ -162,6 +139,13 @@ p {
      grid-area: cU;
      text-decoration-line: underline;
  }
+.lG {
+     grid-area: 1G;
+    text-emphasis: bold;
+    font-size: 20px;
+    padding-right: 15px;
+    margin-right: 15px;
+}
 .t1 {
      grid-area: t1;
  }

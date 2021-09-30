@@ -12,7 +12,7 @@
                     <router-link class="footer-link" v-bind:to="{ name: 'terms' }">Terms</router-link>
                 </li>
                 <li class="footer-item">
-                    <router-link class="footer-link" v-bind:to="{ name: 'privacypolicy' }">Privacy Policy</router-link>
+                    <router-link class="footer-link" v-bind:to="{ name: 'privacy-policy' }">Privacy Policy</router-link>
                 </li>
             </ul>
             <p>ABACUS &#xa9; 2021</p>
