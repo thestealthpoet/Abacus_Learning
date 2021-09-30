@@ -1,7 +1,7 @@
 <template>
-  <div class="main"> here
+  <div class="main"> 
       <div class="topics-list">
-          <div class="course-topics" v-for="topic in course-topics" :key="topic.id" >
+          <div class="course-topics" v-for="topic in courseTopics" :key="topic.id" >
             <div class="topic-name">
                 <h3> {{topic.topicName}} there</h3>
             </div>
@@ -9,7 +9,7 @@
                  <h4>{{topic.topicDescription}}</h4>
             </div>
             <div class="class-time">
-                Due Date: {{topic.topicDueDate}}
+                Due Date: {{dayNameAndTime(topic.topicDueDate)}}
             </div>
             </div>
       </div>
@@ -18,8 +18,15 @@
 
 <script>
 import topicService from '../services/TopicService';
+import moment from 'moment';
 export default {
-    name: 'course-topics',
+    name: 'topics-by-course',
+    methods: {
+        dayNameAndTime(date) {
+          const getFullName = moment(date).format('MMMM Do YYYY, h:mm:ss a');
+          return getFullName;
+        },
+    },
   
     data() {
         return {

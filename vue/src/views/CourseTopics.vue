@@ -7,12 +7,11 @@
 
 <script>
 
-import topicsByCourse from '../components/TopicsByCourse.vue';
+import TopicsByCourse from '../components/TopicsByCourse.vue';
 export default {
     components: { 
-        topicsByCourse,
-
-    },
+        TopicsByCourse
+        },
 
 }
 </script>
