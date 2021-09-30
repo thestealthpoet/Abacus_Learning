@@ -1,5 +1,5 @@
 <template>
-  <div class="topics-by-course">
+  <div class="course-topic-view">
       <topics-by-course />
       
   </div>

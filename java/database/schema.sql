@@ -117,7 +117,7 @@ INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALU
 INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (112, 'Roberto Garcia','r.garcia@test.com','user13','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 
 --COURSES
-INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1101, 'Game Show Mythology and Western Ego', 102, 'An exploration of the personalities behind the most popular game shows, informed by David Foster Wallace''s story ''Little Expressionless Animals''.', 'Medium', '2021-12-12 10:00:00');
+INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1101, 'Game Show Mythology and Western Ego', 106, 'An exploration of the personalities behind the most popular game shows, informed by David Foster Wallace''s story ''Little Expressionless Animals''.', 'Medium', '2021-12-12 10:00:00');
 INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1102, 'Introduction to SQL Queries', 102, 'Come prepared with your caps lock, a large computer screen, and a penchant for key-making.', 'Medium', '2021-11-12 12:00:00');
 INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1103, 'How to Win Friends and Influence People', 103, 'The text for this course has been in publication since 1936 and has sold over 15 million copies. Maybe you''ll be number 16 million.','Novice', '2021-10-04 09:00:00');
 INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1104, 'Pokemon 101', 103, 'For those late to this party, we have all of your basics: from cards, to animations, to tournaments.','Experienced', '2021-10-04 11:00:00');
@@ -148,6 +148,9 @@ INSERT INTO course_users (class_id, user_id) VALUES (1101, 106);
 INSERT INTO course_users (class_id, user_id) VALUES (1107, 110);
 INSERT INTO course_users (class_id, user_id) VALUES (1107, 109);
 INSERT INTO course_users (class_id, user_id) VALUES (1105, 108);
+INSERT INTO course_users (class_id, user_id) VALUES (1104, 108);
+INSERT INTO course_users (class_id, user_id) VALUES (1104, 107);
+INSERT INTO course_users (class_id, user_id) VALUES (1104, 106);
 
 --TOPICS
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2101, 1101, 'Pat Sajak', 'He has held his position at Wheel of Fortune since 1981: what we know, and don''t know about him.', '2021-12-12 09:00:00', '2021-12-04 10:00:00');
@@ -188,7 +191,7 @@ INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, ass
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3107, 2108, 'How to Win Friends and Influence People: Using Names', '2021-10-08 09:00:00', 'Quiz');
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3108, 2109, 'Demystifying Wine Terminology: French Sparkling', '2021-10-23 09:00:00', 'Homework');
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3109, 2110, 'Crosswording for Beginners: Understanding Themes', '2021-10-17 09:00:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3110, 2110,'Crosswording for Beginners: Understanding Themes', '2021-10-19 09:00:00', 'Quiz');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3110, 2110, 'Crosswording for Beginners: Understanding Themes', '2021-10-19 09:00:00', 'Quiz');
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3111, 2110, 'Demystifying Wine Terminology: French Sparkling', '2021-10-25 09:00:00', 'Quiz');
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3112, 2106, 'Underwater Basket Weaving: Safety', '2021-10-17 09:00:00', 'Quiz');
 

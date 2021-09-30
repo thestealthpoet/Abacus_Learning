@@ -1,18 +1,17 @@
 <template>
   <div class="course-topics">
-      <course-topics />
+      <topics-by-course />
   </div>
   
 </template>
 
 <script>
 
-import courseTopics from '../components/CourseTopics.vue';
+import TopicsByCourse from '../components/TopicsByCourse.vue';
 export default {
     components: { 
-        courseTopics,
-
-    },
+        TopicsByCourse
+        },
 
 }
 </script>

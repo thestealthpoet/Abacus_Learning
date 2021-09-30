@@ -5,6 +5,7 @@
     <div class="user-list">      
       <div class="users" v-for=" user in userList" :key="user.id">
         <img id="profile-pic" :src="selectRandomImage()">
+        
         <div class="name">
           {{user.name}} &#124;
         </div>
@@ -123,7 +124,8 @@ created() {
 }
 
 #profile-pic {
-  height: 25%;
+  display: flex;
+  height: 8rem;
   width: auto;
   margin: 5px;
   border: 3px solid;

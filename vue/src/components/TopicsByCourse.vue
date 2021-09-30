@@ -1,15 +1,15 @@
 <template>
-  <div class="main">
+  <div class="main"> 
       <div class="topics-list">
           <div class="course-topics" v-for="topic in courseTopics" :key="topic.id" >
             <div class="topic-name">
                 <h3> {{topic.topicName}} </h3>
             </div>
-            <div class="topic.topic-description">
+            <div class="topic.description">
                  <h4>{{topic.topicDescription}}</h4>
             </div>
             <div class="class-time">
-                Due Date: {{new Date(topic.topicDueDate).toLocaleString()}}
+                Due  {{dayNameAndTime(topic.topicDueDate)}}
             </div>
             </div>
       </div>
@@ -17,9 +17,16 @@
 </template>
 
 <script>
-import topicService from "../services/TopicService";
+import topicService from '../services/TopicService';
+import moment from 'moment';
 export default {
-    name: 'course-topics',
+    name: 'topics-by-course',
+    methods: {
+        dayNameAndTime(date) {
+          const getFullName = moment(date).format('dddd, h:mm a');
+          return getFullName;
+        }
+    },
   
     data() {
         return {
@@ -28,13 +35,9 @@ export default {
         };
     },
     created() {
-                                               //logged in store
+                                               
         topicService.getTopicsByCourse(this.selectedCourseId)
-        //when you receive the data back as a list of course Object data
-        //userCoursesData is a var
-        //loaded into an array
-        //values from db
-        //don't have to define already defined columns
+        
         .then( (courseTopicData) => {
             this.courseTopics = courseTopicData.data;
         })
@@ -48,7 +51,7 @@ export default {
 </script>
 
 <style>
-.assignments {
+.course-topics {
   border: 5px double rgb(9, 115, 148);
   margin: 10px;
   padding: 16px;
