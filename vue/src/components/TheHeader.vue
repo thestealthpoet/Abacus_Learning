@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div>
-            <img class="logo" src="@/assets/logo3.png" alt="Abacus Logo">
+            <img class="logo" src="@/assets/whitelogo.png" alt="Abacus Logo">
         </div>
         <div class="phrase">
             <h4 class="headline">Always gaining knowledge!</h4>
@@ -46,9 +46,9 @@ export default {
 
 .phrase {
     font-size: 25px;
-    font-family: 'Rouge Script', cursive;
-    text-shadow: 1px 1px 2px white;
-    /* color: white; */
+    font-family: Georgia, 'Times New Roman', Times, serif, cursive;
+    text-shadow: 1px 1px 2px black;
+    color: white;
 }
 
 .Icons {

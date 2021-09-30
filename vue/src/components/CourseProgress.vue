@@ -1,18 +1,10 @@
 <template>
     <div class="Pokemon101">
         <div class="c-container">
-            <!-- <p class="c">Course:</p> -->
-                <p class="cN">Pokemon 101</p>
-                <img class="pB" src="../assets/10%.png" alt="Wire Frame 0%">
-                <p class="lG">Grade: D</p>
+            <p class="cN">Pokemon 101</p>
+            <img class="pB" src="../assets/20%.png" alt="Wire Frame 20%">
+            <p class="lG">Grade: D</p>
         </div>
-        <!-- <div class="p-container">
-                
-        </div>
-        <div class="g-container">
-            <p class="oG">Overall Grade</p>
-                
-        </div> -->
         <div class="cU-container">
             <p class="cU">Curriculum</p>
                 <p class="dD">Due Date</p>
@@ -116,10 +108,6 @@ export default {
     padding: 16px;
     border-radius: 10px;
     justify-items: left;
-}
-
-.progressHeader {
-    padding: 0px 0px 20px 0px;
 }
 p {
     color: black;
@@ -238,6 +226,11 @@ p {
 }
 .dD {
     grid-area: dD;
+    text-decoration: underline;
+}
+.aG {
+    grid-area: aG;
+    text-decoration: underline;
 }
 .dD1 {
     grid-area: dD1;
