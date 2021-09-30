@@ -37,16 +37,23 @@ export default {
 </script>
 
 <style>
-.view-topics {
+.main {
+   column-count: 2;
+    
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: space-around;
+    
+}
+.view-topics{
   border: 5px double rgb(9, 115, 148);
   margin: 10px;
-  padding: 16px;
-  width: 300px;
+  padding: 5px;
+  width: 25rem;
   border-radius: 10px;
-  display: inline-flexbox;
-  flex-wrap: wrap;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
 }
-
 
 </style>
