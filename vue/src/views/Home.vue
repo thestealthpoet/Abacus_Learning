@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="home">
-      <h1>Welcome to your dashboard!</h1>
-      <h4>This is where you will see all of the class and information.</h4>
+      <h1>Welcome to Abacus, {{$store.state.user.username}}</h1>
+      <center><h4>Get learning below!</h4></center>
       <!-- <h4>Let's learn something new, this.user.id.</h4> -->
         
       <div class="options">
@@ -41,4 +41,6 @@ export default {
   gap: 15px;
   padding: 2px;
 }
+
+
 </style>
