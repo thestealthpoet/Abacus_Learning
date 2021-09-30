@@ -7,10 +7,10 @@
         <img id="profile-pic" :src="selectRandomImage()">
         
         <div class="name">
-          {{user.name}} &#124;
+          {{user.name}}
         </div>
         <div class="username">
-          {{user.username}} &#124;
+          @{{user.username}} 
         </div>
         <div class="email-address">
           {{user.emailAddress}}  
@@ -19,10 +19,12 @@
         <input type="checkbox" id="user-select-checkbox" v-bind:value="{
         selectedUserId: user.id,
         selectedCourseId: $store.state.selectedCourseId}" v-model="selectedUsers">
+        <label for=user-select-checkbox>Add student to roster</label>
         </div>
       </div>
-        <button id="btn" class="btn-submit">Add Selected User to Course</button>
+        
     </div>
+    <center><button id="btn" class="btn-submit">Add Selected User to Course</button></center>
   </form>
 
 </div>
@@ -98,21 +100,28 @@ created() {
 </script>
 
 <style>
-.roster-users-list {
-  /* display: flex;
-  align-content: space-between;
-  flex-direction: column;
-  flex-wrap: wrap; */
-  display: flex;
-  flex-direction: column;
+.user-list {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  
+  
 }
 
 .users {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 5px double rgb(9, 115, 148);
   margin: 10px;
   padding: 16px;
   border-radius: 10px;
+  
+}
+
+.name {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(9, 115, 148);
 }
 
 #btn {

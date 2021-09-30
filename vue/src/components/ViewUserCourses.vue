@@ -5,8 +5,10 @@
               <button id="btn" class="create-course-btn" @click="$router.push({ name: 'course-creation' })">Create your first course!</button>
           </div>
           <div v-else class="courses" v-for="course in userCourses" :key="course.id" >
-            <div class="course-name">
-                <h3> {{course.courseName}} </h3>
+            <div class="course-name">{{course.courseName}}<img v-if="course.courseTeacher === currentUserId" id="teacher-emblem" src="../assets/teacher_emblem.png">
+                
+                
+                
             </div>
             <div class="course-description">
                 <em> {{course.courseDescription}} </em>
@@ -16,7 +18,6 @@
                 - {{dayNameAndTime(course.classTime)}}
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
-                <div id="role-label">You are the teacher of this course.</div>
                 <button id="btn" @click="$router.push( {name: 'user-list', params: {courseName: course.courseName}}); setSelectedCourseId(course.courseId)">Add students to this course</button>
             
             <div class="show-topics">
@@ -92,5 +93,20 @@ export default {
 #role-label {
   text-decoration: overline;
   padding: 20px 0px 0px 20px;
+  color: red;
+}
+
+#teacher-emblem {
+    max-width: 5%;
+    max-height: auto;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.course-name {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
 }
 </style>

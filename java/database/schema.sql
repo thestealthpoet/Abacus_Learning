@@ -191,6 +191,9 @@ INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date,
 
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2120, 1106, 'French Sparkling Wine Terminology', 'Pet-Nats, Bruts, and Cremants', '2021-10-23 09:00:00', '2021-10-21 09:00:00');
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2121, 1107, 'Understanding Themes', 'Common crossword themes: from card games to travel', '2021-10-15 09:00:00', '2021-10-17 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2122, 1106, 'Italian Varietals', 'From Sicily to Piedmont, Italy produces an enormous variety of wines from over 800 varieties of grapes', '2021-10-30 09:00:00', '2021-10-28 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2123, 1106, 'The Influence of Robert Parker', 'Love him or hate him, he has done more to change palates worldwide than anyone else', '2021-11-6 09:00:00', '2021-11-4 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2124, 1106, 'Madeira: the Beverage of Our Forefathers', 'An exploration of the four styles: sercial, verdelho, bual, and malvasia', '2021-11-13 09:00:00', '2021-11-11 09:00:00');
 
 --ASSIGNMENTS
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3201, 2201, 'Pokemon Type Chart', '2021-10-11 11:59:00', 'Quiz');

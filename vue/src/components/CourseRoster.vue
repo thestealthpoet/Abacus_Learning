@@ -71,10 +71,16 @@ export default {
 
 .roster {
     display: flex;
+    flex-direction: column;
   border: 5px double rgb(9, 115, 148);
   margin: 10px;
   padding: 5px;
   border-radius: 10px;
+}
+
+.main scoped{
+    display: grid;
+  grid-template-columns: 250px 250px 250px;
 }
 
 </style>
