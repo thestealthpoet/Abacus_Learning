@@ -1,15 +1,15 @@
 <template>
-  <div class="main">
+  <div class="main"> here
       <div class="topics-list">
-          <div class="course-topics" v-for="topic in courseTopics" :key="topic.id" >
+          <div class="course-topics" v-for="topic in course-topics" :key="topic.id" >
             <div class="topic-name">
-                <h3> {{topic.topicName}} </h3>
+                <h3> {{topic.topicName}} there</h3>
             </div>
-            <div class="topic.topic-description">
+            <div class="topic.description">
                  <h4>{{topic.topicDescription}}</h4>
             </div>
             <div class="class-time">
-                Due Date: {{new Date(topic.topicDueDate).toLocaleString()}}
+                Due Date: {{topic.topicDueDate}}
             </div>
             </div>
       </div>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import topicService from "../services/TopicService";
+import topicService from '../services/TopicService';
 export default {
     name: 'course-topics',
   
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style>
-.assignments {
+.course-topics {
   border: 5px double rgb(9, 115, 148);
   margin: 10px;
   padding: 16px;

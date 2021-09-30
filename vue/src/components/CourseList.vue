@@ -12,7 +12,7 @@
                 Course Time: {{dayNameAndTime(course.classTime)}}
             </div>
             <div class="show-topics">
-              <button id="btn"  @click="$router.push({name: 'course-topics'}); ">view topics</button>
+              <button id="btn"  @click="$router.push({name: 'course-topics',  params: {courseId: course.courseId}}); setSelectedCourseId(course.courseId)"> view topics</button>
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
                 <div id="role-label">You are the teacher of this course.</div>

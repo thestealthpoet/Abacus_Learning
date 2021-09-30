@@ -16,7 +16,7 @@
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
                 <div id="role-label">You are the teacher of this course.</div>
-                <button id="btn" @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
+                <button id="btn" @click="$router.push( {name: 'user-list', params: {courseName: course.courseName}}); setSelectedCourseId(course.courseId)">Add students to this course</button>
             
             <div class="show-topics">
                     <button id="btn" @click="$router.push({name: 'curricula-creation'}); setSelectedCourseId(course.courseId)">Add content to this course</button>

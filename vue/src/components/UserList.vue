@@ -123,7 +123,8 @@ created() {
 }
 
 #profile-pic {
-  height: 25%;
+  display: flex;
+  height: 8rem;
   width: auto;
   margin: 5px;
   border: 3px solid;
