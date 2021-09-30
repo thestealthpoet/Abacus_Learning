@@ -28,7 +28,7 @@ export default {
 
 <style>
 .footer {
-    font-family: Georgia, sans-serif;
+    font-family: 'Roboto', sans-serif;
     /* background: rgba(0, 48, 73, .7); */
     background: linear-gradient(to left, rgba(0, 48,73), rgba(33, 158, 188));
     /* min-height: 10vh; */

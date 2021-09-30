@@ -8,8 +8,9 @@
           <div class="course-description">
               <em> {{course.courseDescription}} </em>
           </div>
+          <br>
           <div class="class-time">
-                Course Time: {{dayNameAndTime(course.classTime)}}
+                - {{dayNameAndTime(course.classTime)}}
             </div>
             <div class="show-topics">
               <button id="btn"  @click="$router.push({name: 'course-topics',  params: {courseId: course.courseId}}); setSelectedCourseId(course.courseId)"> view topics</button>

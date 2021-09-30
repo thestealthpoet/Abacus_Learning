@@ -1,9 +1,12 @@
 <template>
+<div class="todo">
   <div class="user-topics">
       <user-topics />
+      <div class="assignments">
       <user-assignments/>
+      </div>
   </div>
-  
+</div>  
 </template>
 
 <script>
@@ -20,5 +23,19 @@ export default {
 </script>
 
 <style>
+.todo {
+    
+    grid-template-columns: 25%, 25%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "topics assignments";
+
+}
+.user-topics {
+    grid-area: topics;
+}
+.assignments {
+    grid-area: assignments;
+}
 
 </style>

@@ -28,13 +28,9 @@ export default {
         };
     },
     created() {
-                                               //logged in store
+                                               
         topicService.getTopicsByCourse(this.selectedCourseId)
-        //when you receive the data back as a list of course Object data
-        //userCoursesData is a var
-        //loaded into an array
-        //values from db
-        //don't have to define already defined columns
+        
         .then( (courseTopicData) => {
             this.courseTopics = courseTopicData.data;
         })

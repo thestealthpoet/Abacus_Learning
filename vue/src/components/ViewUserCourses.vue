@@ -6,13 +6,14 @@
           </div>
           <div v-else class="courses" v-for="course in userCourses" :key="course.id" >
             <div class="course-name">
-                <h2> {{course.courseName}} </h2>
+                <h3> {{course.courseName}} </h3>
             </div>
             <div class="course-description">
                 <em> {{course.courseDescription}} </em>
             </div>
+            <br>
             <div class="class-time">
-                Course Time: {{new Date(course.classTime).toLocaleString()}}
+                - {{dayNameAndTime(course.classTime)}}
             </div>
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
                 <div id="role-label">You are the teacher of this course.</div>
@@ -31,33 +32,30 @@
 </template>
 
 <script>
+import moment from 'moment';
 import courseService from "../services/CourseService";
 export default {
     name: 'view-user-courses',
     methods: {
         setSelectedCourseId(courseId) {
             this.$store.commit("SET_SELECTED_COURSE", courseId);
+        },
+        dayNameAndTime(date) {
+          const getFullName = moment(date).format('dddd, h:mm a');
+          return getFullName;
         }
     },
     data() {
         return {
-            //value of userCourses
-            //key values are column name
-            //modeling java
-            //course.courseName equates to course.getName()
+            
             userCourses:  [],
             currentUserId: this.$store.state.user.id,
-            //isTeacher: false,
+           
     };
     },
     created() {
-                                               //logged in store
+                                               
         courseService.listCoursesByCurrentUserId(this.currentUserId)
-        //when you receive the data back as a list of course Object data
-        //userCoursesData is a var
-        //loaded into an array
-        //values from db
-        //don't have to define already defined columns
         .then( (userCoursesData) => {
             this.userCourses = userCoursesData.data;
         })
