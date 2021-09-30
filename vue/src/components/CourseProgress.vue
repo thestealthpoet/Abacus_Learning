@@ -4,7 +4,7 @@
             <!-- <p class="c">Course:</p> -->
                 <p class="cN">Pokemon 101</p>
                 <img class="pB" src="../assets/10%.png" alt="Wire Frame 0%">
-                <p class="lG">Grade: A</p>
+                <p class="lG">Grade: D</p>
         </div>
         <!-- <div class="p-container">
                 
@@ -18,44 +18,44 @@
                 <p class="dD">Due Date</p>
                 <p class="aG">Points</p>
             <p class="t1">Pokemon Types</p>
-                <p class="a1A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Type Chart</p>
-                <p class="dD1">09/24/21</p>
-                <p class="a1G">9/10</p>
+                <p class="a1A">Pokemon Type Chart</p>
+                <p class="dD1">09/17/21</p>
+                <p class="a1G">10/10</p>
             <p class="t2">Pokemon Abilities</p>
-                <p class="a2A">Assignment:&nbsp;&nbsp;&nbsp;Abilities Flash Cards</p>
-                <p class="dD2">10/01/21</p>
-                <p class="a2G">-</p>
+                <p class="a2A">Abilities Flash Cards</p>
+                <p class="dD2">09/24/21</p>
+                <p class="a2G">9/10</p>
             <p class="t3">Catching Pokemon</p>
-                <p class="a3A">Assignment:&nbsp;&nbsp;&nbsp;Pokeball catch rates</p>
-                <p class="dD3">10/08/21</p>
+                <p class="a3A">Pokeball catch rates</p>
+                <p class="dD3">10/01/21</p>
                 <p class="a3G">-</p>
             <p class="t4">Pokemon Training</p>
-                <p class="a4A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Stats Paper</p>
-                <p class="dD4">10/15/21</p>
+                <p class="a4A">Pokemon Stats Paper</p>
+                <p class="dD4">10/08/21</p>
                 <p class="a4G">-</p>
             <p class="t5">Items</p>
-                <p class="a5A">Assignment:&nbsp;&nbsp;&nbsp;PokeMart Excursion</p>
-                <p class="dD5">10/22/21</p>
+                <p class="a5A">PokeMart Excursion</p>
+                <p class="dD5">10/15/21</p>
                 <p class="a5G">-</p>
             <p class="t6">Pokemon Battling Part1</p>
-                <p class="a6A">Assignment:&nbsp;&nbsp;&nbsp;Battle Journal</p>
-                <p class="dD6">10/29/21</p>
+                <p class="a6A">Battle Journal</p>
+                <p class="dD6">10/22/21</p>
                 <p class="a6G">-</p>
             <p class="t7">Pokemon Battling Part2</p>
-                <p class="a7A">Assignment:&nbsp;&nbsp;&nbsp;Battle Video</p>
-                <p class="dD7">11/05/21</p>
+                <p class="a7A">Battle Video</p>
+                <p class="dD7">10/29/21</p>
                 <p class="a7G">-</p>
             <p class="t8">Pokemon Evolution</p>
-                <p class="a8A">Assignment:&nbsp;&nbsp;&nbsp;Evolution Path Chart</p>
-                <p class="dD8">11/12/21</p>
+                <p class="a8A">Evolution Path Chart</p>
+                <p class="dD8">11/05/21</p>
                 <p class="a8G">-</p>
             <p class="t9">Pokemon Breeding</p>
-                <p class="a9A">Assignment:&nbsp;&nbsp;&nbsp;Pokemon Daycare Quiz</p>
-                <p class="dD9">11/19/21</p>
+                <p class="a9A">Pokemon Daycare Quiz</p>
+                <p class="dD9">11/12/21</p>
                 <p class="a9G">-</p>
             <p class="t10">Pokemon Career Paths</p>
-                <p class="a10A">Assignment:&nbsp;&nbsp;&nbsp;Final Exam</p>
-                <p class="dD10">11/26/21</p>
+                <p class="a10A">I want to be the very best paper</p>
+                <p class="dD10">11/19/21</p>
                 <p class="a10G">-</p>
         </div>
     </div>
@@ -244,10 +244,10 @@ p {
 }
 .dD2 {
     grid-area: dD2;
-    color: rgb(214, 40, 40);
 }
 .dD3 {
     grid-area: dD3;
+    color: rgb(214, 40, 40);
 }
 .dD4 {
     grid-area: dD4;
