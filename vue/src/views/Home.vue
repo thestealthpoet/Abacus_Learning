@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="home">
-      <h1>Welcome to Abacus, {{$store.state.user.username}}</h1>
+      <h1>Welcome to Abacus, {{$store.state.user.username}}!</h1>
       <center><h4>Get learning below!</h4></center>
       <!-- <h4>Let's learn something new, this.user.id.</h4> -->
         

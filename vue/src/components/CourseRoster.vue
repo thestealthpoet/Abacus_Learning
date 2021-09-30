@@ -14,6 +14,15 @@
 
 <script>
 import rosterService from '../services/RosterService';
+import legohead1 from '../assets/legohead1.jpg';
+import legohead2 from '../assets/legohead2.jpg';
+import legohead3 from '../assets/legohead3.jpg';
+import legohead4 from '../assets/legohead4.jpg';
+import legohead5 from '../assets/legohead5.jpg';
+import legohead6 from '../assets/legohead6.jpg';
+import legohead7 from '../assets/legohead7.jpg';
+import legohead8 from '../assets/legohead8.jpg';
+import legohead9 from '../assets/legohead9.jpg';
 export default {
     name: 'course-roster',
 
@@ -22,23 +31,24 @@ export default {
             roster: [],
             selectedCourseId: this.$store.state.selectedCourseId,
             images: [
-                '../assets/legohead1.jpg',
-                '../assets/legohead2.jpg',
-                '../assets/legohead3.jpg',
-                '../assets/legohead4.jpg',
-                '../assets/legohead5.jpg',
-                '../assets/legohead6.jpg',
-                '../assets/legohead7.jpg',
-                '../assets/legohead8.jpg',
-                '../assets/legohead9.jpg'
-            ]
+                legohead1,
+                legohead2,
+                legohead3,
+                legohead4,
+                legohead5,
+                legohead6,
+                legohead7,
+                legohead8,
+                legohead9
+            ],
         }
     },
 
     methods: {
-        randomImage() {
-            return this.images[Math.floor(Math.random()*this.images.length)];
-        }
+        selectRandomImage() {
+    return this.images[Math.floor(Math.random()*this.images.length)]; 
+
+        },
 
     },
 
@@ -58,5 +68,13 @@ export default {
 </script>
 
 <style>
+
+.roster {
+    display: flex;
+  border: 5px double rgb(9, 115, 148);
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+}
 
 </style>
