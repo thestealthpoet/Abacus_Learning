@@ -151,10 +151,18 @@ INSERT INTO course_users (class_id, user_id) VALUES (1105, 108);
 INSERT INTO course_users (class_id, user_id) VALUES (1104, 108);
 INSERT INTO course_users (class_id, user_id) VALUES (1104, 107);
 INSERT INTO course_users (class_id, user_id) VALUES (1104, 106);
+INSERT INTO course_users (class_id, user_id) VALUES (1104, 110);
+INSERT INTO course_users (class_id, user_id) VALUES (1105, 110);
+INSERT INTO course_users (class_id, user_id) VALUES (1106, 104);
+INSERT INTO course_users (class_id, user_id) VALUES (1106, 109);
+INSERT INTO course_users (class_id, user_id) VALUES (1104, 105);
+INSERT INTO course_users (class_id, user_id) VALUES (1107, 105);
+INSERT INTO course_users (class_id, user_id) VALUES (1104, 109);
+
 
 --TOPICS
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2101, 1101, 'Pat Sajak', 'He has held his position at Wheel of Fortune since 1981: what we know, and don''t know about him.', '2021-12-12 09:00:00', '2021-12-04 10:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2102, 1101, 'Alex Trebeck', 'He is, and will continue to be missed. The legend, and the inspiration for ''Tiny Expresionless Animals''', '2021-11-12 09:00:00', '2021-12-04 10:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2102, 1101, 'Alex Trebeck', 'He is, and will continue to be missed. The legend, and the inspiration for ''Tiny Expresionless Animals''', '2021-11-12 09:00:00', '2021-11-04 10:00:00');
 
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2201, 1104, 'Pokemon Types', 'Deep dive into the 18 Pokemon types', '2021-09-17 09:00:00', '2021-09-13 09:00:00');
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2202, 1104, 'Pokemon Abilities', 'Deep dive into the 100s of Pokemon abilities', '2021-09-24 09:00:00', '2021-09-20 09:00:00');
@@ -169,9 +177,20 @@ INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date,
 
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2106, 1105, 'Safety', 'Best safety practices when weaving baskets underwater', '2021-10-11 13:00:00', '2021-10-04 13:00:00');
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2107, 1102, 'How to Use Select *', 'Definitely not a best practice, but generally quicker than typing column names', '2021-10-14 13:00:00', '2021-10-7 13:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2108, 1103, 'Addressing Other People by Their Names', 'One of the Fundamental Takeaways', '2021-10-08 09:00:00', '2021-10-04 09:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2109, 1106, 'From the Beginning: French Sparkling Wine Terminology', 'Pet-Nats, Bruts, and Cremants', '2021-10-21 09:00:00', '2021-10-23 09:00:00');
-INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2110, 1107, 'Understanding Themes', 'Common crossword themes: from card games to travel', '2021-10-15 09:00:00', '2021-10-17 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2108, 1103, 'Addressing Other People by Their Names', 'One''s name is the sweetest sound for many people', '2021-10-08 09:00:00', '2021-10-04 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2111, 1103, 'Honestly Appreciating Others', 'Everyone has noteworthy qualities and they should be recognized', '2021-10-12 10:00:00', '2021-10-08 10:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2112, 1103, 'Smiling and It''s effectiveness', 'Smiles are free to give and make others feel great', '2021-10-15 09:00:00', '2021-10-11 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2113, 1103, 'Be a Good Listener', 'Encourage other people to talk about themselves: everyone wants someone to listen', '2021-10-17 10:00:00', '2021-10-15 10:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2114, 1103, 'Talk to People about THEIR Interests', 'They will feel valued and reciprocate', '2021-10-22 09:00:00', '2021-10-18 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2115, 1103, 'Avoiding Arguments: There Are No Winners', 'The other person will either feel humiliated or strengthened; we must avoid arguments whenever possible', '2021-10-24 10:00:00', '2021-10-22 10:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2116, 1106, 'Burgundy Terminology', 'What is a Grand Cru vs. a Premier Cru and why is Beaujolais a part of Burgundy?', '2021-10-16 09:00:00', '2021-10-14 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2117, 1106, 'Loire Valley: Sancerre and Chenin Blanc', 'An overview of the white wines of the region, and a brief dive into the popularity of Sancerre after ''Fifty Shades of Grey''', '2021-10-13 09:00:00', '2021-10-11 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2118, 1101, 'Bob Barker', 'Come on down as we look Barker''s amazing longevity and fondness for pets', '2021-10-12 09:00:00', '2021-10-4 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2119, 1101, 'Chuck Woolery', 'From Wheel of Fortune to Love Connection to Scrabble, he was the game show host of the 1980s', '2021-10-22 09:00:00', '2021-10-14 09:00:00');
+
+
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2120, 1106, 'French Sparkling Wine Terminology', 'Pet-Nats, Bruts, and Cremants', '2021-10-23 09:00:00', '2021-10-21 09:00:00');
+INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2121, 1107, 'Understanding Themes', 'Common crossword themes: from card games to travel', '2021-10-15 09:00:00', '2021-10-17 09:00:00');
 
 --ASSIGNMENTS
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3201, 2201, 'Pokemon Type Chart', '2021-10-11 11:59:00', 'Quiz');
@@ -189,10 +208,10 @@ INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, ass
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3105, 2102, 'Game Show Mythology and Western Ego: Alex Trebeck', '2021-10-14 09:00:00', 'Quiz');
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3106, 2106, 'Underwater Basket Weaving: Safety', '2021-10-14 09:00:00', 'Homework');
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3107, 2108, 'How to Win Friends and Influence People: Using Names', '2021-10-08 09:00:00', 'Quiz');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3108, 2109, 'Demystifying Wine Terminology: French Sparkling', '2021-10-23 09:00:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3109, 2110, 'Crosswording for Beginners: Understanding Themes', '2021-10-17 09:00:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3110, 2110, 'Crosswording for Beginners: Understanding Themes', '2021-10-19 09:00:00', 'Quiz');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3111, 2110, 'Demystifying Wine Terminology: French Sparkling', '2021-10-25 09:00:00', 'Quiz');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3108, 2120, 'Demystifying Wine Terminology: French Sparkling', '2021-10-23 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3109, 2121, 'Crosswording for Beginners: Understanding Themes', '2021-10-17 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3110, 2121, 'Crosswording for Beginners: Understanding Themes', '2021-10-19 09:00:00', 'Quiz');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3111, 2120, 'Demystifying Wine Terminology: French Sparkling', '2021-10-25 09:00:00', 'Quiz');
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3112, 2106, 'Underwater Basket Weaving: Safety', '2021-10-17 09:00:00', 'Quiz');
 
 --GRADES
