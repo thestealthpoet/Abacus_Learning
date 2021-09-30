@@ -1,7 +1,7 @@
 <template>
   <div class="main">
       <div class="topics-list">
-          <div class="assignments" v-for="topic in userTopics" :key="topic.id" >
+          <div class="course-topics" v-for="topic in courseTopics" :key="topic.id" >
             <div class="topic-name">
                 <h3> {{topic.topicName}} </h3>
             </div>
@@ -19,26 +19,27 @@
 <script>
 import topicService from "../services/TopicService";
 export default {
-    name: 'user-topics',
+    name: 'course-topics',
+  
     data() {
         return {
-            userTopics:  [],
-            currentUserId: this.$store.state.user.id,
+            courseTopics:  [],
+            selectedCourseId: this.$store.state.selectedCourseId,
         };
     },
     created() {
                                                //logged in store
-        topicService.getTopicsByUser(this.currentUserId)
+        topicService.getTopicsByCourse(this.selectedCourseId)
         //when you receive the data back as a list of course Object data
         //userCoursesData is a var
         //loaded into an array
         //values from db
         //don't have to define already defined columns
-        .then( (userTopicData) => {
-            this.userTopics = userTopicData.data;
+        .then( (courseTopicData) => {
+            this.courseTopics = courseTopicData.data;
         })
         .catch( (error) => {
-            console.error(error + "user assignments not loaded");
+            console.error(error + "course topics not loaded");
         });
         
     },

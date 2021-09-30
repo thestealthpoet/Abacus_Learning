@@ -23,6 +23,7 @@ export default new Vuex.Store({
     courses: [],
     assignments: [],
     selectedCourseId: '',
+    selectedTopicId: '',
     
   },
   mutations: {

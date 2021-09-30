@@ -4,7 +4,7 @@
    <form v-on:submit.prevent="addStudentsToRoster" class="roster-creation-form">
     <div class="user-list">      
       <div class="users" v-for=" user in userList" :key="user.id">
-        <!---<div class="profile-pic"><img :src="selectRandomImage"></div> --->
+        <img id="profile-pic" :src="selectRandomImage()">
         <div class="name">
           {{user.name}} &#124;
         </div>
@@ -71,7 +71,8 @@ methods: {
   },
 
   selectRandomImage() {
-    return this.images[Math.floor(Math.random()*this.images.length)]; 
+    return this.images[Math.floor(Math.random()*this.images.length)];
+     
     
   },
 
@@ -82,7 +83,7 @@ methods: {
 
 created() {
 
-this.selectedImage = this.selectRandomImage(this.images);
+//this.selectedImage = this.selectRandomImage(this.images);
 
   userService.getUsersList()
   .then( (userData) => {
@@ -121,8 +122,13 @@ this.selectedImage = this.selectRandomImage(this.images);
   /* padding: 0px 0px 0px 20px; */
 }
 
-.profile-pic {
+#profile-pic {
+  height: 25%;
+  width: auto;
   margin: 5px;
+  border: 3px solid;
+  border-radius: 8px;
+  
 }
 
 </style>

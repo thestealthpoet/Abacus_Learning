@@ -22,6 +22,11 @@ createAssignment(assignment) {
 
 //will get assignments by user
 getAssignmentsByUser(userId) {
-  return http.get(`/assignments/${userId}`);
+  return http.get(`/assignments/user/${userId}`);
 },
+
+//will get assignments by topic
+getAssignmentsByTopic(topicId) {
+  return http.get(`/assignments/${topicId}`);
+}
 }
