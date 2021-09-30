@@ -24,12 +24,12 @@ export default {
     data() {
         return {
             courseTopics:  [],
-            selectedCourseId: this.$store.selectedCourseId,
+            selectedCourseId: this.$store.state.selectedCourseId,
         };
     },
     created() {
                                                //logged in store
-        topicService.getTopicsByCourse(this.currentCourseId)
+        topicService.getTopicsByCourse(this.selectedCourseId)
         //when you receive the data back as a list of course Object data
         //userCoursesData is a var
         //loaded into an array
