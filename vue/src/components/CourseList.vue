@@ -26,7 +26,7 @@
            
            </div>
            <div class="show-join" v-else>
-             <button>Join Class</button>
+             <button id="btn">Join Class</button>
            </div> 
           <!-- <div id="role-label" class="else" v-else>
               You are not the teacher of this course.
