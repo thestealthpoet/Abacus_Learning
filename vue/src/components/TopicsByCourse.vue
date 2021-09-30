@@ -3,13 +3,13 @@
       <div class="topics-list">
           <div class="course-topics" v-for="topic in courseTopics" :key="topic.id" >
             <div class="topic-name">
-                <h3> {{topic.topicName}} there</h3>
+                <h3> {{topic.topicName}} </h3>
             </div>
             <div class="topic.description">
                  <h4>{{topic.topicDescription}}</h4>
             </div>
             <div class="class-time">
-                Due Date: {{dayNameAndTime(topic.topicDueDate)}}
+                Due  {{dayNameAndTime(topic.topicDueDate)}}
             </div>
             </div>
       </div>
@@ -23,9 +23,9 @@ export default {
     name: 'topics-by-course',
     methods: {
         dayNameAndTime(date) {
-          const getFullName = moment(date).format('MMMM Do YYYY, h:mm:ss a');
+          const getFullName = moment(date).format('dddd, h:mm a');
           return getFullName;
-        },
+        }
     },
   
     data() {
