@@ -71,6 +71,9 @@ export default {
 </script>
 
 <style>
+.course-list {
+    padding: 40px;
+}
 .courses {
   border: 5px double rgb(9, 115, 148);
   margin: 10px;
