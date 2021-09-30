@@ -56,7 +56,7 @@ public class ApplicationController {
         return userDao.getCourseRoster(courseId);
     }
 
-    @RequestMapping(path = "/courses/{courseId}/roster", method = RequestMethod.POST)
+    @RequestMapping(path = "/courses/roster/{courseId}", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void createCourseRosterEntry(@RequestBody CourseRosterEntry[] courseRosterEntries , @PathVariable int courseId) {
         /*for (CourseRosterEntry entry : courseRosterEntries) {
@@ -72,8 +72,8 @@ public class ApplicationController {
         return rosterDao.getUsersOnCourseRosterByCourseId(courseId);
     }
 
-    @RequestMapping(path = "/{course}/topics", method = RequestMethod.GET)
-    public List<Topic> getTopicByCourse(@PathVariable int courseId) {
+    @RequestMapping(path = "/topics/courses/{courseId}", method = RequestMethod.GET)
+    public List<Topic> getByCourse(@PathVariable int courseId) {
         return topicDao.getByCourse(courseId);
     }
 
@@ -109,12 +109,6 @@ public class ApplicationController {
         assignmentDao.createAssignment(assignment);
     }
 
-    @GetMapping(path = "/topics/{courseId}/{userId}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<Topic> listTopicsByUserAndCourse(@Valid @PathVariable int courseId, @PathVariable int userId) {
-        return topicDao.topicsByCourseAndUser(courseId, userId);
-    }
-
 
     @GetMapping(path = "/topics/{userId}")
     @ResponseStatus(HttpStatus.OK)
@@ -130,10 +124,15 @@ public class ApplicationController {
         return userDao.findAll();
     }
 
-    @GetMapping(path = "/assignments/{userId}")
+    @GetMapping(path = "/assignments/user/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Assignment> getByUser(@Valid @PathVariable int userId) {
         return assignmentDao.getAssignmentsByUserId(userId);
+    }
+    @GetMapping(path = "/assignments/{topicId}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Assignment> getByTopicId(@Valid @PathVariable int topicId) {
+        return assignmentDao.getByTopicId(topicId);
     }
 
 }

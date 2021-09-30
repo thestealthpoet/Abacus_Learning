@@ -4,7 +4,7 @@
             <img class="logo" src="@/assets/logo3.png" alt="Abacus Logo">
         </div>
         <div class="phrase">
-            <h4>Always gaining knowledge!</h4>
+            <h4 class="headline">Always gaining knowledge!</h4>
         </div>
         <div class="nav-text">
         <router-link class="Icons" v-bind:to="{ name: 'myDashboard', params: {username: this.$store.state.user.username} }">
@@ -56,6 +56,9 @@ export default {
     display: grid;
     text-align: center;
     padding: 5px 10px;
+}
+.headline, .nav-text {
+    font-family: 'Roboto', sans-serif;
 }
 
 </style>

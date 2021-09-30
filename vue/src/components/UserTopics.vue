@@ -9,7 +9,7 @@
                  <h4>{{topic.topicDescription}}</h4>
             </div>
             <div class="class-time">
-                Due Date: {{new Date(topic.topicDueDate).toLocaleString()}}
+                - {{dayNameAndTime(topic.topicDueDate)}}
             </div>
             </div>
       </div>
@@ -17,18 +17,20 @@
 </template>
 
 <script>
+import moment from 'moment';
 import topicService from "../services/TopicService";
 export default {
     name: 'user-topics',
+    methods: {
+        dayNameAndTime(date) {
+          const getFullName = moment(date).format('dddd, h:mm a');
+          return getFullName;
+        }
+    },
     data() {
         return {
-            //value of userCourses
-            //key values are column name
-            //modeling java
-            //course.courseName equates to course.getName()
             userTopics:  [],
             currentUserId: this.$store.state.user.id,
-            //isTeacher: false,
         };
     },
     created() {
