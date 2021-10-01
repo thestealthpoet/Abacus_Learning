@@ -1,5 +1,7 @@
-# Final Capstone
+Abacus Learning was the final capstone project for the National Live Remote #3 cohort of Tech Elevator.
 
-This directory contains all of the starter projects for the final capstone. The Vue starter project works with both the Java and .NET backend projects with a single configuration update that you can read about in the README.
+Under the guidance of a SCRUM master and utilzing Agile development sprint cycles, with this project my team and I built a functional learning management system.  It is built with the VueJS framework and Java Spring Boot on the backend.
 
-Each project contains instructions that provides information about the starting code and explains how to get started with the final capstone project.
+A user's experience is that they can log in and immediately can create courses, add assignments, check grades as a teacher, and simultaneously can join classes as a student.
+
+Further development in progress to continuously improve the user experience.
