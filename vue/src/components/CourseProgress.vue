@@ -9,43 +9,43 @@
             <p class="cU">Curriculum</p>
                 <p class="dD">Due Date</p>
                 <p class="aG">Points</p>
-            <p class="t1">Pokemon Types</p>
-                <p class="a1A">&nbsp;&nbsp;&nbsp;&nbsp;Pokemon Type Chart</p>
+            <!-- <p class="t1">Pokemon Types</p> -->
+                <center><p class="a1A">Pokemon Type Chart</p></center>
                 <p class="dD1">09/17/21</p>
                 <p class="a1G">10/10</p>
-            <p class="t2">Pokemon Abilities</p>
+            <!-- <p class="t2">Pokemon Abilities</p> -->
                 <p class="a2A">Abilities Flash Cards</p>
                 <p class="dD2">09/24/21</p>
                 <p class="a2G">9/10</p>
-            <p class="t3">Catching Pokemon</p>
+            <!-- <p class="t3">Catching Pokemon</p> -->
                 <p class="a3A">Pokeball catch rates</p>
                 <p class="dD3">10/01/21</p>
                 <p class="a3G">-</p>
-            <p class="t4">Pokemon Training</p>
+            <!-- <p class="t4">Pokemon Training</p> -->
                 <p class="a4A">Pokemon Stats Paper</p>
                 <p class="dD4">10/08/21</p>
                 <p class="a4G">-</p>
-            <p class="t5">Items</p>
+            <!-- <p class="t5">Items</p> -->
                 <p class="a5A">PokeMart Excursion</p>
                 <p class="dD5">10/15/21</p>
                 <p class="a5G">-</p>
-            <p class="t6">Pokemon Battling Part1</p>
+            <!-- <p class="t6">Pokemon Battling Part1</p> -->
                 <p class="a6A">Battle Journal</p>
                 <p class="dD6">10/22/21</p>
                 <p class="a6G">-</p>
-            <p class="t7">Pokemon Battling Part2</p>
+            <!-- <p class="t7">Pokemon Battling Part2</p> -->
                 <p class="a7A">Battle Video</p>
                 <p class="dD7">10/29/21</p>
                 <p class="a7G">-</p>
-            <p class="t8">Pokemon Evolution</p>
+            <!-- <p class="t8">Pokemon Evolution</p> -->
                 <p class="a8A">Evolution Path Chart</p>
                 <p class="dD8">11/05/21</p>
                 <p class="a8G">-</p>
-            <p class="t9">Pokemon Breeding</p>
+            <!-- <p class="t9">Pokemon Breeding</p> -->
                 <p class="a9A">Pokemon Daycare Quiz</p>
                 <p class="dD9">11/12/21</p>
                 <p class="a9G">-</p>
-            <p class="t10">Pokemon Career Paths</p>
+            <!-- <p class="t10">Pokemon Career Paths</p> -->
                 <p class="a10A">I want to be the very best paper</p>
                 <p class="dD10">11/19/21</p>
                 <p class="a10G">-</p>
@@ -79,28 +79,28 @@ export default {
 }
 .cU-container {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
     grid-template-areas:
     "cU cU dD aG"
-    "t1 t1 t1 t1"
+    /* "t1 t1 t1 t1" */
     "a1A a1A dD1 a1G"
-    "t2 t2 t2 t2"
+    /* "t2 t2 t2 t2" */
     "a2A a2A dD2 a2G"
-    "t3 t3 t3 t3"
+    /* "t3 t3 t3 t3" */
     "a3A a3A dD3 a3G"
-    "t4 t4 t4 t4"
+    /* "t4 t4 t4 t4" */
     "a4A a4A dD4 a4G"
-    "t5 t5 t5 t5"
+    /* "t5 t5 t5 t5" */
     "a5A a5A dD5 a5G"
-    "t6 t6 t6 t6"
+    /* "t6 t6 t6 t6" */
     "a6A a6A dD6 a6G"
-    "t7 t7 t7 t7"
+    /* "t7 t7 t7 t7" */
     "a7A a7A dD7 a7G"
-    "t8 t8 t8 t8"
+    /* "t8 t8 t8 t8" */
     "a8A a8A dD8 a8G"
-    "t9 t9 t9 t9"
+    /* "t9 t9 t9 t9" */
     "a9A a9A dD9 a9G"
-    "t10 t10 t10 t10"
+    /* "t10 t10 t10 t10" */
     "a10A a10A dD10 a10G";  
     gap: 5px;
     border: 5px double rgb(9, 115, 148);

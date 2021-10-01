@@ -105,16 +105,16 @@ CREATE TABLE course_users (
 INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (100, 'Test User','useremail@email.com','user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (101, 'Test Admin', 'adminemail@email.com','admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (102, 'Sally Test', 'testMeFindOut@test.com','missTest','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (103, 'Naomi Johnson','n.johnson@test.com','user4','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (104, 'Ken Anthony','k.anthony@test.com','user5','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (105, 'Crystal Smith','c.smith@test.com','user6','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (106, 'Jessica Stark','j.stark@test.com','user7','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (107, 'Travis Diaz','t.diaz@test.com','user8','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (108, 'Zola Lewis','z.lewis@test.com','user9','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (109, 'Alex Harrison','a.harrison@test.com','user10','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (110, 'Cierra Taylor','c.taylor@test.com','user11','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (111, 'George Noble','g.noble@test.com','user12','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (112, 'Roberto Garcia','r.garcia@test.com','user13','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (103, 'Naomi Johnson','n.johnson@test.com','n.johnson','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (104, 'Ken Anthony','k.anthony@test.com','Ken.Ant','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (105, 'Crystal Smith','c.smith@test.com','crystalS','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (106, 'Jessica Stark','j.stark@test.com','Starky','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (107, 'Travis Diaz','t.diaz@test.com','TravyD','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (108, 'Zola Lewis','z.lewis@test.com','Zolaaa','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (109, 'Alex Harrison','a.harrison@test.com','A.Harrison','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (110, 'Cierra Taylor','c.taylor@test.com','Cieeeerrra','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (111, 'George Noble','g.noble@test.com','NobleG','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (user_id, name,email_address,username,password_hash,role) VALUES (112, 'Roberto Garcia','r.garcia@test.com','BertoG','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 
 --COURSES
 INSERT INTO courses (course_id, course_name, course_teacher, description, difficulty_level, class_time) VALUES (1101, 'Game Show Mythology and Western Ego', 106, 'An exploration of the personalities behind the most popular game shows, informed by David Foster Wallace''s story ''Little Expressionless Animals''.', 'Medium', '2021-12-12 10:00:00');
@@ -196,16 +196,16 @@ INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date,
 INSERT INTO topics(topic_id, course_id, topic_name, description, topic_due_date, topic_teach_date) VALUES (2124, 1106, 'Madeira: the Beverage of Our Forefathers', 'An exploration of the four styles: sercial, verdelho, bual, and malvasia', '2021-11-13 09:00:00', '2021-11-11 09:00:00');
 
 --ASSIGNMENTS
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3201, 2201, 'Pokemon Type Chart', '2021-10-11 11:59:00', 'Quiz');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3202, 2202, 'Abilities Flash Cards', '2021-10-15 11:59:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3203, 2203, 'Pokeball catch rates', '2021-10-07 11:59:00', 'Quiz');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3204, 2204, 'Pokemon Stats Paper', '2021-10-07 11:59:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3205, 2205, 'PokeMart Excursion', '2021-10-07 11:59:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3206, 2206, 'Battle Journal', '2021-10-07 11:59:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3207, 2207, 'Battle Video', '2021-10-07 11:59:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3208, 2208, 'Evolution Path Chart', '2021-10-07 11:59:00', 'Homework');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3209, 2209, 'Pokemon Daycare Quiz', '2021-10-07 11:59:00', 'Quiz');
-INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3210, 2210, 'I want to be the very best paper', '2021-10-07 11:59:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3201, 2201, 'Pokemon Type Chart', '2021-09-17 09:00:00', 'Quiz');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3202, 2202, 'Abilities Flash Cards', '2021-09-24 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3203, 2203, 'Pokeball catch rates', '2021-10-01 09:00:00', 'Quiz');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3204, 2204, 'Pokemon Stats Paper', '2021-10-08 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3205, 2205, 'PokeMart Excursion', '2021-10-15 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3206, 2206, 'Battle Journal', '2021-10-22 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3207, 2207, 'Battle Video', '2021-10-29 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3208, 2208, 'Evolution Path Chart', '2021-11-05 09:00:00', 'Homework');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3209, 2209, 'Pokemon Daycare Quiz', '2021-11-12 09:00:00', 'Quiz');
+INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3210, 2210, 'I want to be the very best paper', '2021-11-19 09:00:00', 'Homework');
 
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3104, 2101, 'Game Show Mythology and Western Ego: Pat Sajak', '2021-12-14 09:00:00', 'Homework');
 INSERT INTO assignments (assignment_id, topic_id, assignment_name, due_date, assignment_type) VALUES (3105, 2102, 'Game Show Mythology and Western Ego: Alex Trebeck', '2021-10-14 09:00:00', 'Quiz');

@@ -3,7 +3,7 @@
     <div class="course-list">
         <div class="courses" v-for="course in courseList" :key="course.id" >
           <div class="course-name">
-              <h4> {{course.courseName}} </h4>
+              <h4> {{course.courseName}} </h4> <img v-if="course.courseTeacher === currentUserId" id="teacher-emblem" src="../assets/teacher_emblem.png">
           </div>
           <div class="course-description">
               <em> {{course.courseDescription}} </em>
@@ -13,11 +13,11 @@
                 - {{dayNameAndTime(course.classTime)}}
             </div>
             <div class="show-topics">
-              <button id="btn"  @click="$router.push({name: 'course-topics',  params: {courseId: course.courseId}}); setSelectedCourseId(course.courseId)"> view topics</button>
+              <button id="btn"  @click="$router.push({name: 'course-topics',  params: {courseId: course.courseId}}); setSelectedCourseId(course.courseId)">View topics</button>
             </div>
 
             <div class="show-teacher" v-if="course.courseTeacher === currentUserId">
-                <div id="role-label">You are the teacher of this course.</div>
+                <!-- <div id="role-label">You are the teacher of this course.</div> -->
                 <button id="btn" @click="$router.push( {name: 'user-list'}); setSelectedCourseId(course.courseId)">Add students to this course</button>
             
             <div class="show-topics">

@@ -47,7 +47,7 @@ export default {
    flex-direction: column;
    flex-wrap: wrap;
    justify-content: space-around;
-    
+   padding-top: 40px;
 }
 .view-assignments{
   border: 5px double rgb(9, 115, 148);
