@@ -6,7 +6,7 @@
             <p class="lG">Grade: <strong>D</strong></p>
         </div>
         <div class="cU-container">
-            <p class="cU">Curriculum</p>
+            <p class="cU">Assignments</p>
                 <p class="dD">Due Date</p>
                 <p class="aG">Points</p>
             <!-- <p class="t1">Pokemon Types</p> -->
